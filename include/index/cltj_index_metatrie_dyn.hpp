@@ -246,7 +246,7 @@ namespace cltj {
             return &m_tries[i];
         }
 
-        bool insert(const spo_triple &triple) {
+        bool insert_old(const spo_triple &triple) {
             if(!m_n_triples) {
                 m_tries[0] = create_full_trie(triple, 0);
                 m_tries[1] = create_partial_trie(triple, 1);
@@ -310,6 +310,89 @@ namespace cltj {
                             //m_tries[i].print();
                             if(j == 1) inc_gaps[i/2] = true;
                         }
+                    }
+                }
+            }
+
+            //Update root degree because insertion of a new element in the first level
+            for(auto i = 0; i < m_tries.size(); i+=2) {
+                if(inc_gaps[i/2]) m_tries[i].inc_root_degree();
+            }
+            ++m_n_triples;
+            return true;
+        }
+
+        bool insert(const spo_triple &triple) {
+            if(!m_n_triples) {
+                m_tries[0] = create_full_trie(triple, 0);
+                m_tries[1] = create_partial_trie(triple, 1);
+                m_tries[2] = create_full_trie(triple, 2);
+                m_tries[3] = create_partial_trie(triple, 3);
+                m_tries[4] = create_full_trie(triple, 4);
+                m_tries[5] = create_partial_trie(triple, 5);
+                for(size_type i = 0; i < m_tries.size(); i+=2) {
+                    m_tries[i].inc_root_degree();
+                }
+                ++m_n_triples;
+                return true;
+            }
+            typedef struct {
+                size_type pos;
+                bool first_child; //pos contains the first_child of the current level
+                bool ins;
+            } state_type ;
+            std::array<state_type, 4> states;
+            std::array<bool, 3> inc_gaps = {false, false, false};
+            std::array<bool, 3> ins_part = {false, false, false};
+            std::array<state_type, 3> u_part; //info to update partial trie
+            states[0].pos = 0; states[0].first_child = false; states[0].ins = false;
+            size_type b, e;
+            for(size_type i = 0; i < m_tries.size(); i+=2) {
+                bool insert = false;
+                for(size_type l = 0; l < 3; ++l) {
+                    if(!states[l].ins) {
+                        b = (l==0) ? 0 : m_tries[i].child(states[l].pos, 1);
+                        e = b+m_tries[i].children(b)-1;
+                        auto p = m_tries[i].next(b, e, triple[spo_orders[i][l]]);
+                        states[l+1].pos = p.second;
+                        states[l+1].first_child = (b==p.second); //first position
+                        states[l+1].ins =  p.first != triple[spo_orders[i][l]]; //insert
+                        insert = p.first != triple[spo_orders[i][l]];
+                    } else {
+                        states[l+1].pos = m_tries[i].child(states[l].pos, 1);
+                        states[l+1].first_child = false; //it is not the first child of the current range
+                        states[l+1].ins = true;
+                    }
+                }
+                if(i == 0 && !insert) return false;
+                for(int64_t j = 3; j >= 1; --j) {
+                    //When the triple is not found in the previous level, it means that we are in the first child (1-bit) of the current level.
+                    //Otherwise, we have to add a new child to the current level, thus we add a 0-bit.
+                    if(states[j].ins) {
+                        //std::cout << "insert at: " << states[j].pos << "[" << states[j-1].ins << ", " << states[j].first_child << "]" << std::endl;
+                        m_tries[i].insert(states[j].pos, triple[spo_orders[i][j-1]], states[j-1].ins, states[j].first_child);
+                        //m_tries[i].print();
+                        if (j == 1) inc_gaps[i/2] = true;
+                        if (j == 2) { //insert into partial trie
+                            auto pt = ts_part_map[i/2];
+                            ins_part[pt/2] = true;
+                            u_part[i/2] = states[1]; //to sync with the first level in the partial trie
+                        }
+                    }
+                }
+            }
+
+            for (uint64_t i = 1; i < m_tries.size(); i+=2) {
+                if (ins_part[i/2]) {
+                    if (!u_part[i/2].ins) {
+                        //the previous element exists in the previous level
+                        b = m_tries[i].child(u_part[i/2].pos, 1, 0);
+                        e = b+m_tries[i].children(b)-1;
+                        auto p = m_tries[i].next(b, e, triple[spo_orders[i][1]]);
+                        m_tries[i].insert(p.second, triple[spo_orders[i][1]], u_part[i/2].ins, (b==p.second));
+                    }else {
+                        b = m_tries[i].child(u_part[i/2].po, 1, 0);
+                        m_tries[i].insert(b, triple[spo_orders[i][1]], states[1].ins, false);
                     }
                 }
             }
