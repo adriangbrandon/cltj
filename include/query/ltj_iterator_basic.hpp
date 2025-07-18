@@ -400,6 +400,16 @@ namespace ltj {
             return trie->children(it);
         }
 
+        inline size_type interval_length(var_type var) const {
+            state_type state = o;
+            if (is_variable_subject(var)) {
+                state = s;
+            } else if (is_variable_predicate(var)) {
+                state = p;
+            }
+            return children(state);
+        }
+
         inline size_type subtree_size_fixed1(state_type state) const {
             size_type t_i, s_i;
             if (state == s) { //Fix variables

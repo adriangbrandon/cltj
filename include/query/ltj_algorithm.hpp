@@ -190,6 +190,16 @@ namespace ltj {
             search(0, t, res, start, limit_results, timeout_seconds);
         };
 
+        template<class results_type>
+        void join_v2(/*vector<tuple_type> &res,*/
+                  results_type &res,
+                  const size_type limit_results = 0, const size_type timeout_seconds = 0){
+            if(m_is_empty) return;
+            time_point_type start = chrono::high_resolution_clock::now();
+            tuple_type t(m_veo.size());
+            search_v2(0, t, res, start, limit_results, timeout_seconds);
+        };
+
         /**
         *
         * @param res               Results
@@ -395,6 +405,112 @@ namespace ltj {
             return true;
         };
 
+        static bool compare_iterator(ltj_iter_type *iter1, ltj_iter_type *iter2) {
+            return iter1->interval_length() < iter2->interval_length();
+        }
+
+          /**
+         *
+         * @param j                 Index of the variable
+         * @param tuple             Tuple of the current search
+         * @param res               Results
+         * @param start             Initial time to check timeout
+         * @param limit_results     Limit of results
+         * @param timeout_seconds   Timeout in seconds
+         */
+        template<class results_type>
+        bool search_v2(const size_type j, tuple_type &tuple, results_type &res,
+                    const time_point_type start,
+                    const size_type limit_results = 0, const size_type timeout_seconds = 0){
+
+            //(Optional) Check timeout
+            if(timeout_seconds > 0){
+                time_point_type stop = chrono::high_resolution_clock::now();
+                auto sec = chrono::duration_cast<chrono::seconds>(stop-start).count();
+                if(sec > timeout_seconds) {
+                    return false;
+                }
+            }
+
+            //(Optional) Check limit
+            if(limit_results > 0 && res.size() == limit_results) {
+                return false;
+            }
+
+            if(j == m_veo.size()){
+                //Report results
+                //res.emplace_back(tuple);
+                res.add(tuple);
+#if EXPT_TIME_SOL
+                if(res.size() % 1000 == 0){
+                    time_point_type stop = chrono::high_resolution_clock::now();
+                    auto sec = chrono::duration_cast<chrono::seconds>(stop-start).count();
+                    std::cerr << res.size() << ";" << sec << std::endl;
+                }
+#endif
+                /*cout << "Add result" << endl;
+                for(const auto &dat : tuple){
+                    cout << "{" << (uint64_t) dat.first << "=" << dat.second << "} ";
+                }
+                cout << endl;*/
+            }else{
+                var_type x_j = m_veo.next();
+                //cout << "Variable: " << (uint64_t) x_j << endl;
+                //cout << (uint64_t) x_j << endl;
+                vector<ltj_iter_type*>& itrs = m_var_to_iterators[x_j];
+                bool ok;
+                if(itrs.size() == 1 && itrs[0]->in_last_level()) {//Lonely variables
+                    //cout << "Seeking (last level)" << endl;
+                    auto results = itrs[0]->seek_all(x_j);
+                    //cout << "Results: " << results.size() << endl;
+                    //cout << "Seek (last level): (" << (uint64_t) x_j << ": size=" << results.size() << ")" <<endl;
+                    for (const auto &c : results) {
+                        //1. Adding result to tuple
+                        tuple[j] = {x_j, c};
+                        //2. Going down in the trie by setting x_j = c (\mu(t_i) in paper)
+                        itrs[0]->down(x_j, c);
+                        m_veo.down();
+                        //2. Search with the next variable x_{j+1}
+                        ok = search_v2(j + 1, tuple, res, start, limit_results, timeout_seconds);
+                        if(!ok) return false;
+                        //4. Going up in the trie by removing x_j = c
+                        itrs[0]->up(x_j);
+                        m_veo.up();
+                    }
+                }else {
+                    std::vector<ltj_iter_type*> sorted_itrs = itrs; //copy iterators to sort them by interval length
+                    std::sort(sorted_itrs.begin(), sorted_itrs.end(),
+                              [x_j](ltj_iter_type *iter1, ltj_iter_type *iter2) {
+                                  return iter1->interval_length(x_j) < iter2->interval_length(x_j);
+                              });
+                    value_type c = seek(sorted_itrs, x_j);
+                    //cout << "Seek (init): (" << (uint64_t) x_j << ": " << c << ")" <<endl;
+                    while (c != 0) { //If empty c=0
+                        //1. Adding result to tuple
+                        tuple[j] = {x_j, c};
+                        //2. Going down in the tries by setting x_j = c (\mu(t_i) in paper)
+                        for (ltj_iter_type* iter : sorted_itrs) {
+                            iter->down(x_j, c);
+                        }
+                        m_veo.down();
+                        //3. Search with the next variable x_{j+1}
+                        ok = search_v2(j + 1, tuple, res, start, limit_results, timeout_seconds);
+                        if(!ok) return false;
+                        //4. Going up in the tries by removing x_j = c
+                        for (ltj_iter_type *iter : sorted_itrs) {
+                            iter->up(x_j);
+                        }
+                        m_veo.up();
+                        //5. Next constant for x_j
+                        c = seek(x_j, c + 1);
+                        //cout << "Seek (bucle): (" << (uint64_t) x_j << ": " << c << ")" <<endl;
+                    }
+                }
+                m_veo.done();
+            }
+            return true;
+        };
+
 
         /**
          *
@@ -427,8 +543,36 @@ namespace ltj {
                 c = c_prev = c_i;
                 i = (i+1 == itrs.size()) ? 0 : i+1;
             }
-            for(auto &itr : itrs){
-                itr->leap_done();
+        }
+
+        value_type seek(std::vector<ltj_iter_type*>& itrs, const var_type x_j, value_type c=-1){
+
+            value_type c_i = (c == -1) ? itrs[0]->leap(x_j) : itrs[0]->leap(x_j, c);
+            if(itrs.size() == 1 || c_i == 0) {
+                if (!c_i) itrs[0]->leap_done();
+                return c_i;
+            }
+            c = c_i;
+            value_type i = 1, seed = 0, n_ok = 1;
+            while (true){
+                //Compute leap for each triple that contains x_j
+                c_i = itrs[i]->leap(x_j, c);
+                if(c_i == 0) {
+                    for(auto &itr : itrs){
+                        itr->leap_done();
+                    }
+                    return 0; //Empty intersection
+                }
+                if (c == c_i) {
+                    ++n_ok;
+                    if(n_ok == itrs.size()) return c;
+                    i = (i+1) % itrs.size();
+                }else {
+                    //seed = i;
+                    i = 0;
+                    n_ok = 0;
+                    c = c_i;
+                }
             }
         }
 

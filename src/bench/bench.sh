@@ -28,7 +28,7 @@ if [ $RUN_STATIC -eq 1 ]; then
    $BIN_FOLDER/bench-query-xcltj $DATASET.xcltj $QUERIES 1000 normal > $OUTPUT_FOLDER/xcltj-normal-1000.txt
    $BIN_FOLDER/bench-query-xcltj-global $DATASET.xcltj $QUERIES 1000 star > $OUTPUT_FOLDER/xcltj-global-star-1000.txt
    $BIN_FOLDER/bench-query-xcltj-global $DATASET.xcltj $QUERIES 1000 normal > $OUTPUT_FOLDER/xcltj-global-normal-1000.txt
-   echo "1.3 Running UNCLTJ..."
+   echo "1.3 Running UnCLTJ..."
    $BIN_FOLDER/bench-query-uncltj $DATASET.uncltj $QUERIES 1000 star > $OUTPUT_FOLDER/uncltj-star-1000.txt
    $BIN_FOLDER/bench-query-uncltj $DATASET.uncltj $QUERIES 1000 normal > $OUTPUT_FOLDER/uncltj-normal-1000.txt
    $BIN_FOLDER/bench-query-uncltj-global $DATASET.uncltj $QUERIES 1000 star > $OUTPUT_FOLDER/uncltj-global-star-1000.txt
@@ -46,7 +46,7 @@ if [ $RUN_STATIC -eq 1 ]; then
    $BIN_FOLDER/bench-query-xcltj $DATASET.xcltj $QUERIES 0 normal > $OUTPUT_FOLDER/xcltj-normal-0.txt
    $BIN_FOLDER/bench-query-xcltj-global $DATASET.xcltj $QUERIES 0 star > $OUTPUT_FOLDER/xcltj-global-star-0.txt
    $BIN_FOLDER/bench-query-xcltj-global $DATASET.xcltj $QUERIES 0 normal > $OUTPUT_FOLDER/xcltj-global-normal-0.txt
-   echo "2.3 Running UNCLTJ..."
+   echo "2.3 Running UnCLTJ..."
    $BIN_FOLDER/bench-query-uncltj $DATASET.uncltj $QUERIES 0 star > $OUTPUT_FOLDER/uncltj-star-0.txt
    $BIN_FOLDER/bench-query-uncltj $DATASET.uncltj $QUERIES 0 normal > $OUTPUT_FOLDER/uncltj-normal-0.txt
    $BIN_FOLDER/bench-query-uncltj-global $DATASET.uncltj $QUERIES 0 star > $OUTPUT_FOLDER/uncltj-global-star-0.txt
@@ -59,15 +59,15 @@ fi
 if [ $RUN_DYNAMIC -eq 1 ]; then
   echo "3. Running dynamic benchmarks with limit=0..."
   echo "Building dynamic indices..."
-  $BIN_FOLDER/build-cltj-dyn $DATASET_80 > $OUTPUT_FOLDER/cltj-dyn-build.txt
+  #$BIN_FOLDER/build-cltj-dyn $DATASET_80 > $OUTPUT_FOLDER/cltj-dyn-build.txt
   $BIN_FOLDER/build-xcltj-dyn $DATASET_80 > $OUTPUT_FOLDER/xcltj-dyn-build.txt
   echo "Done building dynamic indices."
-  echo "3.1 Running CLTJ..."
-  for ratio in 0.001 0.01 0.1 1 10 100 1000
-  do
-      $BIN_FOLDER/bench-update-cltj $DATASET_80.cltj-dyn $QUERIES $UPDATES $ratio 0 star > $OUTPUT_FOLDER/cltj-dyn-star-$ratio-0.txt
-  done
-  $BIN_FOLDER/bench-indels-cltj $DATASET_80.cltj-dyn $INDELS > $OUTPUT_FOLDER/cltj-dyn-indels.txt
+  #echo "3.1 Running CLTJ..."
+  #for ratio in 0.001 0.01 0.1 1 10 100 1000
+  #do
+  #    $BIN_FOLDER/bench-update-cltj $DATASET_80.cltj-dyn $QUERIES $UPDATES $ratio 0 star > $OUTPUT_FOLDER/cltj-dyn-star-$ratio-0.txt
+  #done
+  #$BIN_FOLDER/bench-indels-cltj $DATASET_80.cltj-dyn $INDELS > $OUTPUT_FOLDER/cltj-dyn-indels.txt
   echo "3.2 Running xCLTJ..."
   for ratio in 0.001 0.01 0.1 1 10 100 1000
   do
@@ -80,16 +80,16 @@ else
 fi
 
 if [ $RUN_RDF -eq 1 ]; then
-  echo "4. Running RDF benchmarks with limit=0..."
+  echo "4. Running RDF benchmarks with limit=1000..."
   echo "Building RDF indices..."
   $BIN_FOLDER/build-cltj-rdf $DATASET_RDF > $OUTPUT_FOLDER/cltj-rdf-build.txt
   $BIN_FOLDER/build-xcltj-rdf $DATASET_RDF > $OUTPUT_FOLDER/xcltj-rdf-build.txt
   echo "Done building RDF indices."
   echo "4.1 Running CLTJ..."
-  $BIN_FOLDER/bench-query-cltj-rdf $DATASET_RDF $QUERIES 0 star > $OUTPUT_FOLDER/cltj-rdf-star-0.txt
+  $BIN_FOLDER/bench-query-cltj-rdf $DATASET_RDF $QUERIES 1000 star > $OUTPUT_FOLDER/cltj-rdf-star-1000.txt
   echo "4.2 Running xCLTJ..."
-  $BIN_FOLDER/bench-query-xcltj-rdf $DATASET_RDF $QUERIES 0 star > $OUTPUT_FOLDER/xcltj-rdf-star-0.txt
-  echo "Done running RDF benchmarks with limit=0."
+  $BIN_FOLDER/bench-query-xcltj-rdf $DATASET_RDF $QUERIES 1000 star > $OUTPUT_FOLDER/xcltj-rdf-star-1000.txt
+  echo "Done running RDF benchmarks with limit=1000."
 else
     echo "Skipping RDF benchmarks..."
 fi
