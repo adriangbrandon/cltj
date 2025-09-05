@@ -502,7 +502,7 @@ namespace ltj {
                         }
                         m_veo.up();
                         //5. Next constant for x_j
-                        c = seek(x_j, c + 1);
+                        c = seek(sorted_itrs, x_j, c + 1);
                         //cout << "Seek (bucle): (" << (uint64_t) x_j << ": " << c << ")" <<endl;
                     }
                 }

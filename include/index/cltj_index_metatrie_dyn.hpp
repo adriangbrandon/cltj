@@ -391,7 +391,7 @@ namespace cltj {
                         auto p = m_tries[i].next(b, e, triple[spo_orders[i][1]]);
                         m_tries[i].insert(p.second, triple[spo_orders[i][1]], u_part[i/2].ins, (b==p.second));
                     }else {
-                        b = m_tries[i].child(u_part[i/2].po, 1, 0);
+                        b = m_tries[i].child(u_part[i/2].pos, 1, 0);
                         m_tries[i].insert(b, triple[spo_orders[i][1]], states[1].ins, false);
                     }
                 }

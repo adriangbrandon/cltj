@@ -17,10 +17,10 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef DICT_MAP_HPP
-#define DICT_MAP_HPP
+#ifndef DICT_MAP2_HPP
+#define DICT_MAP2_HPP
 
-#include <dict/pfc.hpp>
+#include <dict/pfc2.hpp>
 #include <map>
 #include <sdsl/int_vector.hpp>
 #include <cltj_config.hpp>
@@ -39,23 +39,23 @@ namespace dict
    * @tparam MAXSIZE The maximum words a PFC can have before splitting
    */
   template <uint64_t MINSIZE, uint64_t MAXSIZE>
-  class dict_map
+  class dict_map2
   {
   public:
     typedef uint64_t size_type;
     typedef uint64_t value_type;
 
   private:
-    class node;
-    node *root = NULL;
-    std::vector<EmptyOrPFC> id_map;
+    class node2;
+    node2 *root = NULL;
+    std::vector<EmptyOrPFC2> id_map;
     //Cached strings
     std::vector<std::string> cache;
     // Values used to represent the Queue of free IDs
     uint64_t first_empty = 0, last_empty = 0, free_ids_size = 0;
 
-    void copy(const dict_map &o) {
-      std::unordered_map<PFC*, PFC*> ht; //mapping between PFCs
+    void copy(const dict_map2 &o) {
+      std::unordered_map<PFC2*, PFC2*> ht; //mapping between PFCs
       root = (o.root)->clone(ht);
       cache = o.cache;
       first_empty = o.first_empty;
@@ -63,37 +63,37 @@ namespace dict
       free_ids_size = o.free_ids_size;
       id_map = o.id_map;
       for(uint64_t i = 0; i < id_map.size(); ++i) {
-        auto it = ht.find(id_map[i].info.pfc);
+        auto it = ht.find(id_map[i].pfc);
         if(it != ht.end()) {
-          id_map[i].info.pfc = it->second;
+          id_map[i].pfc = it->second;
         }
       }
     }
 
   public:
-    dict_map()
+    dict_map2()
     {
-      root = new node();
+      root = new node2();
     }
 
-    explicit dict_map(std::string &val)
+    explicit dict_map2(std::string &val)
     {
-      root = new node(val, 1);
+      root = new node2(val, 1);
       id_map.push_back({ .pfc = root->get_pfc()});
     }
 
 
     //Bulk load from a map
-    explicit dict_map(std::map<std::string, uint64_t> &dict)
+    explicit dict_map2(std::map<std::string, uint64_t> &dict)
     {
       auto pfc_size = (MAXSIZE + MINSIZE) / 2;
       auto size = (dict.size() + pfc_size - 1) / pfc_size;
 
       //1. Building the leaves
-      std::vector<node*> nodes(size);
+      std::vector<node2*> nodes(size);
       size_type pfc_i;
       for(pfc_i = 0; pfc_i < size; ++pfc_i) {
-        nodes[pfc_i] = new node();
+        nodes[pfc_i] = new node2();
       }
 
       //2. Appending the strings in the leaves
@@ -102,7 +102,7 @@ namespace dict
       std::string prev = "\0";
       id_map.resize(dict.size());
       for(auto &p : dict) {
-        id_map[p.second-1].info.pfc = nodes[pfc_i]->get_pfc();
+        id_map[p.second-1].pfc = nodes[pfc_i]->get_pfc();
         nodes[pfc_i]->get_pfc()->append(p.first, p.second, prev);
         prev = p.first; ++k;
         if(k % pfc_size == 0) {
@@ -115,7 +115,7 @@ namespace dict
       //3. Building the tree
       while(size > 1) {
         for(pfc_i = 0; pfc_i < size - (size % 2); pfc_i += 2) {
-          node* n = new node(nodes[pfc_i], nodes[pfc_i+1]);
+          node2* n = new node2(nodes[pfc_i], nodes[pfc_i+1]);
           nodes[pfc_i / 2] = n;
         }
         if(size % 2 == 1) {
@@ -127,18 +127,18 @@ namespace dict
     }
 
     //! Copy constructor
-    dict_map(const dict_map &o) {
+    dict_map2(const dict_map2 &o) {
       copy(o);
     }
 
     //! Move constructor
-    dict_map(dict_map &&o) {
+    dict_map2(dict_map2 &&o) {
       *this = std::move(o);
       o.root = NULL;
     }
 
     //! Copy Operator=
-    dict_map &operator=(const dict_map &o) {
+    dict_map2 &operator=(const dict_map2 &o) {
       if (this != &o) {
         copy(o);
       }
@@ -146,7 +146,7 @@ namespace dict
     }
 
     //! Move Operator=
-    dict_map &operator=(dict_map &&o) {
+    dict_map2 &operator=(dict_map2 &&o) {
       if (this != &o) {
         root = o.root;
         o.root = NULL; //prevent remove dynamic info
@@ -159,7 +159,7 @@ namespace dict
       return *this;
     }
 
-    void swap(dict_map &o) {
+    void swap(dict_map2 &o) {
       // m_bp.swap(bp_support.m_bp); use set_vector to set the supported bit_vector
       std::swap(root, o.root);
       std::swap(cache, o.cache);
@@ -169,7 +169,7 @@ namespace dict
       std::swap(free_ids_size, o.free_ids_size);
     }
 
-    ~dict_map()
+    ~dict_map2()
     {
       if(root != NULL) {
         root->free_mem();
@@ -179,12 +179,7 @@ namespace dict
     }
 
 
-    void reset_cache() {
-        cache.clear();
-        for(uint64_t i = 0; i < id_map.size(); ++i) {
-          id_map[i].ptr_str = 0;
-        }
-    }
+
     /**
      * @brief Function that serializes the data structure.
      *
@@ -209,8 +204,8 @@ namespace dict
         // For every empty slot write the next empty
         for (uint64_t i = 0; i < free_ids_size - 1; i++)
         {
-          out.write((char *)&id_map[first_empty - 1].info.next_empty, sizeof(uint64_t));
-          first_empty = id_map[first_empty - 1].info.next_empty;
+          out.write((char *)&id_map[first_empty - 1].next_empty, sizeof(uint64_t));
+          first_empty = id_map[first_empty - 1].next_empty;
           w_bytes += sizeof(uint64_t);
         }
       }
@@ -235,8 +230,8 @@ namespace dict
         auto empty_ptr = first_empty;
         for (uint64_t i = 0; i < free_ids_size - 1; i++)
         {
-          out.write((char *)&id_map[empty_ptr - 1].info.next_empty, sizeof(uint64_t));
-          empty_ptr = id_map[empty_ptr - 1].info.next_empty;
+          out.write((char *)&id_map[empty_ptr - 1].next_empty, sizeof(uint64_t));
+          empty_ptr = id_map[empty_ptr - 1].next_empty;
           written_bytes += sizeof(uint64_t);
         }
       }
@@ -255,8 +250,8 @@ namespace dict
       size_t map_size;
 
       sdsl::read_member(map_size, in);
-      id_map = std::vector<EmptyOrPFC>(map_size);
-      root = new node();
+      id_map = std::vector<EmptyOrPFC2>(map_size);
+      root = new node2();
       root->load(in, id_map);
       sdsl::read_member(free_ids_size, in);
       sdsl::read_member(first_empty, in);
@@ -267,7 +262,7 @@ namespace dict
         for (uint64_t i = 0; i < free_ids_size - 1; i++)
         {
           in.read((char *)&tmp, sizeof(uint64_t));
-          id_map[last_empty - 1].info.next_empty = tmp;
+          id_map[last_empty - 1].next_empty = tmp;
           last_empty = tmp;
         }
       }
@@ -287,10 +282,10 @@ namespace dict
       if (free_ids_size == 0)
       {
         id = id_map.size() + 1;
-        EmptyOrPFC data;
-        data.info.pfc = root->insert(val, id, id_map);
+        EmptyOrPFC2 data;
+        data.pfc = root->insert(val, id, id_map);
         id_map.push_back(data);
-        //id_map.push_back({ .info.pfc = root->insert(val, id, id_map)});
+        //id_map.push_back({ .pfc = root->insert(val, id, id_map)});
       }
       else
       {
@@ -301,9 +296,9 @@ namespace dict
           last_empty = 0;
           first_empty = 0;
         } else {
-          first_empty = id_map[id - 1].info.next_empty;
+          first_empty = id_map[id - 1].next_empty;
         }
-        id_map[id - 1].info.pfc = root->insert(val, id, id_map);
+        id_map[id - 1].pfc = root->insert(val, id, id_map);
         free_ids_size--;
       }
 
@@ -319,7 +314,7 @@ namespace dict
     uint64_t get_or_insert(const std::string &val)
     {
       uint64_t id, found_id;
-      std::tuple<uint64_t, PFC *> res;
+      std::tuple<uint64_t, PFC2 *> res;
       if (free_ids_size == 0)
       {
         id = id_map.size() + 1;
@@ -327,8 +322,8 @@ namespace dict
         found_id = std::get<0>(res);
         if (found_id == id)
         {
-          EmptyOrPFC data;
-          data.info.pfc = std::get<1>(res);
+          EmptyOrPFC2 data;
+          data.pfc = std::get<1>(res);
           id_map.push_back(data);
         }
       }
@@ -345,9 +340,9 @@ namespace dict
             last_empty = 0;
             first_empty = 0;
           } else {
-            first_empty = id_map[id - 1].info.next_empty;
+            first_empty = id_map[id - 1].next_empty;
           }
-          id_map[id - 1].info.pfc = std::get<1>(res);
+          id_map[id - 1].pfc = std::get<1>(res);
           free_ids_size--;
         }
       }
@@ -374,11 +369,11 @@ namespace dict
       if (free_ids_size == 0)
       {
         first_empty = elim_id;
-        id_map[elim_id - 1].info.pfc = nullptr;
+        id_map[elim_id - 1].pfc = nullptr;
       }
       else
       {
-        id_map[last_empty - 1].info.next_empty = elim_id;
+        id_map[last_empty - 1].next_empty = elim_id;
       }
       last_empty = elim_id;
       free_ids_size++;
@@ -392,8 +387,8 @@ namespace dict
      */
     void eliminate(const uint64_t id)
     {
-      id_map[id - 1].info.pfc->elim(id);
-      id_map[id - 1].info.pfc = nullptr;
+      id_map[id - 1].pfc->elim(id);
+      id_map[id - 1].pfc = nullptr;
       // First in "Symbolic queue"
       if (free_ids_size == 0)
       {
@@ -401,7 +396,7 @@ namespace dict
       }
       else
       {
-        id_map[last_empty - 1].info.next_empty = id;
+        id_map[last_empty - 1].next_empty = id;
       }
       last_empty = id;
       free_ids_size++;
@@ -427,12 +422,8 @@ namespace dict
     std::string extract(uint64_t id)
     {
       assert(id > 0 && id - 1 < id_map.size());
-      if(id_map[id-1].ptr_str != 0) {
-        return cache[id_map[id-1].ptr_str-1];
-      }
-      std::string res =  id_map[id - 1].info.pfc->extract(id);
+      std::string res =  id_map[id - 1].pfc->extract(id);
       cache.push_back(res);
-      id_map[id-1].ptr_str = cache.size();
       return res;
     }
 
@@ -443,7 +434,7 @@ namespace dict
 
     size_t bit_size() const
     {
-      size_t id_size = 8 * sizeof(id_map) + 8 * id_map.size() * sizeof(EmptyOrPFC);
+      size_t id_size = 8 * sizeof(id_map) + 8 * id_map.size() * sizeof(EmptyOrPFC2);
       return 8 * sizeof(root) + id_size + root->bit_size();
     }
 
@@ -452,7 +443,7 @@ namespace dict
       return root->get_value();
     }
 
-    PFC *get_root_pfc()
+    PFC2 *get_root_pfc()
     {
       return root->get_pfc();
     }
@@ -468,29 +459,29 @@ namespace dict
    * @tparam MAXSIZE The maximum words a PFC can have before splitting
    */
   template <uint64_t MINSIZE, uint64_t MAXSIZE>
-  class dict_map<MINSIZE, MAXSIZE>::node
+  class dict_map2<MINSIZE, MAXSIZE>::node2
   {
   public:
-    node()
+    node2()
     {
       _is_leaf = true;
-      pfc = new PFC();
+      pfc = new PFC2();
     }
 
-    node(std::string& val, uint64_t id)
+    node2(std::string& val, uint64_t id)
     {
       _is_leaf = true;
-      pfc = new PFC();
+      pfc = new PFC2();
       pfc->insert(val, id);
     }
 
-    node(PFC *p)
+    node2(PFC2 *p)
     {
       _is_leaf = true;
       pfc = p;
     }
 
-    node(node* l, node* r) {
+    node2(node2* l, node2* r) {
       _is_leaf = false;
       left = l;
       right = r;
@@ -516,28 +507,28 @@ namespace dict
       }
     }
 
-    node* clone(std::unordered_map<PFC*, PFC*> &ht)
+    node2* clone(std::unordered_map<PFC2*, PFC2*> &ht)
     {
-      node* n;
+      node2* n;
       if (_is_leaf)
       {
-        n = new node();
+        n = new node2();
         n->_is_leaf = _is_leaf;
-        n->pfc = new PFC(pfc);
+        n->pfc = new PFC2(pfc);
         ht.insert({pfc, n->pfc});
       }
       else
       {
-        node* l = left->clone(ht);
-        node* r = right->clone(ht);
-        n = new node(l, r);
+        node2* l = left->clone(ht);
+        node2* r = right->clone(ht);
+        n = new node2(l, r);
       }
       return n;
     }
 
     bool is_leaf() { return _is_leaf; }
 
-    PFC *get_pfc()
+    PFC2 *get_pfc()
     {
       return pfc;
     }
@@ -596,22 +587,22 @@ namespace dict
      * @param id_map Reference to the vector that maps every ID to its corresponding PFC
      * @return PFC* The pointer to the leftmost leaf in the node subtree
      */
-    PFC *load(std::istream &in, std::vector<EmptyOrPFC> &id_map)
+    PFC2 *load(std::istream &in, std::vector<EmptyOrPFC2> &id_map)
     {
       size_t string_size;
       in.read((char *)&_is_leaf, sizeof(_is_leaf));
 
       if (_is_leaf)
       {
-        pfc = new PFC();
+        pfc = new PFC2();
         pfc->load(in, id_map);
         return pfc;
       }
       else
       {
-        left = new node();
-        PFC *left_pfc = left->load(in, id_map);
-        right = new node();
+        left = new node2();
+        PFC2 *left_pfc = left->load(in, id_map);
+        right = new node2();
         pfc = right->load(in, id_map);
         return left_pfc;
       }
@@ -624,7 +615,7 @@ namespace dict
      * @param val value being inserted
      * @param id ID assigned to that value
      */
-    PFC *insert(const std::string &val, const uint64_t &id, std::vector<EmptyOrPFC> &id_map)
+    PFC2 *insert(const std::string &val, const uint64_t &id, std::vector<EmptyOrPFC2> &id_map)
     {
       if (is_leaf())
       {
@@ -634,16 +625,16 @@ namespace dict
         {
           // Split PFC
           std::tuple<std::string, uint64_t> res = pfc->split();
-          PFC *new_pfc = new PFC(std::get<0>(res), std::get<1>(res));
+          PFC2 *new_pfc = new PFC2(std::get<0>(res), std::get<1>(res));
           _is_leaf = false;
-          right = new node(new_pfc);
-          left = new node(pfc);
+          right = new node2(new_pfc);
+          left = new node2(pfc);
           pfc = new_pfc;
 
           // Update ID mapping
           for (uint64_t id : pfc->all_ids())
           {
-            id_map[id - 1].info.pfc = pfc;
+            id_map[id - 1].pfc = pfc;
           }
 
           if (val.compare(pfc->first_word()) >= 0)
@@ -674,7 +665,7 @@ namespace dict
      * @param id  ID assigned to the value if its inserted
      * @return std::tuple<uint64_t, PFC *> a pair containing the ID of the value and the PFC it was found/inserted
      */
-    std::tuple<uint64_t, PFC *> get_or_insert(const std::string &val, const uint64_t &id, std::vector<EmptyOrPFC> &id_map)
+    std::tuple<uint64_t, PFC2 *> get_or_insert(const std::string &val, const uint64_t &id, std::vector<EmptyOrPFC2> &id_map)
     {
       if (is_leaf())
       {
@@ -684,16 +675,16 @@ namespace dict
         {
           // Split PFC
           std::tuple<std::string, uint64_t> res = pfc->split();
-          PFC *new_pfc = new PFC(std::get<0>(res), std::get<1>(res));
+          PFC2 *new_pfc = new PFC2(std::get<0>(res), std::get<1>(res));
           _is_leaf = false;
-          right = new node(new_pfc);
-          left = new node(pfc);
+          right = new node2(new_pfc);
+          left = new node2(pfc);
           pfc = new_pfc;
 
           // Update ID mapping
           for (uint64_t id : pfc->all_ids())
           {
-            id_map[id - 1].info.pfc = pfc;
+            id_map[id - 1].pfc = pfc;
           }
 
           if (val.compare(pfc->first_word()) >= 0)
@@ -730,7 +721,7 @@ namespace dict
      * @return std::tuple<uint64_t, uint64_t> a pair containing
      * the ID of the deleted value and the resulting size of the PFC it was stored in
      */
-    std::tuple<uint64_t, uint64_t> eliminate(const std::string &val, std::vector<EmptyOrPFC> &id_map)
+    std::tuple<uint64_t, uint64_t> eliminate(const std::string &val, std::vector<EmptyOrPFC2> &id_map)
     {
       if (is_leaf())
       {
@@ -765,7 +756,7 @@ namespace dict
           // Update ID mapping
           for (uint64_t id : right->pfc->all_ids())
           {
-            id_map[id - 1].info.pfc = left->pfc;
+            id_map[id - 1].pfc = left->pfc;
           }
 
           std::string right_string = right->pfc->pfc_string();
@@ -782,16 +773,16 @@ namespace dict
           {
             // Split PFC
             std::tuple<std::string, uint64_t> split_res = pfc->split();
-            PFC *new_pfc = new PFC(std::get<0>(split_res), std::get<1>(split_res));
+            PFC2 *new_pfc = new PFC2(std::get<0>(split_res), std::get<1>(split_res));
             _is_leaf = false;
-            right = new node(new_pfc);
-            left = new node(pfc);
+            right = new node2(new_pfc);
+            left = new node2(pfc);
             pfc = new_pfc;
 
             // Update ID mapping
             for (uint64_t id : pfc->all_ids())
             {
-              id_map[id - 1].info.pfc = pfc;
+              id_map[id - 1].pfc = pfc;
             }
           }
         }
@@ -832,13 +823,13 @@ namespace dict
 
   private:
     bool _is_leaf = false;
-    node *left = NULL;
-    node *right = NULL;
-    PFC *pfc = NULL;
+    node2 *left = NULL;
+    node2 *right = NULL;
+    PFC2 *pfc = NULL;
   };
 
-  typedef dict_map<32, 128> basic_map;
-  typedef dict_map<2, 4> tiny_map;
+  typedef dict_map2<32, 128> basic_map2;
+  typedef dict_map2<2, 4> tiny_map2;
 
 }
 
