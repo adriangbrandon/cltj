@@ -7,7 +7,7 @@ project(CLTJ)
 set(CMAKE_PROJECT_NAME "CLTJ")
 
 #Change to "Debug" when you need it
-set(CMAKE_BUILD_TYPE "Release")
+set(CMAKE_BUILD_TYPE "Debug")
 
 # C++11 compiler Check
 if(NOT CMAKE_CXX_COMPILER_VERSION) # work around for cmake versions smaller than 2.8.10
@@ -55,6 +55,10 @@ add_executable(build-cltj src/bench/build-cltj.cpp)
 target_link_libraries(build-cltj sdsl divsufsort divsufsort64)
 set_target_properties(build-cltj PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
 
+add_executable(build-cltj-v2 src/bench/build-cltj-v2.cpp)
+target_link_libraries(build-cltj-v2 sdsl divsufsort divsufsort64)
+set_target_properties(build-cltj-v2 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
+
 add_executable(build-cltj-dyn src/bench/build-cltj-dyn.cpp)
 target_link_libraries(build-cltj-dyn sdsl divsufsort divsufsort64 hybridbv_gn)
 set_target_properties(build-cltj-dyn PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
@@ -88,6 +92,16 @@ add_executable(bench-query-cltj-global src/bench/bench-query-cltj.cpp)
 target_compile_definitions(bench-query-cltj-global PUBLIC ADAPTIVE=0)
 target_link_libraries(bench-query-cltj-global sdsl divsufsort divsufsort64)
 set_target_properties(bench-query-cltj-global PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
+
+add_executable(bench-query-cltj-v2 src/bench/bench-query-cltj-v2.cpp)
+target_compile_definitions(bench-query-cltj-v2 PUBLIC ADAPTIVE=1)
+target_link_libraries(bench-query-cltj-v2 sdsl divsufsort divsufsort64)
+set_target_properties(bench-query-cltj-v2 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
+
+add_executable(bench-query-cltj-v2-global src/bench/bench-query-cltj-v2.cpp)
+target_compile_definitions(bench-query-cltj-v2-global PUBLIC ADAPTIVE=0)
+target_link_libraries(bench-query-cltj-v2-global sdsl divsufsort divsufsort64)
+set_target_properties(bench-query-cltj-v2-global PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
 
 add_executable(bench-query-uncltj src/bench/bench-query-uncltj.cpp)
 target_compile_definitions(bench-query-uncltj PUBLIC ADAPTIVE=1)

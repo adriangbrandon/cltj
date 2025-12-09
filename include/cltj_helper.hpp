@@ -27,6 +27,17 @@ namespace cltj {
             return true;
         }
 
+        static void sym_root(const vector<spo_triple> &D, const spo_order_type &order, std::vector<uint32_t> &syms){
+            spo_triple prev, curr;
+            for(uint64_t i = 1; i < D.size(); ++i){
+                prev = D[i-1]; curr = D[i];
+                if(!helper::equal(prev, curr, order, 0)){
+                    syms.emplace_back(prev[order[0]]);
+                }
+            }
+            syms.emplace_back(curr[order[0]]);
+        }
+
         static void sym_level(const vector<spo_triple> &D, const spo_order_type &order, uint64_t level,
                       std::vector<uint32_t> &syms, std::vector<uint64_t> &lengths){
             spo_triple prev, curr;
