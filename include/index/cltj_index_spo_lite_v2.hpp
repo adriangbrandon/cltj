@@ -65,14 +65,16 @@ namespace cltj {
                     m_gaps[i/2] = syms_root.size();
                     if (i == 0) {
                         m_subjects = sdsl::bit_vector(syms_root.back()+1, 0);
-                        for(size_type j = 0; j < m_gaps[i/2]; ++j){
+                        for(size_type j = 0; j < m_gaps[0]; ++j){
                             m_subjects[syms_root[j]] = 1;
                         }
                         sdsl::util::init_support(m_succ_subj, &m_subjects);
                         sdsl::util::init_support(m_rank_subj, &m_subjects);
-                    } else if (i == 2) {
+                    }
+                    //if (i==2) predicates -> the values are contiguous
+                    if (i == 4) {
                         m_objects = sdsl::bit_vector(syms_root.back()+1, 0);
-                        for(size_type j = 0; j < m_gaps[i/2]; ++j){
+                        for(size_type j = 0; j < m_gaps[2]; ++j){
                             m_objects[syms_root[j]] = 1;
                         }
                         sdsl::util::init_support(m_succ_obj, &m_objects);
