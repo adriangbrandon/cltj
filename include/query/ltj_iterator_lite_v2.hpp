@@ -513,7 +513,7 @@ namespace ltj {
             auto first = trie->child(it, 1, 0); //no root -> gap = 0
             leftmost_leaf = trie->first_child(first);
             //Rightmost
-            it = trie->child(it, cnt);
+            it = trie->child(it, cnt, m_ptr_index->gaps[m_trie_i/2]);
             cnt = trie->children(it);
             rightmost_leaf = trie->first_child(it) + cnt - 1;
             return rightmost_leaf - leftmost_leaf + 1;

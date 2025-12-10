@@ -94,7 +94,7 @@ int main(int argc, char *argv[]) {
     std::string queries = argv[2];
     uint64_t limit = std::atoll(argv[3]);
     std::string type = argv[4];
-    uint64_t timeout = 600; //in serconds
+    uint64_t timeout = 600; //in seconds
     if(argc > 5) {
         timeout = std::atoll(argv[5]);
     }
