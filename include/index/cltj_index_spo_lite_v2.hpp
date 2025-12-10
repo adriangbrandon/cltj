@@ -59,9 +59,9 @@ namespace cltj {
                 std::sort(D.begin(), D.end(), comparator_order(i));
                 std::vector<uint32_t> syms_root, syms;
                 std::vector<size_type> lengths;
-                helper::sym_root(D, spo_orders[i], syms_root);
                 helper::sym_level(D,  spo_orders[i], 1, syms, lengths);
                 if(i % 2 == 0){
+                    helper::sym_root(D, spo_orders[i], syms_root);
                     m_gaps[i/2] = syms_root.size();
                     if (i == 0) {
                         m_subjects = sdsl::bit_vector(syms_root.back()+1, 0);
@@ -150,16 +150,16 @@ namespace cltj {
             return m_subjects.size()-1;
         }
 
+        inline value_type max_object() const {
+            return m_objects.size()-1;
+        }
+
         inline value_type next_object(value_type c) {
             return m_succ_obj(c);
         }
 
         inline value_type next_subject(value_type c) {
             return m_succ_subj(c);
-        }
-
-        inline value_type max_object() const {
-            return m_subjects.size()-1;
         }
 
         inline value_type max_predicate() const {
