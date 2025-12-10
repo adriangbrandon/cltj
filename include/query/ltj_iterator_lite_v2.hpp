@@ -377,6 +377,7 @@ namespace ltj {
             } else if (is_variable_predicate(var)) {
                 state = p;
             }
+            choose_trie(state);
 
             if (m_nfixed == 0) {
                 value_type value;
@@ -415,8 +416,6 @@ namespace ltj {
                 //print_status();
                 return value;
             }
-
-            choose_trie(state);
             const auto* trie = m_ptr_index->get_trie(m_trie_i);
             size_type beg, end, it;
             //std::cout << "Leap redo n_fixed:" << m_nfixed << std::endl;

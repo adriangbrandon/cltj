@@ -546,7 +546,7 @@ namespace ltj {
             }
         }
 
-        /*value_type seek(std::vector<ltj_iter_type*>& itrs, const var_type x_j, value_type c=-1) {
+        value_type seek(std::vector<ltj_iter_type*>& itrs, const var_type x_j, value_type c=-1) {
             value_type c_i = 0, i = 0;
             while (i < itrs.size()){
                 //Compute leap for each triple that contains x_j
@@ -563,12 +563,12 @@ namespace ltj {
                 c = c_i;
             }
             return c_i;
-        }*/
+        }
 
         /**
         * Seek avoiding recomputing the iterators that have already matched
         */
-        value_type seek(std::vector<ltj_iter_type*>& itrs, const var_type x_j, value_type c = -1) {
+        /*value_type seek(std::vector<ltj_iter_type*>& itrs, const var_type x_j, value_type c = -1) {
             value_type c_i = (c == -1) ? itrs[0]->leap(x_j) : itrs[0]->leap(x_j, c);
             if (c_i == 0) return 0;
             c = c_i;
@@ -594,7 +594,7 @@ namespace ltj {
                 c = c_i;
             }
             return c_i;
-        }
+        }*/
 
 
         void print_veo(unordered_map<uint8_t, string> &ht){
