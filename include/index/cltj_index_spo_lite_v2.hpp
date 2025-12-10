@@ -72,6 +72,14 @@ namespace cltj {
                         sdsl::util::init_support(m_rank_subj, &m_subjects);
                     }
                     //if (i==2) predicates -> the values are contiguous
+                    if (i == 2) {
+                        for (size_type j = 0; j < m_gaps[1]; ++j) {
+                            if (syms_root[j] != j+1) {
+                                std::cerr << "Error: predicates are not contiguous!" << std::endl;
+                                std::exit(EXIT_FAILURE);
+                            }
+                        }
+                    }
                     if (i == 4) {
                         m_objects = sdsl::bit_vector(syms_root.back()+1, 0);
                         for(size_type j = 0; j < m_gaps[2]; ++j){
