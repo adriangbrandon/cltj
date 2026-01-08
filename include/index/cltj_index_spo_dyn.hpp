@@ -50,7 +50,7 @@ namespace cltj {
                 std::sort(D.begin(), D.end(), comparator_order(i));
                 std::vector<uint32_t> syms;
                 std::vector<size_type> lengths;
-                helper::sym_level(D,  spo_orders[i], i % 2, syms, lengths);
+                helper::sym_level(D,  spo_orders[i], i % 2, 3, syms, lengths);
                 if(i % 2 == 0){
                     m_gaps[i/2] = lengths[0];
                 }

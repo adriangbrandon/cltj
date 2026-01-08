@@ -1,21 +1,18 @@
 //
-// Created by Adrián on 19/10/23.
+// Created by Diego Arroyuelo on 20/09/24.
 //
 
-#ifndef CLTJ_INDEX_SPO_LITE_V2_HPP
-#define CLTJ_INDEX_SPO_LITE_V2_HPP
-
+#ifndef CLTJ_INDEX_METATRIE_V2_HPP
+#define CLTJ_INDEX_METATRIE_V2_HPP
 
 #include <trie/cltj_compact_trie.hpp>
-#include <trie/cltj_compact_trie_stats.hpp>
-#include <cltj_helper.hpp>
-#include <trie/cltj_uncompact_trie.hpp>
 #include <cltj_config.hpp>
+#include <cltj_helper.hpp>
 
 namespace cltj {
 
     template<class Trie>
-    class cltj_index_spo_lite_v2 {
+    class cltj_index_metatrie_v2 {
 
     public:
         typedef uint64_t size_type;
@@ -32,7 +29,168 @@ namespace cltj {
         sdsl::rank_support_v<1> m_rank_subj;
         sdsl::rank_support_v<1> m_rank_obj;
 
-        void copy(const cltj_index_spo_lite_v2 &o){
+
+
+        trie_type create_full_trie(vector<spo_triple> &D, uint8_t order){
+
+            std::sort(D.begin(), D.end(), comparator_order(order));
+
+            uint64_t c0 = 1, cur_value = D[0][spo_orders[order][0]];
+            std::vector<uint64_t> v0;
+            std::vector<uint64_t> seq;
+
+            for (uint64_t i = 1; i < D.size(); i++) {
+                if (D[i][spo_orders[order][0]] != D[i-1][spo_orders[order][0]]) {
+                    seq.push_back(cur_value);
+                    cur_value = D[i][spo_orders[order][0]];
+                    v0.push_back(c0);
+                    c0 = 1;
+                } else c0++;
+            }
+            seq.push_back(cur_value);
+            v0.push_back(c0);
+            
+            uint64_t c1, c2;
+            std::vector<uint64_t> v1, v2;
+
+            for (uint64_t i = 0, k = 0; i < v0.size(); i++) {
+                c1 = 1;
+                c2 = 1;
+                for (uint64_t j = 1; j < v0[i]; j++) {
+                    k++;
+                    if (D[k][spo_orders[order][1]] != D[k-1][spo_orders[order][1]]) {
+                        v2.push_back(c2);
+                        seq.push_back(D[k-1][spo_orders[order][1]]);
+                        c2 = 1;
+                        c1++;
+                    } else c2++;
+                }
+                seq.push_back(D[k][spo_orders[order][1]]);
+                v2.push_back(c2);
+                v1.push_back(c1);
+                k++;
+            }
+            uint64_t c = v0.size()+1; 
+
+            for (uint64_t i = 0; i < v1.size(); i++)
+                c += v1[i];
+
+            for (uint64_t i = 0; i < v2.size(); i++)
+                c += v2[i];
+
+            sdsl::bit_vector bv = sdsl::bit_vector(c, 1);
+            sdsl::int_vector<> seq_compact = sdsl::int_vector<>(seq.size()+D.size()+1);
+
+            std::cout << "Full bv.size()=" << bv.size() << " seq=" << seq_compact.size() << std::endl;
+
+            uint64_t j = 0;
+
+            bv[0] = 0;
+            bv[v0.size()] = 0;
+            j = v0.size();
+
+            for (uint64_t i = 0; i < v1.size(); i++) {
+                j += v1[i];
+                bv[j] = 0;
+            }
+
+            for (uint64_t i = 0; i < v2.size(); i++) {
+                j += v2[i];
+                bv[j] = 0;
+            }
+
+            for (j = 0; j < seq.size(); j++)
+                seq_compact[j] = seq[j];
+
+            for (uint64_t i = 0; i < D.size(); i++)
+                seq_compact[j++] = D[i][spo_orders[order][2]];
+            seq_compact[j] = 0; //mock
+
+/*            cout << "*** Trie para el orden " << (uint64_t)order << " ***" << endl;
+            for (uint64_t i = 0; i < bv.size(); i++) {
+                cout << bv[i];
+            }
+            cout << endl;
+            for (uint64_t i = 0; i < seq_compact.size(); i++) {
+                cout << seq_compact[i] << " ";
+            }
+            cout << endl;
+*/
+            return trie_type(bv, seq_compact);            
+        }
+
+
+        trie_type create_partial_trie(vector<spo_triple> &D, uint8_t order){
+
+            std::sort(D.begin(), D.end(), comparator_order(order));
+
+            uint64_t c0 = 1;
+            std::vector<uint64_t> v0;
+            std::vector<uint64_t> seq;
+
+            for (uint64_t i = 1; i < D.size(); i++) {
+                if (D[i][spo_orders[order][0]] != D[i-1][spo_orders[order][0]]) {
+                    v0.push_back(c0);
+                    c0 = 1;
+                } else c0++;
+            }
+            v0.push_back(c0);
+
+            uint64_t c1, c2;
+            std::vector<uint64_t> v1, v2;
+
+            for (uint64_t i = 0, k = 0; i < v0.size(); i++) {
+                c1 = 1;
+                c2 = 1;
+                for (uint64_t j = 1; j < v0[i]; j++) {
+                    k++;
+                    if (D[k][spo_orders[order][1]] != D[k-1][spo_orders[order][1]]) {
+                        v2.push_back(c2);
+                        seq.push_back(D[k-1][spo_orders[order][1]]);
+                        c2 = 1;
+                        c1++;
+                    } else c2++;
+                }
+                seq.push_back(D[k][spo_orders[order][1]]);
+                v2.push_back(c2);
+                v1.push_back(c1);
+                k++;
+            }
+
+            uint64_t c = 0;
+            for (uint64_t i = 0; i < v1.size(); i++)
+                c += v1[i];
+
+            sdsl::bit_vector bv = sdsl::bit_vector(c+1, 1);
+            sdsl::int_vector<> seq_compact(seq.size()+1);
+
+            std::cout << "Partial bv.size()=" << bv.size() << " seq=" << seq_compact.size() << std::endl;
+
+            bv[0] = 0;
+            uint64_t j = 1;
+            for (uint64_t i = 0; i < v1.size(); i++) {
+                j += v1[i];
+                bv[j-1] = 0;
+            }
+
+            for (j = 0; j < seq.size(); j++)
+                seq_compact[j] = seq[j];
+            seq_compact[seq.size()] = 0; //mock
+/*
+            cout << "*** Trie para el orden " << (uint64_t)order << " ***" << endl;
+            for (uint64_t i = 0; i < bv.size(); i++) {
+                cout << bv[i];
+            }
+            cout << endl;
+            for (uint64_t i = 0; i < seq_compact.size(); i++) {
+                cout << seq_compact[i] << " ";
+            }
+            cout << endl;
+*/          
+            return trie_type(bv, seq_compact);
+        }
+
+        void copy(const cltj_index_metatrie_v2 &o){
             m_tries = o.m_tries;
             m_gaps = o.m_gaps;
             m_subjects = o.m_subjects;
@@ -51,15 +209,24 @@ namespace cltj {
 
         const std::array<trie_type, 6> &tries = m_tries;
         const std::array<size_type, 3> &gaps = m_gaps;
-        cltj_index_spo_lite_v2() = default;
+        cltj_index_metatrie_v2() = default;
 
-        cltj_index_spo_lite_v2(vector<spo_triple> &D){
+        /*cltj_index_metatrie_v2(vector<spo_triple> &D) {
+            m_tries[0] = create_full_trie(D, 0);  // trie for SPO
+            m_tries[1] = create_partial_trie(D, 1); // trie for SOP
+	        m_tries[2] = create_full_trie(D, 2);  // trie for POS
+	        m_tries[3] = create_partial_trie(D, 3); // trie for PSO
+	        m_tries[4] = create_full_trie(D, 4);  // trie for OSP
+	        m_tries[5] = create_partial_trie(D, 5); // trie for OPS
+        }*/
 
+        cltj_index_metatrie_v2(vector<spo_triple> &D) {
             for(size_type i = 0; i < 6; ++i){
                 std::sort(D.begin(), D.end(), comparator_order(i));
                 std::vector<uint32_t> syms_root, syms;
                 std::vector<size_type> lengths;
-                helper::sym_level(D,  spo_orders[i], 1, 3, syms, lengths);
+                auto end_level = 2 + (i % 2 == 0);
+                helper::sym_level(D,  spo_orders[i], 1, end_level, syms, lengths);
                 if(i % 2 == 0){
                     helper::sym_root(D, spo_orders[i], syms_root);
                     m_gaps[i/2] = syms_root.size();
@@ -94,17 +261,17 @@ namespace cltj {
         }
 
         //! Copy constructor
-        cltj_index_spo_lite_v2(const cltj_index_spo_lite_v2 &o) {
+        cltj_index_metatrie_v2(const cltj_index_metatrie_v2 &o) {
             copy(o);
         }
 
         //! Move constructor
-        cltj_index_spo_lite_v2(cltj_index_spo_lite_v2 &&o) {
+        cltj_index_metatrie_v2(cltj_index_metatrie_v2 &&o) {
             *this = std::move(o);
         }
 
         //! Copy Operator=
-        cltj_index_spo_lite_v2 &operator=(const cltj_index_spo_lite_v2 &o) {
+        cltj_index_metatrie_v2 &operator=(const cltj_index_metatrie_v2 &o) {
             if (this != &o) {
                 copy(o);
             }
@@ -112,7 +279,7 @@ namespace cltj {
         }
 
         //! Move Operator=
-        cltj_index_spo_lite_v2 &operator=(cltj_index_spo_lite_v2 &&o) {
+        cltj_index_metatrie_v2 &operator=(cltj_index_metatrie_v2 &&o) {
             if (this != &o) {
                 m_tries = std::move(o.m_tries);
                 m_gaps = std::move(o.m_gaps);
@@ -130,7 +297,17 @@ namespace cltj {
             return *this;
         }
 
-        void swap(cltj_index_spo_lite_v2 &o) {
+        bool insert(const spo_triple &triple) {
+            std::cout << "Insert operation is not supported (static version)." << std::endl;
+            std::exit(EXIT_FAILURE);
+        }
+
+        bool remove(const spo_triple &triple) {
+            std::cout << "Remove operation is not supported (static version)." << std::endl;
+            std::exit(EXIT_FAILURE);
+        }
+
+        void swap(cltj_index_metatrie_v2 &o) {
             // m_bp.swap(bp_support.m_bp); use set_vector to set the supported bit_vector
             std::swap(m_tries, o.m_tries);
             std::swap(m_gaps, o.m_gaps);
@@ -174,17 +351,6 @@ namespace cltj {
             return m_rank_obj(c+1)-1;
         }
 
-
-        bool insert(const spo_triple &triple) {
-            std::cout << "Insert operation is not supported (static version)." << std::endl;
-            std::exit(EXIT_FAILURE);
-        }
-
-        bool remove(const spo_triple &triple) {
-            std::cout << "Remove operation is not supported (static version)." << std::endl;
-            std::exit(EXIT_FAILURE);
-        }
-
         size_type serialize(std::ostream &out, sdsl::structure_tree_node *v = nullptr, std::string name = "") const {
             sdsl::structure_tree_node *child = sdsl::structure_tree::add_child(v, name, sdsl::util::class_name(*this));
             size_type written_bytes = 0;
@@ -226,8 +392,9 @@ namespace cltj {
 
     };
 
-    typedef cltj::cltj_index_spo_lite_v2<cltj::compact_trie> compact_ltj_v2;
+    typedef cltj::cltj_index_metatrie_v2<cltj::compact_trie> compact_ltj_metatrie_v2;
+    //typedef cltj::cltj_index_metatrie<cltj::uncompact_trie_v2> uncompact_ltj;
 
 }
 
-#endif //CLTJ_INDEX_SPO_LITE_V2_HPP
+#endif 

@@ -39,7 +39,6 @@ namespace cltj {
             m_succ0.set_vector(&m_bv);
             m_select0 = o.m_select0;
             m_select0.set_vector(&m_bv);
-            m_root_degree = o.m_root_degree;
         }
 
         /*inline size_type rank0(const size_type i) const {
@@ -53,12 +52,11 @@ namespace cltj {
         compact_metatrie() = default;
  
         compact_metatrie(sdsl::bit_vector &_bv, sdsl::int_vector<> &_seq) {
-             m_bv = _bv; 
+             m_bv = _bv;
              m_seq = _seq;
              sdsl::util::bit_compress(m_seq);
              sdsl::util::init_support(m_succ0, &m_bv);
              sdsl::util::init_support(m_select0, &m_bv);
-             m_root_degree = m_succ0(1);
         }
 
         //! Copy constructor
@@ -90,7 +88,6 @@ namespace cltj {
                 m_succ0.set_vector(&m_bv);
                 m_select0 = std::move(o.m_select0);
                 m_select0.set_vector(&m_bv);
-                m_root_degree = o.m_root_degree;
             }
             return *this;
         }
@@ -101,7 +98,6 @@ namespace cltj {
             std::swap(m_seq, o.m_seq);
             sdsl::util::swap_support(m_succ0, o.m_succ0, &m_bv, &o.m_bv);
             sdsl::util::swap_support(m_select0, o.m_select0, &m_bv, &o.m_bv);
-            std::swap(m_root_degree, o.m_root_degree);
         }
 
 
@@ -109,16 +105,12 @@ namespace cltj {
             Degree of the trie root
         */
 
-         size_type root_degree() {
-             return m_root_degree;
-         }
+        inline size_type child(uint32_t it, uint32_t n, uint32_t gap = 1) const {
+            return m_select0(it + gap + n);
+        }
 
-        /*
-            Receives index of current node and the child that is required
-            Returns index of the nth child of current node
-        */
-        inline size_type child(uint32_t it, uint32_t n) const {
-            return m_select0(it + 1 + n);
+        inline size_type nodeselect(uint32_t it, uint32_t gap = 1) const {
+            return child(it, 1, gap);
         }
 
         /*
@@ -133,9 +125,6 @@ namespace cltj {
             return i;
         }
 
-        inline size_type nodeselect(size_type i) const {
-            return m_select0(i + 2);
-        }
 
         pair<uint32_t, uint32_t> binary_search_seek(uint32_t val, uint32_t i, uint32_t f) const {
             if (m_seq[f] < val) return make_pair(0, f + 1);
@@ -175,7 +164,6 @@ namespace cltj {
             m_seq.load(in);
             m_succ0.load(in, &m_bv);
             m_select0.load(in, &m_bv);
-            m_root_degree = m_succ0(1);
         }
 
     };

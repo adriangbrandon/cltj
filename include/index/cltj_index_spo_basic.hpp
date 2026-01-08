@@ -37,7 +37,7 @@ namespace cltj {
                 std::sort(D.begin(), D.end(), comparator_order(i));
                 std::vector<uint32_t> syms;
                 std::vector<size_type> lengths;
-                helper::sym_level(D,  spo_orders[i], 0, syms, lengths);
+                helper::sym_level(D,  spo_orders[i], 0, 3, syms, lengths);
                 m_tries[i] = trie_type(syms, lengths);
             }
         }
