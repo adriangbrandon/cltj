@@ -55,10 +55,6 @@ add_executable(build-cltj src/bench/build-cltj.cpp)
 target_link_libraries(build-cltj sdsl divsufsort divsufsort64)
 set_target_properties(build-cltj PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
 
-add_executable(build-cltj-v2 src/bench/build-cltj-v2.cpp)
-target_link_libraries(build-cltj-v2 sdsl divsufsort divsufsort64)
-set_target_properties(build-cltj-v2 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
-
 add_executable(build-cltj-dyn src/bench/build-cltj-dyn.cpp)
 target_link_libraries(build-cltj-dyn sdsl divsufsort divsufsort64 hybridbv_gn)
 set_target_properties(build-cltj-dyn PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
@@ -66,11 +62,6 @@ set_target_properties(build-cltj-dyn PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE
 add_executable(build-xcltj src/bench/build-xcltj.cpp)
 target_link_libraries(build-xcltj sdsl divsufsort divsufsort64 hybridbv_gn)
 set_target_properties(build-xcltj PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
-
-add_executable(build-xcltj-v2 src/bench/build-xcltj-v2.cpp)
-target_link_libraries(build-xcltj-v2 sdsl divsufsort divsufsort64 hybridbv_gn)
-set_target_properties(build-xcltj-v2 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
-
 
 add_executable(build-xcltj-dyn src/bench/build-xcltj-dyn.cpp)
 target_link_libraries(build-xcltj-dyn sdsl divsufsort divsufsort64 hybridbv_gn)
@@ -98,15 +89,6 @@ target_compile_definitions(bench-query-cltj-global PUBLIC ADAPTIVE=0)
 target_link_libraries(bench-query-cltj-global sdsl divsufsort divsufsort64)
 set_target_properties(bench-query-cltj-global PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
 
-add_executable(bench-query-cltj-v2 src/bench/bench-query-cltj-v2.cpp)
-target_compile_definitions(bench-query-cltj-v2 PUBLIC ADAPTIVE=1)
-target_link_libraries(bench-query-cltj-v2 sdsl divsufsort divsufsort64)
-set_target_properties(bench-query-cltj-v2 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
-
-add_executable(bench-query-cltj-v2-global src/bench/bench-query-cltj-v2.cpp)
-target_compile_definitions(bench-query-cltj-v2-global PUBLIC ADAPTIVE=0)
-target_link_libraries(bench-query-cltj-v2-global sdsl divsufsort divsufsort64)
-set_target_properties(bench-query-cltj-v2-global PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
 
 add_executable(bench-query-uncltj src/bench/bench-query-uncltj.cpp)
 target_compile_definitions(bench-query-uncltj PUBLIC ADAPTIVE=1)
@@ -128,15 +110,7 @@ target_compile_definitions(bench-query-xcltj-global PUBLIC ADAPTIVE=0)
 target_link_libraries(bench-query-xcltj-global sdsl divsufsort divsufsort64)
 set_target_properties(bench-query-xcltj-global PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
 
-add_executable(bench-query-xcltj-v2 src/bench/bench-query-xcltj-v2.cpp)
-target_compile_definitions(bench-query-xcltj-v2 PUBLIC ADAPTIVE=1)
-target_link_libraries(bench-query-xcltj-v2 sdsl divsufsort divsufsort64)
-set_target_properties(bench-query-xcltj-v2 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
 
-add_executable(bench-query-xcltj-v2-global src/bench/bench-query-xcltj-v2.cpp)
-target_compile_definitions(bench-query-xcltj-v2-global PUBLIC ADAPTIVE=0)
-target_link_libraries(bench-query-xcltj-v2-global sdsl divsufsort divsufsort64)
-set_target_properties(bench-query-xcltj-v2-global PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
 
 add_executable(bench-query-cltj-rdf src/bench/bench-query-cltj-rdf.cpp)
 target_compile_definitions(bench-query-cltj-rdf PUBLIC ADAPTIVE=1)

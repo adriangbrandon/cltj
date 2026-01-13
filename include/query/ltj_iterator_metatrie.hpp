@@ -61,7 +61,7 @@ namespace ltj {
         size_type m_nfixed = 0;
         std::array<state_type, 3> m_fixed;
 
-        std::array<size_type, 3> m_path_label; 
+        std::array<size_type, 3> m_path_label;
 
         size_type m_trie_i = 0;
         size_type m_status_i = 0;
@@ -150,29 +150,28 @@ namespace ltj {
         }
 
         size_type trie_switch() {
-            size_type trie_aux;
-            switch (m_trie_i) {
-                case 1: trie_aux = 4;  // switches SOP -> OSP
-                        break;
-                case 3: trie_aux = 0;  // switches PSO -> SPO
-                        break;
-                case 5: trie_aux = 2;  // switches OPS -> POS
-                        break;
-            }
-
-            const auto* trie = m_ptr_index->get_trie(trie_aux);   // switches to the corresponding trie
+            size_type fti = cltj::ts_full_map[m_trie_i/2]; //full trie index
+            const auto* trie = m_ptr_index->get_trie(fti);   // switches to the corresponding trie
             // Now gets down using the labels of the current path, reversed
-            auto cnt = trie->root_degree();
-            size_type beg, end;
-            beg = trie->first_child(0); 
-            end = beg+cnt-1;
-            auto p = trie->binary_search_seek(m_path_label[m_nfixed-1], beg, end);
-            size_type cur_node = trie->nodeselect(p.second);
-            cnt = trie->children(cur_node);
-            beg = trie->first_child(cur_node);
-            end = beg+cnt-1;
-            p = trie->binary_search_seek(m_path_label[m_nfixed-2], beg, end);
-            cur_node = trie->nodeselect(p.second);  
+            size_type p0; //position in first level
+            switch (m_fixed[m_nfixed-1]){
+                case s:
+                    p0 = m_ptr_index->pos_subject(m_path_label[m_nfixed-1]);
+                    break;
+                case p:
+                    p0 = m_path_label[m_nfixed-1]-1;
+                    break;
+                case o:
+                    p0 = m_ptr_index->pos_object(m_path_label[m_nfixed-1]);
+                    break;
+            }
+            //descend to the next level
+            size_type cur_node = trie->nodeselect(p0, 0); // no root -> gap = 0
+            size_type cnt = trie->children(cur_node);
+            size_type beg = trie->first_child(cur_node);
+            size_type end = beg+cnt-1;
+            auto p = trie->binary_search_seek(m_path_label[m_nfixed-2], beg, end);
+            cur_node = trie->nodeselect(p.second, m_ptr_index->gaps[fti/2]); //no root -> gap = nodes in first level
             return cur_node;
         }
 
@@ -288,18 +287,19 @@ namespace ltj {
             if(m_nfixed == 1) {
                 const auto* trie = m_ptr_index->get_trie(m_trie_i);
                 auto pos = m_status[m_nfixed].beg;
-                m_status[m_nfixed].it[0] = trie->nodeselect(pos);
-                const auto* trie_aux = m_ptr_index->get_trie(m_trie_i+1);
-                m_status[m_nfixed].it[1] = trie_aux->nodeselect(m_status[m_nfixed].beg-1); // -1 as there is no root in this trie
+                m_status[m_nfixed].it[0] =  trie->nodeselect(pos, 0); //no root -> gap = 0
+                trie = m_ptr_index->get_trie(m_trie_i+1);
+                m_status[m_nfixed].it[1] = trie->nodeselect(pos, 0); //no root -> gap = 0
             } else if (m_nfixed == 2) {
-                if (!m_status_i) { 
+                if (!m_status_i) {
                     const auto* trie = m_ptr_index->get_trie(m_trie_i);
                     auto pos = m_status[m_nfixed].beg;
-                    m_status[m_nfixed].it[m_status_i] = trie->nodeselect(pos);
-                } else {  
-                    // trie switching 
+                    //root -> gap = 1; no root -> gap = nodes in first level
+                    m_status[m_nfixed].it[m_status_i] = trie->nodeselect(pos, m_ptr_index->gaps[m_trie_i/2]);
+                } else {
+                    // trie switching
                     size_type switch_node = trie_switch();
-                    m_status[m_nfixed].it[m_status_i] = switch_node; 
+                    m_status[m_nfixed].it[m_status_i] = switch_node;
                 }
             }
         }
@@ -330,45 +330,44 @@ namespace ltj {
         bool exists(state_type state, size_type c) { //Return the minimum in the range
 
             choose_trie(state);
-            const auto* trie = m_ptr_index->get_trie(m_trie_i);
-
-            if (m_nfixed == 1 && m_status_i == 1) {
-                //const auto* trie_aux = m_ptr_index->get_trie(m_trie_i-1);
-                size_type beg, end;
-                size_type node = trie->nodeselect(m_status[m_nfixed].beg-1);
-                auto cnt = trie->children(node);
-                beg = trie->first_child(node);
+            if (m_nfixed == 0) { //we don't use tries, just the bitvectors
+                switch (state){
+                    case s:
+                        if (c > m_ptr_index->max_subject()) return false;
+                        if (m_ptr_index->next_subject(c) != c) return false;
+                        m_status[m_nfixed+1].beg = m_ptr_index->pos_subject(c);
+                        m_redo[m_nfixed] = false;
+                        break;
+                    case p:
+                        if (c > m_ptr_index->max_predicate()) return false;
+                        m_status[m_nfixed+1].beg = c-1;
+                        m_redo[m_nfixed] = false;
+                        break;
+                    case o:
+                        if (c > m_ptr_index->max_object()) return false;
+                        if (m_ptr_index->next_object(c) != c) return false;
+                        m_status[m_nfixed+1].beg = m_ptr_index->pos_object(c);
+                        m_redo[m_nfixed] = false;
+                        break;
+                }
+            }else {
+                size_type cnt, beg, end;
+                const auto* trie = m_ptr_index->get_trie(m_trie_i);
+                if (m_status_i && m_nfixed == 2) { //partial trie
+                    size_type fti = cltj::ts_full_map[m_trie_i/2];
+                    trie = m_ptr_index->get_trie(fti);   // switches to the corresponding trie
+                }
+                cnt = trie->children(parent());
+                //auto child = trie->child(parent(), 1)
+                beg = trie->first_child(parent());
                 end = beg + cnt -1;
                 auto p = trie->binary_search_seek(c, beg, end);
-                if(p.second > end or p.first != c) return false;
+                if (p.second > end or p.first != c) return false;
                 m_status[m_nfixed+1].beg = p.second;
                 m_status[m_nfixed+1].end = end;
                 m_status[m_nfixed+1].cnt = cnt;
                 m_redo[m_nfixed] = false;
-                return true;
             }
-
-            if (m_nfixed == 2 && m_status_i == 1) {
-                switch (m_trie_i) {
-                    case 1: trie = m_ptr_index->get_trie(4);  // switches SOP -> OSP
-                            break;
-                    case 3: trie = m_ptr_index->get_trie(0);  // switches PSO -> SPO
-                            break;
-                    case 5: trie = m_ptr_index->get_trie(2);  // switches OPS -> POS
-                            break;
-                }
-            } 
-
-            size_type beg, end;
-            auto cnt = trie->children(parent());
-            beg = trie->first_child(parent());
-            end = beg + cnt -1;
-            auto p = trie->binary_search_seek(c, beg, end);
-            if(p.second > end or p.first != c) return false;
-            m_status[m_nfixed+1].beg = p.second;
-            m_status[m_nfixed+1].end = end;
-            m_status[m_nfixed+1].cnt = cnt;
-            m_redo[m_nfixed] = false;
             return true;
         }
 
@@ -382,17 +381,50 @@ namespace ltj {
                 state = p;
             }
             choose_trie(state);
-            const auto* trie = m_ptr_index->get_trie(m_trie_i);
 
-            if (m_nfixed == 2 && m_status_i == 1) {
-                switch (m_trie_i) {
-                    case 1: trie = m_ptr_index->get_trie(4);  // switches SOP -> OSP
-                            break;
-                    case 3: trie = m_ptr_index->get_trie(0);  // switches PSO -> SPO
-                            break;
-                    case 5: trie = m_ptr_index->get_trie(2);  // switches OPS -> POS
-                            break;
+            if (m_nfixed == 0) {
+                value_type value;
+                switch (state){
+                    case s:
+                        if(c == -1ULL){
+                            value = m_ptr_index->next_subject(1);
+                            m_status[m_nfixed+1].beg = 0;
+                        }else{
+                            if (c > m_ptr_index->max_subject()) return 0;
+                            value = m_ptr_index->next_subject(c);
+                            if (value > m_ptr_index->max_subject()) return 0;
+                            m_status[m_nfixed+1].beg = m_ptr_index->pos_subject(value);
+                        }
+                        break;
+                    case p:
+                        if(c == -1ULL){
+                            value = 1;
+                            m_status[m_nfixed+1].beg = 0;
+                        }else{
+                            if (c > m_ptr_index->max_predicate()) return 0;
+                            value = c;
+                            m_status[m_nfixed+1].beg = c-1;
+                        }
+                        break;
+                    case o:
+                        if(c == -1ULL){
+                            value = m_ptr_index->next_object(1);
+                            m_status[m_nfixed+1].beg = 0;
+                        }else{
+                            if (c > m_ptr_index->max_object()) return 0;
+                            value = m_ptr_index->next_object(c);
+                            if (value > m_ptr_index->max_object()) return 0;
+                            m_status[m_nfixed+1].beg = m_ptr_index->pos_object(value);
+                        }
+                        break;
                 }
+                //print_status();
+                return value;
+            }
+            const auto* trie = m_ptr_index->get_trie(m_trie_i);
+            if (m_status_i && m_nfixed == 2) { //partial trie
+                size_type fti = cltj::ts_full_map[m_trie_i/2];
+                trie = m_ptr_index->get_trie(fti);   // switches to the corresponding trie
             }
 
             size_type beg, end;
@@ -434,9 +466,8 @@ namespace ltj {
 
         inline size_type children(state_type state) const{
             size_type t_i, s_i=0;
-            if(m_nfixed == 0) {
-                t_i = 2*state;
-            }else if (m_nfixed == 1){
+            if(m_nfixed == 0) return m_ptr_index->gaps[state];
+            if (m_nfixed == 1){
                 if (state == s) { //Fix variables
                     t_i = (m_fixed[m_nfixed-1] == o) ? 4 : 3 ;
                     s_i = (m_fixed[m_nfixed-1] == o) ? 0 : 1;
@@ -450,16 +481,8 @@ namespace ltj {
             }else{
                 t_i = m_trie_i; //Previously decided
                 s_i = m_status_i; //Previously decided
-
-                if (m_nfixed == 2 && m_status_i == 1) {
-                    switch (m_trie_i) {
-                        case 1: t_i = 4;  // switches SOP -> OSP
-                                break;
-                        case 3: t_i = 0;  // switches PSO -> SPO
-                                break;
-                        case 5: t_i = 2;  // switches OPS -> POS
-                                break;
-                    }
+                if (m_status_i && m_nfixed == 2) { //partial trie
+                    t_i = cltj::ts_full_map[m_trie_i/2];
                 }
             }
             auto trie = m_ptr_index->get_trie(t_i);
@@ -490,67 +513,40 @@ namespace ltj {
                 s_i = (m_fixed[m_nfixed - 1] == p) ? 0 : 1;
             }
 
+            //we always use the full trie
+            //if s_i = 1 then we move to the full trie
+            const auto* trie =  m_ptr_index->get_trie(t_i - s_i);
+            auto it = m_status[m_nfixed].it[0];
             size_type leftmost_leaf, rightmost_leaf;
-            const auto* trie =  m_ptr_index->get_trie(t_i);
-            if (s_i == 0) {
-                auto it = m_status[m_nfixed].it[s_i];
-                //Count children
-                auto cnt = trie->children(it);
-                //Leftmost
-                auto first = trie->child(it, 1);
-                leftmost_leaf = trie->first_child(first);
-                //Rightmost
-                it = trie->child(it, cnt);
-                cnt = trie->children(it);
-                rightmost_leaf = trie->first_child(it) + cnt - 1;
-            } else {
-	            const auto* trie_aux =  m_ptr_index->get_trie(t_i-1);
-		        auto it = m_status[m_nfixed].it[0];
-                        //Count children
-		        auto cnt = trie_aux->children(it);
-                        //Leftmost
-		        auto first = trie_aux->child(it, 1);
-		        leftmost_leaf = trie_aux->first_child(first);
-                        //Rightmost
-		        it = trie_aux->child(it, cnt);
-		        cnt = trie_aux->children(it);
-		        rightmost_leaf = trie_aux->first_child(it) + cnt - 1;
-	        }
+
+            //Count children
+            auto cnt = trie->children(it);
+            //Leftmost
+            auto first = trie->child(it, 1, 0); //no root -> gap = 0
+            leftmost_leaf = trie->first_child(first);
+            //Rightmost
+            it = trie->child(it, cnt, m_ptr_index->gaps[m_trie_i/2]);
+            cnt = trie->children(it);
+            rightmost_leaf = trie->first_child(it) + cnt - 1;
             return rightmost_leaf - leftmost_leaf + 1;
         }
 
         inline size_type subtree_size_fixed2() const {
             const auto* trie =  m_ptr_index->get_trie(m_trie_i);
-            if (m_nfixed == 2 && m_status_i == 1) {
-                switch (m_trie_i) {
-                    case 1: trie = m_ptr_index->get_trie(4);  // switches SOP -> OSP
-                            break;
-                    case 3: trie = m_ptr_index->get_trie(0);  // switches PSO -> SPO
-                            break;
-                    case 5: trie = m_ptr_index->get_trie(2);  // switches OPS -> POS
-                            break;
-                }
+            if (m_status_i && m_nfixed == 2) { //partial trie
+                size_type fti = cltj::ts_full_map[m_trie_i/2];
+                trie = m_ptr_index->get_trie(fti);   // switches to the corresponding trie
             }
-
             auto it = m_status[m_nfixed].it[m_status_i];
             return trie->children(it);
         }
 
         std::vector<uint64_t> seek_all(var_type x_j){
             std::vector<uint64_t> results;
-            size_type t_i;
+            size_type t_i = m_trie_i;
             if (m_nfixed == 2 && m_status_i == 1) {
-                switch (m_trie_i) {
-                    case 1: t_i = 4;  // switches SOP -> OSP
-                            break;
-                    case 3: t_i = 0;  // switches PSO -> SPO
-                            break;
-                    case 5: t_i = 2;  // switches OPS -> POS
-                            break;
-                    default: t_i = m_trie_i;
-                }
-            } else t_i = m_trie_i;
-        
+               t_i = cltj::ts_full_map[t_i/2];
+            }
             const auto* trie = m_ptr_index->get_trie(t_i);
             uint32_t cnt = trie->children(parent());
             size_type beg = trie->first_child(parent());
@@ -559,7 +555,7 @@ namespace ltj {
             }
             return results;
         }
-   
+
     };
 
     template<class index_scheme_t, class var_t, class cons_t>

@@ -131,7 +131,7 @@ void query(index_scheme_type &graph, const std::string &queries, const uint64_t 
             }
 
 
-            typedef ltj::ltj_iterator_metatrie<index_scheme_type, uint8_t, uint64_t> iterator_type;
+            typedef ltj::ltj_iterator_metatrie_dyn<index_scheme_type, uint8_t, uint64_t> iterator_type;
 #if ADAPTIVE
             typedef ltj::ltj_algorithm<iterator_type,
                 ltj::veo::veo_adaptive<iterator_type, trait_type> > algorithm_type;

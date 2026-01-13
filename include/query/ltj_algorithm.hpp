@@ -28,8 +28,9 @@
 #include <dict/dict_map.hpp>
 #include <query/ltj_iterator_basic.hpp>
 #include <query/ltj_iterator_lite.hpp>
-#include <query/ltj_iterator_lite_v2.hpp>
+#include <query/ltj_iterator_dyn.hpp>
 #include <query/ltj_iterator_metatrie.hpp>
+#include <query/ltj_iterator_metatrie_dyn.hpp>
 #include <veo/veo_simple.hpp>
 #include <veo/veo_adaptive.hpp>
 #include <results/results.hpp>

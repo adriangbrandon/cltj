@@ -25,7 +25,7 @@ template<class index_scheme_type, class trait_type>
 void query_indel(const std::string &index, const std::vector<query_type> &queries, const std::vector<update_type> &updates,
            const uint64_t limit) {
 
-    typedef ltj::ltj_iterator_metatrie<index_scheme_type, uint8_t, uint64_t> iterator_type;
+    typedef ltj::ltj_iterator_metatrie_dyn<index_scheme_type, uint8_t, uint64_t> iterator_type;
     typedef ltj::ltj_algorithm<iterator_type,
         ltj::veo::veo_adaptive<iterator_type, trait_type> > algorithm_type;
     //typedef std::vector<typename algorithm_type::tuple_type> results_type;

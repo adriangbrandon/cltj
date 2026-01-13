@@ -61,12 +61,12 @@ namespace cltj {
             }
         }
 
-        static void sym_level(vector<spo_triple>::iterator beg, vector<spo_triple>::iterator end, const spo_order_type &order, uint64_t level,
+        static void sym_level(vector<spo_triple>::iterator beg, vector<spo_triple>::iterator end, const spo_order_type &order, uint64_t level, uint64_t end_level,
                       std::vector<uint32_t> &syms, std::vector<uint64_t> &lengths){
             vector<spo_triple>::iterator prev, curr;
             uint64_t children;
 
-            for(uint32_t l = level; l < 3; ++l){
+            for(uint32_t l = level; l < end_level; ++l){
                 children = 1;
                 prev = beg; curr = beg+1;
                 while(curr != end) {
