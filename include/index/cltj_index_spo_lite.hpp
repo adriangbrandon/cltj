@@ -60,7 +60,7 @@ namespace cltj {
                 std::vector<uint32_t> syms_root, syms;
                 std::vector<size_type> lengths;
                 helper::sym_level(D,  spo_orders[i], 1, 3, syms, lengths);
-                if(i & 0x1 == 0){
+                if(!(i & 0x1)){
                     helper::sym_root(D, spo_orders[i], syms_root);
                     m_gaps[i/2] = syms_root.size();
                     if (i == 0) {

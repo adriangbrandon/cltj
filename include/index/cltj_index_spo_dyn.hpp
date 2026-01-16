@@ -67,7 +67,7 @@ namespace cltj {
                 std::vector<size_type> lengths;
                 auto beg_level = (i & 0x1);
                 helper::sym_level(beg, end, spo_orders[i], beg_level, 3, syms, lengths);
-                if(i & 0x1 == 0){
+                if(beg_level == 0){
                     m_gaps[i/2] = lengths[0];
                 }
                 m_tries[i] = trie_type(syms, lengths);
@@ -118,7 +118,7 @@ namespace cltj {
         bool insert(const spo_triple &triple) {
             if(!m_n_triples) {
                 for(size_type i = 0; i < m_tries.size(); ++i) {
-                    m_tries[i] = trie_type(triple, spo_orders[i], i & 0x1, 3);
+                    m_tries[i] = trie_type(triple, spo_orders[i], (i & 0x1), 3);
                 }
                 m_gaps = {1,1,1};
                 ++m_n_triples;
@@ -302,7 +302,7 @@ namespace cltj {
             size_type b, e, gap, l;
             bool exists_l0 = true;
             for(size_type i = 0; i < m_tries.size(); ++i) {
-                bool skip_level = i & 0x1;
+                bool skip_level = (i & 0x1);
                 if(skip_level && !exists_l0) continue;
                 for(l = skip_level; l < 3; ++l) {
                     gap = 1;

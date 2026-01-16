@@ -69,7 +69,7 @@ namespace cltj {
                 auto beg_level = (i & 0x1);
                 auto end_level = 3 - beg_level;
                 helper::sym_level(D,  spo_orders[i], beg_level, end_level, syms, lengths);
-                if(i & 0x1 == 0){
+                if(beg_level == 0){
                     m_gaps[i/2] = lengths[0];
                 }
                 m_tries[i] = trie_type(syms, lengths);
@@ -135,7 +135,7 @@ namespace cltj {
         bool insert(const spo_triple &triple) {
             if(!m_n_triples) {
                 for(size_type i = 0; i < m_tries.size(); ++i) {
-                    m_tries[i] = trie_type(triple, spo_orders[i], i & 0x1, 3 - (i & 0x1));
+                    m_tries[i] = trie_type(triple, spo_orders[i], (i & 0x1), 3 - (i & 0x1));
                 }
                 m_gaps = {1,1,1};
                 ++m_n_triples;
