@@ -183,6 +183,7 @@ namespace cltj {
                     }
                 }
                 if(i == 0 && !insert) return false;
+                u_part[i/2] = states[1]; //to sync with the first level in the partial trie
                 for(int64_t j = 3; j >= 1; --j) {
                     //When the triple is not found in the previous level, it means that we are in the first child (1-bit) of the current level.
                     //Otherwise, we have to add a new child to the current level, thus we add a 0-bit.
@@ -194,7 +195,6 @@ namespace cltj {
                         if (j == 2) { //insert into partial trie
                             auto pt = ts_part_map[i/2];
                             ins_part[pt/2] = true;
-                            u_part[i/2] = states[1]; //to sync with the first level in the partial trie
                         }
                     }
                 }

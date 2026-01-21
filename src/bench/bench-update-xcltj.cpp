@@ -122,7 +122,7 @@ void query_qpu(const std::string &index, const std::vector<query_type> &queries,
                 graph.insert(u.triple);
                 stop = std::chrono::high_resolution_clock::now();
                 time = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start).count();
-                cout << "D;" << i_up << ";" << 0 << ";" << time << endl;
+                cout << "I;" << i_up << ";" << 0 << ";" << time << endl;
             }else {
                 start = std::chrono::high_resolution_clock::now();
                 graph.remove(u.triple);
