@@ -68,7 +68,7 @@ void query_upq(const std::string &index, const std::vector<query_type> &queries,
 
         auto start = std::chrono::high_resolution_clock::now();
         algorithm_type ltj(&q, &graph);
-        ltj.join(res, limit, 600);
+        ltj.join_v2(res, limit, 600);
         auto stop = std::chrono::high_resolution_clock::now();
 
         auto time = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start).count();
@@ -108,7 +108,7 @@ void query_qpu(const std::string &index, const std::vector<query_type> &queries,
 
         auto start = std::chrono::high_resolution_clock::now();
         algorithm_type ltj(&q, &graph);
-        ltj.join(res, limit, 600);
+        ltj.join_v2(res, limit, 600);
         auto stop = std::chrono::high_resolution_clock::now();
 
         auto time = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start).count();

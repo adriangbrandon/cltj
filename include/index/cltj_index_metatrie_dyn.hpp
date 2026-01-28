@@ -188,7 +188,7 @@ namespace cltj {
                     //When the triple is not found in the previous level, it means that we are in the first child (1-bit) of the current level.
                     //Otherwise, we have to add a new child to the current level, thus we add a 0-bit.
                     if(states[j].ins) {
-                        //std::cout << "insert at: " << states[j].pos << "[" << states[j-1].ins << ", " << states[j].first_child << "]" << std::endl;
+                        //std::cout << "insert at j: " << j << " -> " << states[j].pos << "[" << states[j-1].ins << ", " << states[j].first_child << "]" << std::endl;
                         m_tries[i].insert(states[j].pos, triple[spo_orders[i][j-1]], states[j-1].ins, states[j].first_child);
                         //m_tries[i].print();
                         if (j == 1) inc_gaps[i/2] = true;
@@ -206,11 +206,11 @@ namespace cltj {
                         //the previous element exists in the previous level
                         b = m_tries[i].child(u_part[i/2].pos, 1, 0);
                         e = b+m_tries[i].children(b)-1;
-                        auto p = m_tries[i].next(b, e, triple[spo_orders[i][1]]);
+                        auto p = m_tries[i].next(b, e, triple[spo_orders[i][1]]); //find the position to insert
                         m_tries[i].insert(p.second, triple[spo_orders[i][1]], u_part[i/2].ins, (b==p.second));
                     }else {
-                        b = m_tries[i].child(u_part[i/2].pos, 1, 0);
-                        m_tries[i].insert(b, triple[spo_orders[i][1]], states[1].ins, false);
+                        b = m_tries[i].child(u_part[i/2].pos, 1, 0); //insert at the beginning of the range
+                        m_tries[i].insert(b, triple[spo_orders[i][1]], u_part[i/2].ins, false);
                     }
                 }
             }
