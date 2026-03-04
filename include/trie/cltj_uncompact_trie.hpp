@@ -118,7 +118,8 @@ namespace cltj {
             //return i;
         }
 
-        inline size_type nodeselect(size_type i, uint64_t gap) const {
+        inline size_type nodeselect(size_type i, uint64_t gap = 1) const {
+            if (gap == 0) return i; //there is no root but we are in the first level
             return i+gap-1;
             //return i;
         }
