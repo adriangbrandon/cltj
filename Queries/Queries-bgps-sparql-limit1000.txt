@@ -1,0 +1,1295 @@
+?v0 ?v1 ?v2 . ?v0 ?v1 ?v4 . ?v2 ?v1 ?v3 . ?v3 ?v1 ?v4 . ?v4 ?v1 ?v0 . ?v4 ?v1 ?v3
+?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v2 <http://www.wikidata.org/prop/direct/P569> ?v4 . ?v2 <http://www.wikidata.org/prop/direct/P570> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P734> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P735> ?v1 . ?v5 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v5 <http://www.wikidata.org/prop/direct/P569> ?v4 . ?v5 <http://www.wikidata.org/prop/direct/P570> ?v3 . ?v5 <http://www.wikidata.org/prop/direct/P734> ?v0 . ?v5 <http://www.wikidata.org/prop/direct/P735> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P734> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P734> ?v4 . ?v1 <http://www.wikidata.org/prop/direct/P735> ?v5 . ?v1 <http://www.wikidata.org/prop/direct/P735> ?v9 . ?v2 <http://www.wikidata.org/prop/direct/P734> ?v6 . ?v5 <http://www.wikidata.org/prop/direct/P1533> ?v3 . ?v7 <http://www.wikidata.org/prop/direct/P734> ?v3 . ?v7 <http://www.wikidata.org/prop/direct/P735> ?v8 . ?v8 <http://www.wikidata.org/prop/direct/P1533> ?v6 . ?v9 <http://www.wikidata.org/prop/direct/P1533> ?v4
+?v1 <http://www.wikidata.org/prop/direct/P1533> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P734> ?v6 . ?v2 <http://www.wikidata.org/prop/direct/P735> ?v1 . ?v4 <http://www.wikidata.org/prop/direct/P734> ?v3 . ?v4 <http://www.wikidata.org/prop/direct/P735> ?v7 . ?v4 <http://www.wikidata.org/prop/direct/P735> ?v8 . ?v5 <http://www.wikidata.org/prop/direct/P734> ?v0 . ?v7 <http://www.wikidata.org/prop/direct/P1533> ?v6 . ?v8 <http://www.wikidata.org/prop/direct/P1533> ?v3
+?v1 <http://www.wikidata.org/prop/direct/P21> ?v3 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P570> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P734> ?v0 . ?v4 <http://www.wikidata.org/prop/direct/P21> ?v3 . ?v4 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v4 <http://www.wikidata.org/prop/direct/P570> ?v2 . ?v4 <http://www.wikidata.org/prop/direct/P734> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q427626> . ?v0 <http://www.wikidata.org/prop/direct/P361> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q427626> . ?v2 <http://www.wikidata.org/prop/direct/P105> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P171> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> . ?v3 <http://www.wikidata.org/prop/direct/P105> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+?v1 <http://www.wikidata.org/prop/direct/P1476> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P161> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v2 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v3 <http://www.wikidata.org/prop/direct/P1476> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P161> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424>
+?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q34> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P570> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q34> . ?v3 <http://www.wikidata.org/prop/direct/P569> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P570> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P570> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v3 <http://www.wikidata.org/prop/direct/P569> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P570> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P971> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P971> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P971> ?v4 . ?v3 <http://www.wikidata.org/prop/direct/P971> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P971> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P971> ?v4
+?v1 <http://www.wikidata.org/prop/direct/P1476> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P161> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v3 <http://www.wikidata.org/prop/direct/P1476> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P161> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424>
+?v0 <http://www.wikidata.org/prop/direct/P39> ?v4 . ?v0 <http://www.wikidata.org/prop/direct/P69> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P39> ?v4 . ?v1 <http://www.wikidata.org/prop/direct/P69> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v3 . ?v3 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q3918>
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P570> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P734> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v3 <http://www.wikidata.org/prop/direct/P570> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P734> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P105> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> . ?v2 <http://www.wikidata.org/prop/direct/P361> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P105> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P171> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+?v1 <http://www.wikidata.org/prop/direct/P2093> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v4 . ?v3 <http://www.wikidata.org/prop/direct/P2093> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P50> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P50> ?v4
+?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v1 . ?v2 ?v0 ?v3 . ?v2 ?v0 ?v3 . ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P569> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P570> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P569> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P570> ?v3
+?v1 <http://www.wikidata.org/prop/direct/P971> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P971> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P971> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P971> ?v3
+?v1 <http://www.wikidata.org/prop/direct/P1476> ?v3 . ?v1 <http://www.wikidata.org/prop/direct/P161> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P1476> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P161> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P734> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P735> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P734> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P735> ?v3
+?v1 <http://www.wikidata.org/prop/direct/P4614> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P4614> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P361> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P4614> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P166> ?v3 . ?v1 ?v0 ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7191>
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 ?v1 ?v2 . ?v2 ?v3 ?v4 . ?v4 ?v5 ?v0
+?v2 <http://schema.org/name> ?v1 . ?v2 ?v0 ?v1
+?v2 ?v1 ?v0 . ?v2 ?v3 ?v0
+?v2 <http://www.wikidata.org/prop/direct/P361> ?v1 . ?v2 ?v0 ?v1
+?v2 ?v0 ?v1 . ?v2 ?v0 ?v3
+?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v1 . ?v2 ?v0 ?v1
+<http://www.wikidata.org/entity/Q269236> ?v2 ?v1 . ?v0 ?v2 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P171> ?v15 . ?v1 <http://www.wikidata.org/prop/direct/P171> ?v2 . ?v10 <http://www.wikidata.org/prop/direct/P171> ?v6 . ?v11 <http://www.wikidata.org/prop/direct/P171> ?v1 . ?v12 <http://www.wikidata.org/prop/direct/P171> ?v10 . ?v13 <http://www.wikidata.org/prop/direct/P171> ?v5 . ?v15 <http://www.wikidata.org/prop/direct/P171> ?v9 . ?v2 <http://www.wikidata.org/prop/direct/P171> ?v3 . ?v3 <http://www.wikidata.org/prop/direct/P171> ?v13 . ?v4 <http://www.wikidata.org/prop/direct/P171> ?v7 . ?v5 <http://www.wikidata.org/prop/direct/P171> ?v0 . ?v6 <http://www.wikidata.org/prop/direct/P171> ?v4 . ?v7 <http://www.wikidata.org/prop/direct/P171> ?v11 . ?v8 <http://www.wikidata.org/prop/direct/P171> ?v14 . ?v9 <http://www.wikidata.org/prop/direct/P171> ?v8
+?v1 <http://www.wikidata.org/prop/direct/P171> ?v0 . ?v10 <http://www.wikidata.org/prop/direct/P171> ?v2 . ?v11 <http://www.wikidata.org/prop/direct/P171> ?v3 . ?v12 <http://www.wikidata.org/prop/direct/P171> ?v9 . ?v13 <http://www.wikidata.org/prop/direct/P171> ?v5 . ?v2 <http://www.wikidata.org/prop/direct/P171> ?v11 . ?v3 <http://www.wikidata.org/prop/direct/P171> ?v8 . ?v4 <http://www.wikidata.org/prop/direct/P171> ?v13 . ?v5 <http://www.wikidata.org/prop/direct/P171> ?v10 . ?v6 <http://www.wikidata.org/prop/direct/P171> ?v4 . ?v7 <http://www.wikidata.org/prop/direct/P171> ?v6 . ?v8 <http://www.wikidata.org/prop/direct/P171> ?v12 . ?v9 <http://www.wikidata.org/prop/direct/P171> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P171> ?v5 . ?v1 <http://www.wikidata.org/prop/direct/P171> ?v4 . ?v2 <http://www.wikidata.org/prop/direct/P171> ?v7 . ?v4 <http://www.wikidata.org/prop/direct/P171> ?v2 . ?v5 <http://www.wikidata.org/prop/direct/P171> ?v6 . ?v6 <http://www.wikidata.org/prop/direct/P171> ?v1 . ?v7 <http://www.wikidata.org/prop/direct/P171> ?v3 . ?v8 <http://www.wikidata.org/prop/direct/P171> ?v0 . ?v9 <http://www.wikidata.org/prop/direct/P171> ?v8
+?v0 <http://www.wikidata.org/prop/direct/P279> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P279> ?v8 . ?v2 <http://www.wikidata.org/prop/direct/P279> ?v7 . ?v3 <http://www.wikidata.org/prop/direct/P279> ?v6 . ?v4 <http://www.wikidata.org/prop/direct/P279> ?v8 . ?v5 <http://www.wikidata.org/prop/direct/P279> ?v4 . ?v6 <http://www.wikidata.org/prop/direct/P279> ?v0 . ?v7 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q151885> . ?v8 <http://www.wikidata.org/prop/direct/P279> ?v3
+?v4 <http://www.wikidata.org/prop/direct/P136> ?v6 . ?v4 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v4 <http://www.wikidata.org/prop/direct/P495> ?v5 . ?v4 <http://www.wikidata.org/prop/direct/P577> ?v7 . ?v4 <http://www.wikidata.org/prop/direct/P57> ?v1 . ?v4 <http://www.wikidata.org/prop/direct/P915> ?v2 . ?v4 <http://www.wikidata.org/prop/direct/P921> ?v3 . ?v5 <http://www.wikidata.org/prop/direct/P30> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P30> ?v3 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v1 <http://www.wikidata.org/prop/direct/P36> ?v4 . ?v1 <http://www.wikidata.org/prop/direct/P610> ?v0 . ?v4 <http://www.wikidata.org/prop/direct/P1376> ?v1 . ?v5 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v5 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4022>
+<http://www.wikidata.org/entity/Q1342425> ?v2 ?v0 . ?v0 ?v6 ?v14 . ?v11 ?v13 <http://www.wikidata.org/entity/Q366> . ?v14 ?v10 ?v9 . ?v3 ?v7 ?v11 . ?v4 ?v1 ?v8 . ?v8 ?v12 ?v3 . ?v9 ?v5 ?v4
+?v2 <http://www.wikidata.org/prop/direct/P625> ?v5 . ?v4 <http://www.wikidata.org/prop/direct/P19> ?v6 . ?v4 <http://www.wikidata.org/prop/direct/P20> ?v2 . ?v4 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v4 <http://www.wikidata.org/prop/direct/P569> ?v1 . ?v4 <http://www.wikidata.org/prop/direct/P570> ?v0 . ?v6 <http://www.wikidata.org/prop/direct/P625> ?v3
+?v1 <http://www.wikidata.org/prop/direct/P161> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P161> ?v6 . ?v3 <http://www.wikidata.org/prop/direct/P161> ?v6 . ?v4 <http://www.wikidata.org/prop/direct/P161> ?v0 . ?v4 <http://www.wikidata.org/prop/direct/P161> ?v2 . ?v5 <http://www.wikidata.org/prop/direct/P161> <http://www.wikidata.org/entity/Q3454165> . ?v5 <http://www.wikidata.org/prop/direct/P161> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P40> ?v3 . ?v1 <http://www.wikidata.org/prop/direct/P40> ?v4 . ?v2 <http://www.wikidata.org/prop/direct/P40> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P40> ?v1 . ?v4 <http://www.wikidata.org/prop/direct/P40> ?v5 . ?v6 <http://www.wikidata.org/prop/direct/P40> ?v2 . ?v7 <http://www.wikidata.org/prop/direct/P40> ?v6
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q427626> . ?v1 <http://www.wikidata.org/prop/direct/P105> ?v3 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> . ?v2 <http://www.wikidata.org/prop/direct/P105> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P171> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q427626>
+?v1 <http://www.wikidata.org/prop/direct/P105> ?v3 . ?v1 <http://www.wikidata.org/prop/direct/P171> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> . ?v2 <http://www.wikidata.org/prop/direct/P105> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q427626> . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q427626>
+?v2 <http://www.wikidata.org/prop/direct/P19> ?v4 . ?v2 <http://www.wikidata.org/prop/direct/P20> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v2 <http://www.wikidata.org/prop/direct/P569> ?v5 . ?v2 <http://www.wikidata.org/prop/direct/P570> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P735> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P30> ?v4 . ?v1 <http://www.wikidata.org/prop/direct/P149> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P18> ?v3 . ?v1 <http://www.wikidata.org/prop/direct/P31> ?v6 . ?v1 <http://www.wikidata.org/prop/direct/P625> ?v5
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v0 <http://www.wikidata.org/prop/direct/P39> <http://www.wikidata.org/entity/Q30185> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v2 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v2 <http://www.wikidata.org/prop/direct/P6> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P225> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> . ?v2 <http://www.wikidata.org/prop/direct/P171> ?v4 . ?v2 <http://www.wikidata.org/prop/direct/P225> ?v0 . ?v4 <http://www.wikidata.org/prop/direct/P171> ?v1 . ?v4 <http://www.wikidata.org/prop/direct/P225> ?v5
+?v1 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1194951> . ?v1 <http://www.wikidata.org/prop/direct/P641> <http://www.wikidata.org/entity/Q847> . ?v2 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q2485448> . ?v2 <http://www.wikidata.org/prop/direct/P641> <http://www.wikidata.org/entity/Q847>
+?v0 <http://schema.org/about> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q44759> . ?v2 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33231> . ?v2 <http://www.wikidata.org/prop/direct/P19> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v3 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v3 <http://www.wikidata.org/prop/direct/P6> ?v0
+?v2 <http://www.wikidata.org/prop/direct/P106> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P21> ?v4 . ?v2 <http://www.wikidata.org/prop/direct/P27> ?v5 . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v2 <http://www.wikidata.org/prop/direct/P569> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P570> ?v3
+?v0 <http://schema.org/about> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P106> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v3
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v3 . ?v1 <http://www.wikidata.org/prop/direct/P131> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q213> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q811534> . ?v3 <http://www.wikidata.org/prop/direct/P131> ?v2
+?v3 <http://www.wikidata.org/prop/direct/P19> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P20> ?v4 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v3 <http://www.wikidata.org/prop/direct/P569> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P570> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P1001> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v3 <http://www.wikidata.org/prop/direct/P39> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P39> ?v4 . ?v4 <http://www.wikidata.org/prop/direct/P1001> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P19> ?v3 . ?v0 <http://www.wikidata.org/prop/direct/P21> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P27> ?v5 . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v4
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q14839548> . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q18333556> . ?v2 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v2 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v2 <http://www.wikidata.org/prop/direct/P166> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P27> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v2 <http://www.wikidata.org/prop/direct/P39> <http://www.wikidata.org/entity/Q30185> . ?v2 <http://www.wikidata.org/prop/direct/P6> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v0 <http://www.wikidata.org/prop/direct/P6> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P39> <http://www.wikidata.org/entity/Q30185> . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256>
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v0 <http://www.wikidata.org/prop/direct/P6> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P577> ?v4 . ?v2 <http://www.wikidata.org/prop/direct/P50> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P577> ?v3
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q30> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P735> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P735> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P625> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P18> ?v4 . ?v3 <http://www.wikidata.org/prop/direct/P19> <http://www.wikidata.org/entity/Q8692> . ?v3 <http://www.wikidata.org/prop/direct/P20> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P570> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q34542757> . ?v2 <http://www.wikidata.org/prop/direct/P27> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P1346> ?v4 . ?v3 <http://www.wikidata.org/prop/direct/P3450> ?v1 . ?v4 <http://www.wikidata.org/prop/direct/P17> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P625> ?v4 . ?v1 <http://www.wikidata.org/prop/direct/P106> ?v5 . ?v1 <http://www.wikidata.org/prop/direct/P20> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P27> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P570> ?v3
+?v0 <http://www.wikidata.org/prop/direct/P1476> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v4 . ?v0 <http://www.wikidata.org/prop/direct/P50> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P577> ?v3 . ?v4 <http://www.wikidata.org/prop/direct/P1709> <http://schema.org/ScholarlyArticle>
+?v0 <http://schema.org/about> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P361> <http://www.wikidata.org/entity/Q49> . ?v2 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v2 <http://www.wikidata.org/prop/direct/P3716> <http://www.wikidata.org/entity/Q12773225>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q8261> . ?v0 <http://www.wikidata.org/prop/direct/P50> ?v2 . ?v1 <http://schema.org/about> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q145> . ?v2 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q21>
+?v0 <http://www.wikidata.org/prop/direct/P2888> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P352> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P680> <http://www.wikidata.org/entity/Q13667380> . ?v0 <http://www.wikidata.org/prop/direct/P681> <http://www.wikidata.org/entity/Q39572> . ?v0 <http://www.wikidata.org/prop/direct/P703> <http://www.wikidata.org/entity/Q15978631>
+?v0 <http://www.wikidata.org/prop/direct/P1340> ?v3 . ?v0 <http://www.wikidata.org/prop/direct/P26> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v2 <http://www.wikidata.org/prop/direct/P1340> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v3 <http://www.wikidata.org/prop/direct/P19> ?v4 . ?v3 <http://www.wikidata.org/prop/direct/P20> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v3 <http://www.wikidata.org/prop/direct/P569> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P570> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P105> ?v3 . ?v0 <http://www.wikidata.org/prop/direct/P171> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> . ?v2 <http://www.wikidata.org/prop/direct/P105> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v2 <http://www.wikidata.org/prop/direct/P131> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P138> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q142> . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q79007>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v0 <http://www.wikidata.org/prop/direct/P19> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q213>
+?v0 <http://www.wikidata.org/prop/direct/P625> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P276> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q178561> . ?v3 <http://www.wikidata.org/prop/direct/P361> ?v4 . ?v3 <http://www.wikidata.org/prop/direct/P580> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P166> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v2 <http://www.wikidata.org/prop/direct/P166> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097>
+?v1 <http://www.wikidata.org/prop/direct/P106> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v2 <http://schema.org/about> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P40> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P21> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P40> ?v3
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q34> . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v3
+?v3 ?v2 ?v1 . ?v4 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> . ?v4 <http://www.wikidata.org/prop/direct/P577> ?v0 . ?v4 <http://www.wikidata.org/prop/direct/P921> ?v3
+?v1 <http://www.wikidata.org/prop/direct/P30> ?v2 . ?v4 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v4 <http://www.wikidata.org/prop/direct/P18> ?v0 . ?v4 <http://www.wikidata.org/prop/direct/P625> ?v3
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P138> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q79007> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+<http://www.wikidata.org/entity/Q17751444> ?v5 ?v3 . ?v3 ?v6 ?v2 . ?v4 ?v0 <http://www.wikidata.org/entity/Q571> . ?v4 ?v1 ?v2
+<http://www.wikidata.org/entity/Q1022860> ?v5 ?v1 . <http://www.wikidata.org/entity/Q9147> ?v2 ?v4 . ?v1 ?v6 ?v0 . ?v4 ?v3 ?v0
+<http://www.wikidata.org/entity/Q22950401> ?v6 ?v2 . ?v3 ?v1 ?v4 . ?v3 ?v5 <http://www.wikidata.org/entity/Q9147> . ?v4 ?v0 ?v2
+<http://www.wikidata.org/entity/Q1336200> ?v5 ?v6 . <http://www.wikidata.org/entity/Q22950401> ?v0 ?v3 . ?v1 ?v4 ?v3 . ?v6 ?v2 ?v1
+<http://www.wikidata.org/entity/Q26554613> ?v0 ?v3 . <http://www.wikidata.org/entity/Q515> ?v5 ?v6 . ?v1 ?v4 ?v3 . ?v6 ?v2 ?v1
+?v3 <http://www.wikidata.org/prop/direct/P106> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P18> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P27> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://schema.org/about> ?v4 . ?v2 <http://www.wikidata.org/prop/direct/P1653> ?v0 . ?v4 <http://www.wikidata.org/prop/direct/P131> ?v2 . ?v4 <http://www.wikidata.org/prop/direct/P625> ?v3
+?v3 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v3 <http://www.wikidata.org/prop/direct/P166> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P27> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P569> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v0 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256>
+?v3 <http://www.wikidata.org/prop/direct/P18> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P18> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P2021> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P485> <http://www.wikidata.org/entity/Q964035>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v0 <http://www.wikidata.org/prop/direct/P166> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3624078>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v0 <http://www.wikidata.org/prop/direct/P166> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256>
+?v1 <http://www.wikidata.org/prop/direct/P106> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P106> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v2
+?v0 <http://schema.org/about> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q36180> . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q183> . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v3
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q1028181> . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v0
+?v4 <http://www.wikidata.org/prop/direct/P298> ?v0 . ?v4 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v4 <http://www.wikidata.org/prop/direct/P36> ?v2 . ?v4 ?v1 ?v3
+?v2 <http://www.wikidata.org/prop/direct/P50> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P577> ?v4 . ?v3 <http://www.wikidata.org/prop/direct/P50> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P577> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q1028181> . ?v0 <http://www.wikidata.org/prop/direct/P22> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q1028181>
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v4 . ?v3 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v4 <http://www.wikidata.org/prop/direct/P31> ?v0
+<http://www.wikidata.org/entity/Q515> ?v5 ?v3 . ?v3 ?v6 ?v2 . ?v4 ?v0 <http://www.wikidata.org/entity/Q180855> . ?v4 ?v1 ?v2
+<http://www.wikidata.org/entity/Q515> ?v5 ?v1 . <http://www.wikidata.org/entity/Q7719981> ?v2 ?v4 . ?v1 ?v6 ?v0 . ?v4 ?v3 ?v0
+?v3 <http://www.wikidata.org/prop/direct/P19> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v3 <http://www.wikidata.org/prop/direct/P734> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P735> ?v0
+?v3 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v3 <http://www.wikidata.org/prop/direct/P734> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P735> ?v0
+?v3 <http://www.wikidata.org/prop/direct/P21> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v3 <http://www.wikidata.org/prop/direct/P734> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P735> ?v0
+?v3 <http://www.wikidata.org/prop/direct/P106> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v3 <http://www.wikidata.org/prop/direct/P734> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P735> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q5389> . ?v3 <http://www.wikidata.org/prop/direct/P1705> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P31> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P580> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q937857> . ?v0 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P1549> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q937857> . ?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v0 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P1549> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P69> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v2 <http://www.wikidata.org/prop/direct/P69> ?v1
+?v3 <http://www.wikidata.org/prop/direct/P1082> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v3 <http://www.wikidata.org/prop/direct/P625> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P2043> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4022> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3624078>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q19204627> . ?v0 <http://www.wikidata.org/prop/direct/P19> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q19204627> . ?v2 <http://www.wikidata.org/prop/direct/P19> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P19> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q30> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256>
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1549591> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6688521>
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1637706> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6688521>
+?v0 <http://www.wikidata.org/prop/direct/P1889> <http://www.wikidata.org/entity/Q217594> . ?v2 <http://www.wikidata.org/prop/direct/P279> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P910> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P345> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v2
+?v2 <http://schema.org/dateModified> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P345> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P577> ?v4
+?v1 <http://www.wikidata.org/prop/direct/P297> ?v2 . ?v4 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v4 <http://www.wikidata.org/prop/direct/P18> ?v0 . ?v4 <http://www.wikidata.org/prop/direct/P31> ?v3
+?v0 <http://www.wikidata.org/prop/direct/P19> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515>
+?v1 <http://www.wikidata.org/prop/direct/P136> <http://www.wikidata.org/entity/Q200092> . ?v1 <http://www.wikidata.org/prop/direct/P136> <http://www.wikidata.org/entity/Q2484376> . ?v1 <http://www.wikidata.org/prop/direct/P495> <http://www.wikidata.org/entity/Q30> . ?v1 <http://www.wikidata.org/prop/direct/P577> ?v0
+?v0 <http://schema.org/about> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82955> . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P19> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://schema.org/about> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q212>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q668> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1149652> . ?v1 <http://www.wikidata.org/prop/direct/P131> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q532>
+?v4 ?v1 ?v0 . ?v4 ?v3 <http://www.wikidata.org/entity/Q37621> . ?v5 ?v1 ?v0 . ?v5 ?v2 <http://www.wikidata.org/entity/Q37577>
+?v0 <http://www.wikidata.org/prop/direct/P50> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P21> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v3 <http://www.wikidata.org/prop/direct/P2860> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82955> . ?v0 <http://www.wikidata.org/prop/direct/P19> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P39> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q1711695>
+?v2 <http://www.wikidata.org/prop/direct/P21> ?v4 . ?v2 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P3430> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P969> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v0 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P37> <http://www.wikidata.org/entity/Q13955>
+?v0 <http://www.wikidata.org/prop/direct/P21> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v4 . ?v0 <http://www.wikidata.org/prop/direct/P570> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P40> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P170> <http://www.wikidata.org/entity/Q296> . ?v1 <http://www.wikidata.org/prop/direct/P18> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3305213> . ?v1 <http://www.wikidata.org/prop/direct/P571> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q8261> . ?v0 <http://www.wikidata.org/prop/direct/P50> ?v2 . ?v1 <http://schema.org/about> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q22>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q8261> . ?v0 <http://www.wikidata.org/prop/direct/P50> ?v2 . ?v1 <http://schema.org/about> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q21>
+?v1 <http://www.wikidata.org/prop/direct/P352> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P680> <http://www.wikidata.org/entity/Q13667380> . ?v1 <http://www.wikidata.org/prop/direct/P681> <http://www.wikidata.org/entity/Q39572> . ?v1 <http://www.wikidata.org/prop/direct/P703> <http://www.wikidata.org/entity/Q15978631>
+?v0 <http://www.wikidata.org/prop/direct/P18> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v2 <http://www.wikidata.org/prop/direct/P18> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://schema.org/about> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P1082> ?v3 . ?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q865> . ?v1 <http://www.wikidata.org/prop/direct/P625> ?v2
+?v3 <http://www.wikidata.org/prop/direct/P161> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P2047> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v3 <http://www.wikidata.org/prop/direct/P577> ?v0
+<http://www.wikidata.org/entity/Q937> <http://www.wikidata.org/prop/direct/P19> ?v0 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P166> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v2 <http://schema.org/about> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P131> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P138> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q148> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1248784>
+?v1 <http://www.wikidata.org/prop/direct/P106> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q34> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P106> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P21> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q29> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P1412> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v2 <http://schema.org/about> ?v1
+?v3 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q4964182> . ?v3 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P569> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P570> ?v2
+<http://www.wikidata.org/entity/Q27381> <http://www.wikidata.org/prop/direct/P527> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P27> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+<http://www.wikidata.org/entity/Q27381> <http://www.wikidata.org/prop/direct/P527> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q6625963> . ?v1 <http://www.wikidata.org/prop/direct/P27> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P19> <http://www.wikidata.org/entity/Q649> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 ?v2 ?v4 . ?v0 ?v3 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P105> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P171> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> . ?v2 <http://www.wikidata.org/prop/direct/P105> ?v3
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v0 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P361> <http://www.wikidata.org/entity/Q12585>
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P21> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q2066131>
+?v3 <http://www.wikidata.org/prop/direct/P21> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P21> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q884> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4358176> . ?v2 <http://www.wikidata.org/prop/direct/P131> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v1 <http://www.wikidata.org/prop/direct/P463> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P1082> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P17> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v1 <http://www.wikidata.org/prop/direct/P463> <http://www.wikidata.org/entity/Q827525>
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v1 <http://www.wikidata.org/prop/direct/P463> <http://www.wikidata.org/entity/Q233611>
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v1 <http://www.wikidata.org/prop/direct/P463> <http://www.wikidata.org/entity/Q1043527>
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v1 <http://www.wikidata.org/prop/direct/P463> <http://www.wikidata.org/entity/Q1480793>
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v1 <http://www.wikidata.org/prop/direct/P463> <http://www.wikidata.org/entity/Q826700>
+?v2 <http://www.wikidata.org/prop/direct/P2410> ?v4 . ?v2 <http://www.wikidata.org/prop/direct/P527> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P3937> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P527> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P685> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7187> . ?v1 <http://www.wikidata.org/prop/direct/P703> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://schema.org/about> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P136> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q571> . ?v0 <http://www.wikidata.org/prop/direct/P577> ?v2
+?v3 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P625> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q23442>
+?v1 <http://www.wikidata.org/prop/direct/P131> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q213> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q811534>
+?v1 <http://www.wikidata.org/prop/direct/P105> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P105> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P171> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P569> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P40> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P569> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P31> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P136> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P31> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P131> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> . ?v0 <http://www.wikidata.org/prop/direct/P577> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P921> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P138> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P297> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3918>
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://schema.org/about> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q10873124> . ?v0 <http://www.wikidata.org/prop/direct/P1087> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> . ?v0 <http://www.wikidata.org/prop/direct/P225> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P627> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> . ?v0 <http://www.wikidata.org/prop/direct/P225> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P627> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v0 <http://www.wikidata.org/prop/direct/P345> ?v2 . ?v1 <http://schema.org/about> ?v0
+<http://www.wikidata.org/entity/Q17751444> ?v3 ?v1 . ?v4 ?v0 <http://www.wikidata.org/entity/Q571> . ?v4 ?v2 ?v1
+<http://www.wikidata.org/entity/Q9147> ?v3 ?v1 . ?v4 ?v0 <http://www.wikidata.org/entity/Q571> . ?v4 ?v2 ?v1
+?v1 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q486972> . ?v3 ?v0 ?v2 . ?v3 ?v4 ?v1
+?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q142> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P735> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P735> ?v0
+?v0 <http://schema.org/about> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P170> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3305213>
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4167836> . ?v2 <http://schema.org/about> ?v1 . ?v2 <http://schema.org/name> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P1082> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q29> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515>
+?v1 <http://www.wikidata.org/prop/direct/P1082> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q29> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q2074737>
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P19> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P39> <http://www.wikidata.org/entity/Q3044918>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P734> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P735> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q2074737> . ?v2 <http://schema.org/about> ?v1 . ?v2 <http://schema.org/name> ?v0
+<http://www.wikidata.org/entity/Q53592> ?v0 ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q571> . ?v1 ?v0 ?v2
+?v0 <http://www.wikidata.org/prop/direct/P279> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P361> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P31> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P625> ?v3 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82955> . ?v0 <http://www.wikidata.org/prop/direct/P27> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P39> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q901> . ?v3 ?v0 ?v2 . ?v3 ?v4 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q142> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://schema.org/about> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q30> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q41298> . ?v1 <http://www.wikidata.org/prop/direct/P856> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82955> . ?v1 <http://www.wikidata.org/prop/direct/P21> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v2 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P6> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P570> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P106> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v2
+?v2 ?v3 ?v4 . ?v4 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v4 ?v1 ?v0
+?v3 <http://www.wikidata.org/prop/direct/P276> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P481> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P50> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v2 <http://www.wikidata.org/prop/direct/P2860> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P17> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P35> ?v3 . ?v1 <http://www.wikidata.org/prop/direct/P735> <http://www.wikidata.org/entity/Q463035> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v3 . ?v1 <http://www.wikidata.org/prop/direct/P735> <http://www.wikidata.org/entity/Q463035> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v1 <http://www.wikidata.org/prop/direct/P735> <http://www.wikidata.org/entity/Q463035> . ?v1 ?v2 ?v0
+?v3 <http://www.wikidata.org/prop/direct/P214> ?v4 . ?v3 <http://www.wikidata.org/prop/direct/P268> ?v2 . ?v3 ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P19> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P19> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P735> <http://www.wikidata.org/entity/Q603114>
+?v1 <http://www.wikidata.org/prop/direct/P106> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v3 <http://www.wikidata.org/prop/direct/P1082> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P17> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4167410> . ?v2 ?v4 ?v1 . ?v3 ?v0 ?v2
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P21> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q30> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://schema.org/about> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P735> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P30> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v1 <http://www.wikidata.org/prop/direct/P495> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P625> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P106> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P19> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P641> <http://www.wikidata.org/entity/Q2736> . ?v1 <http://schema.org/about> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P50> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v2 <http://www.wikidata.org/prop/direct/P2860> ?v0
+?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1248784> . ?v2 <http://www.wikidata.org/prop/direct/P625> ?v0 . ?v2 ?v1 <http://www.wikidata.org/entity/Q183>
+?v3 <http://www.wikidata.org/prop/direct/P2101> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P2102> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P462> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P18> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P37> <http://www.wikidata.org/entity/Q1860> . ?v1 <http://www.wikidata.org/prop/direct/P27> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q1028181> . ?v1 <http://www.wikidata.org/prop/direct/P19> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+<http://www.wikidata.org/entity/Q26554613> ?v3 ?v0 . <http://www.wikidata.org/entity/Q515> ?v2 ?v1 . ?v1 ?v4 ?v0
+?v3 <http://www.wikidata.org/prop/direct/P1433> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P433> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P478> ?v1
+<http://www.wikidata.org/entity/Q946034> ?v3 ?v1 . ?v4 ?v0 <http://www.wikidata.org/entity/Q30> . ?v4 ?v2 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P734> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P735> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P297> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515>
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P279> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P279> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P69> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P169> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q5389> . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P580> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q36180> . ?v1 <http://www.wikidata.org/prop/direct/P106> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P39> ?v2 . ?v1 ?v3 ?v0
+?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v2 . ?v4 ?v3 ?v0 . ?v4 ?v5 ?v1
+?v3 <http://www.wikidata.org/prop/direct/P1082> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P17> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P625> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v2 . ?v1 <http://schema.org/about> ?v0
+?v2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1248784> . ?v2 <http://www.wikidata.org/prop/direct/P625> ?v0 . ?v2 ?v1 <http://www.wikidata.org/entity/Q31>
+?v3 <http://www.wikidata.org/prop/direct/P18> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P31> ?v4 . ?v3 ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1476> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5633421> . ?v0 <http://www.wikidata.org/prop/direct/P4616> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q13365117> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P50> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P2860> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P577> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P136> ?v3 . ?v1 ?v0 ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q188451>
+?v1 <http://www.wikidata.org/prop/direct/P136> <http://www.wikidata.org/entity/Q1344> . ?v1 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v1 ?v3 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q2526255> . ?v1 <http://schema.org/about> ?v0 . ?v2 <http://www.wikidata.org/prop/direct/P57> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P19> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P20> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072>
+?v0 <http://www.wikidata.org/prop/direct/P237> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P2184> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P17> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P298> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v0 <http://www.wikidata.org/prop/direct/P36> ?v1
+?v3 <http://www.wikidata.org/prop/direct/P1433> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P304> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P478> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q335757> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v3 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P31> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q937857> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P18> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q2095> . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> . ?v0 <http://www.wikidata.org/prop/direct/P1843> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P627> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q20> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P195> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3305213>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v1 ?v2 ?v0
+?v1 <http://www.wikidata.org/prop/direct/P463> <http://www.wikidata.org/entity/Q270920> . ?v2 <http://www.wikidata.org/prop/direct/P170> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P276> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v1 <http://www.wikidata.org/prop/direct/P19> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q30> . ?v1 <http://www.wikidata.org/prop/direct/P19> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v1 <http://www.wikidata.org/prop/direct/P18> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P496> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q185441> . ?v1 <http://www.wikidata.org/prop/direct/P27> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v1 <http://www.wikidata.org/prop/direct/P495> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P19> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P69> <http://www.wikidata.org/entity/Q160302>
+?v1 <http://www.wikidata.org/prop/direct/P571> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P570> ?v2
+?v1 ?v2 ?v0 . ?v1 ?v4 ?v3 . ?v1 ?v6 ?v5
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v2 . ?v1 <http://schema.org/about> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P217> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3305213> . ?v0 <http://www.wikidata.org/prop/direct/P973> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P462> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P163> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256>
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P27> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q183> . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P30> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P17> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q36687> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1867183> . ?v1 <http://www.wikidata.org/prop/direct/P131> ?v0
+?v3 <http://www.wikidata.org/prop/direct/P131> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P131> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P131> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P570> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P138> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q34266> . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q177220> . ?v1 <http://www.wikidata.org/prop/direct/P136> <http://www.wikidata.org/entity/Q187760> . ?v1 <http://www.wikidata.org/prop/direct/P735> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P21> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82955> . ?v1 <http://www.wikidata.org/prop/direct/P106> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q30>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q183> . ?v0 <http://www.wikidata.org/prop/direct/P580> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P27> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3863> . ?v1 <http://www.wikidata.org/prop/direct/P61> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P297> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q486972>
+?v3 <http://www.wikidata.org/prop/direct/P106> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P19> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P569> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P18> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q408> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P570> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P496> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P50> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P577> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P2021> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P21> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P268> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P1476> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P50> ?v1
+?v0 <http://schema.org/about> ?v1 . ?v0 <http://schema.org/name> ?v2 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Article>
+?v0 <http://www.wikidata.org/prop/direct/P166> <http://www.wikidata.org/entity/Q15278116> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q45> . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v2 . ?v1 <http://schema.org/about> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q9899> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q15145593> . ?v1 <http://schema.org/about> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q145> . ?v1 <http://www.wikidata.org/prop/direct/P19> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P27> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://schema.org/dateModified> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v3 <http://www.wikidata.org/prop/direct/P105> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P171> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P225> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P625> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P195> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3305213>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82955> . ?v0 <http://www.wikidata.org/prop/direct/P39> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P735> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P1001> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P18> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q186516>
+?v3 <http://www.wikidata.org/prop/direct/P1435> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P3008> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P31> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P407> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7725634> . ?v1 <http://www.wikidata.org/prop/direct/P407> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://schema.org/about> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q57598> . ?v0 <http://www.wikidata.org/prop/direct/P837> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P18> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3305213> . ?v1 <http://www.wikidata.org/prop/direct/P793> <http://www.wikidata.org/entity/Q1756454>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q20> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://schema.org/about> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P106> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q29> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P106> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q183> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P106> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q142> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P625> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P19> ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P569> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P625> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P19> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P570> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82955> . ?v1 <http://www.wikidata.org/prop/direct/P19> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q57831> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v1 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q57831>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P105> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P171> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+?v1 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q2066131> . ?v2 <http://www.wikidata.org/prop/direct/P106> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P21> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P2124> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7278>
+?v3 <http://www.wikidata.org/prop/direct/P18> ?v2 . ?v3 <http://www.wikidata.org/prop/direct/P19> ?v0 . ?v3 <http://www.wikidata.org/prop/direct/P569> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P1559> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q184> . ?v1 <http://www.wikidata.org/prop/direct/P69> <http://www.wikidata.org/entity/Q2418908>
+?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q16> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P279> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q35120> . ?v2 <http://www.wikidata.org/prop/direct/P279> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P373> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13406463> . ?v1 <http://www.wikidata.org/prop/direct/P373> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P30> ?v2 . ?v1 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P641> ?v3 . ?v1 ?v0 <http://www.wikidata.org/entity/Q5> . ?v1 ?v2 ?v4
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v2 <http://www.wikidata.org/prop/direct/P138> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P625> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P18> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://schema.org/about> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P21> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P138> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P279> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q1823> . ?v1 <http://www.wikidata.org/prop/direct/P17> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P570> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P27> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P734> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P625> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P856> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P1476> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P345> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q36> . ?v1 <http://www.wikidata.org/prop/direct/P17> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P580> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P582> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P106> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P39> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P646> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P1181> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q21199>
+?v0 <http://www.wikidata.org/prop/direct/P18> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v1 <http://schema.org/dateModified> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4167836> . ?v1 ?v2 ?v0
+?v1 <http://www.wikidata.org/prop/direct/P1082> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q15978299>
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> . ?v1 <http://www.wikidata.org/prop/direct/P577> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P138> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3863>
+?v1 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q6023> . ?v1 <http://www.wikidata.org/prop/direct/P1435> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P40> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11344> . ?v1 <http://www.wikidata.org/prop/direct/P361> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P31> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3918>
+?v0 <http://www.wikidata.org/prop/direct/P279> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P351> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q571> . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v0
+?v1 <http://schema.org/about> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://schema.org/name> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P351> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P352> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P433> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P637> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P639> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P644> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P645> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P680> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P681> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P682> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P684> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P688> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P698> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P702> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P704> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P705> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P932> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P971> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P2860> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814>
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q9143> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P50> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P166> <http://www.wikidata.org/entity/Q38104> . ?v1 ?v2 ?v0
+?v0 ?v1 ?v2 . ?v2 ?v1 ?v0
+?v1 <http://www.wikidata.org/prop/direct/P1433> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814>
+?v1 <http://www.wikidata.org/prop/direct/P21> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P735> <http://www.wikidata.org/entity/Q21069180>
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4167836> . ?v1 <http://www.wikidata.org/prop/direct/P31> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5119> . ?v1 ?v2 ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q12136> . ?v1 <http://www.wikidata.org/prop/direct/P493> ?v0
+?v0 <http://schema.org/about> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P18> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q571> . ?v1 <http://www.wikidata.org/prop/direct/P577> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q33> . ?v1 <http://schema.org/about> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> . ?v1 <http://www.wikidata.org/prop/direct/P356> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q1009> . ?v1 <http://www.wikidata.org/prop/direct/P625> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P4124> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P131> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q39715>
+?v0 <http://www.wikidata.org/prop/direct/P161> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P495> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 ?v2 <http://www.wikidata.org/entity/Q2>
+?v0 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v2
+?v3 ?v0 ?v1 . ?v4 ?v0 ?v2
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v0
+?v1 <http://schema.org/dateModified> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4167836>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4167410> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P21> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v1 <http://www.wikidata.org/prop/direct/P106> ?v0
+?v0 <http://schema.org/about> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P150> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q39715> . ?v1 <http://www.wikidata.org/prop/direct/P373> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P361> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7889> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P166> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P27> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P2046> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82955> . ?v1 <http://www.wikidata.org/prop/direct/P27> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1433> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P2860> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1566> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P1566> ?v1
+?v1 ?v0 ?v2 . ?v1 ?v4 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P735> ?v0
+?v2 ?v0 ?v1 . ?v3 <http://www.wikidata.org/prop/direct/P361> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q12709> . ?v1 <http://www.wikidata.org/prop/direct/P131> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P641> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P641> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P569> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P570> ?v1
+?v1 ?v0 ?v3 . ?v2 ?v4 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2860> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P50> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> . ?v1 <http://www.wikidata.org/prop/direct/P921> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v2 <http://schema.org/about> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P1709> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1566> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v1 ?v2 ?v0
+?v1 <http://www.wikidata.org/prop/direct/P161> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424>
+?v0 <http://schema.org/name> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v1 <http://www.wikidata.org/prop/direct/P57> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P2860> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P281> ?v2
+?v0 <http://schema.org/about> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P3098> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P641> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P180> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P195> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P1423> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q19887878>
+?v2 <http://www.wikidata.org/prop/direct/P625> ?v1 . ?v3 ?v0 ?v2
+?v0 <http://www.wikidata.org/prop/direct/P2044> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q23442> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P400> <http://www.wikidata.org/entity/Q201652> . ?v1 <http://www.wikidata.org/prop/direct/P577> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P2410> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P2888> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P175> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P577> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P971> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P971> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q23436> . ?v1 <http://www.wikidata.org/prop/direct/P625> ?v0
+?v0 <http://schema.org/about> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P106> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> . ?v1 <http://www.wikidata.org/prop/direct/P171> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q55> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P597> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P175> <http://www.wikidata.org/entity/Q1143294> . ?v1 <http://www.wikidata.org/prop/direct/P31> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P155> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P3450> ?v1
+?v0 <http://schema.org/about> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P156> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P3450> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P791> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P961> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P1070> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P946> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1156> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P946> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1184> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P946> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1212> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P946> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P345> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P19> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P1412> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P2101> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P2102> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> . ?v1 ?v2 ?v0
+?v1 <http://www.wikidata.org/prop/direct/P144> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424>
+?v0 <http://www.wikidata.org/prop/direct/P214> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P244> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P1566> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P50> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P50> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P921> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P921> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P214> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P1476> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814>
+?v0 ?v1 <http://www.wikidata.org/entity/Q187432> . ?v0 ?v1 <http://www.wikidata.org/entity/Q899523>
+?v0 <http://www.wikidata.org/prop/direct/P159> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P2176> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q12136>
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P159> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P19> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P364> <http://www.wikidata.org/entity/Q1860>
+?v1 <http://www.wikidata.org/prop/direct/P1433> <http://www.wikidata.org/entity/Q180445> . ?v1 <http://www.wikidata.org/prop/direct/P31> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v2 <http://schema.org/dateModified> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P1308> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q48352>
+?v0 <http://www.wikidata.org/prop/direct/P734> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P735> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P1082> ?v1
+?v0 ?v2 "map"@en . ?v1 <http://schema.org/about> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v1 ?v2 ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q43229> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q786820> . ?v1 <http://www.wikidata.org/prop/direct/P127> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v1 <http://www.wikidata.org/prop/direct/P17> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v1 <http://www.wikidata.org/prop/direct/P364> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3914>
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P937> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1433> <http://www.wikidata.org/entity/Q180445> . ?v1 <http://www.wikidata.org/prop/direct/P2860> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q90> . ?v1 <http://www.wikidata.org/prop/direct/P625> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v1 <http://www.wikidata.org/prop/direct/P58> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v1 <http://www.wikidata.org/prop/direct/P495> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q183> . ?v1 <http://www.wikidata.org/prop/direct/P281> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P3896> ?v2
+?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v1 . ?v3 ?v0 ?v2
+?v0 <http://www.wikidata.org/prop/direct/P144> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P910> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P577> ?v1
+?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.wikidata.org/entity/Q146> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P2003> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P268> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P161> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P161> ?v2
+?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Article> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P21> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P735> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q35409> . ?v1 <http://www.wikidata.org/prop/direct/P171> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1476> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P161> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P22> <http://www.wikidata.org/entity/Q1339> . ?v1 <http://schema.org/about> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1080> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P21> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P734> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P734> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P19> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P19> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P69> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P69> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q1028181> . ?v1 <http://www.wikidata.org/prop/direct/P735> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v1 <http://www.wikidata.org/prop/direct/P735> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P2184> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P1435> <http://www.wikidata.org/entity/Q11691318> . ?v1 <http://www.wikidata.org/prop/direct/P625> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> . ?v1 <http://www.wikidata.org/prop/direct/P846> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P361> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P762> ?v2
+?v2 <http://www.wikidata.org/prop/direct/P910> ?v1 . ?v3 ?v0 ?v2
+?v0 <http://www.wikidata.org/prop/direct/P1448> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P297> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P1001> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q28147344>
+?v0 <http://www.wikidata.org/prop/direct/P18> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P214> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> . ?v1 <http://www.wikidata.org/prop/direct/P6> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P18> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P18> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P18> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v2
+?v0 ?v1 <http://www.wikidata.org/entity/Q201311> . ?v2 <http://schema.org/about> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> . ?v1 <http://www.wikidata.org/prop/direct/P31> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3305213> . ?v1 ?v2 ?v0
+<http://www.wikidata.org/entity/Q142> <http://www.wikidata.org/prop/direct/P35> ?v0 . ?v0 <http://www.wikidata.org/prop/direct/P463> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P225> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v0 <http://schema.org/about> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P906> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1843> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P225> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P19> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P2529> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424>
+?v1 <http://www.wikidata.org/prop/direct/P2605> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P238> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1248784>
+?v1 <http://www.wikidata.org/prop/direct/P166> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P1552> <http://www.wikidata.org/entity/Q3174312> . ?v1 <http://www.wikidata.org/prop/direct/P17> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P571> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q35657> . ?v1 <http://www.wikidata.org/prop/direct/P31> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q191> . ?v1 <http://www.wikidata.org/prop/direct/P403> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q191> . ?v1 <http://www.wikidata.org/prop/direct/P625> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P1448> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515>
+?v0 <http://www.wikidata.org/prop/direct/P356> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P698> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> . ?v1 <http://www.wikidata.org/prop/direct/P225> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P373> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P762> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P300> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P131> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P18> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P1082> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q183>
+?v0 <http://www.wikidata.org/prop/direct/P2860> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P577> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P577> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P698> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P50> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P570> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P279> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P106> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P570> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P646> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P2093> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q482994> . ?v1 <http://schema.org/about> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P407> <http://www.wikidata.org/entity/Q188> . ?v1 <http://www.wikidata.org/prop/direct/P856> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P195> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3305213>
+?v1 <http://www.wikidata.org/prop/direct/P304> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v1 <http://schema.org/about> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P18> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P2048> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P19> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P40> ?v1 . ?v1 <http://www.wikidata.org/prop/direct/P40> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P136> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q215380>
+?v0 <http://www.wikidata.org/prop/direct/P2093> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2048> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P18> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P18> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P356> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P1082> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P571> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P576> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q484170> . ?v1 <http://www.wikidata.org/prop/direct/P374> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1566> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16913666> . ?v1 <http://www.wikidata.org/prop/direct/P393> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P171> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P225> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q10742> . ?v1 <http://www.wikidata.org/prop/direct/P131> ?v0
+?v1 <http://schema.org/about> ?v0 . ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Article>
+?v1 <http://www.wikidata.org/prop/direct/P171> <http://www.wikidata.org/entity/Q140> . ?v1 <http://www.wikidata.org/prop/direct/P171> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P19> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82955> . ?v1 <http://www.wikidata.org/prop/direct/P39> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P625> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P1709> <http://schema.org/ScholarlyArticle> . ?v1 ?v2 ?v0
+?v1 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q783794>
+?v0 <http://www.wikidata.org/prop/direct/P50> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P496> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1433> ?v1 . ?v0 ?v2 <http://www.wikidata.org/entity/Q5>
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q937857> . ?v1 <http://www.wikidata.org/prop/direct/P413> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q12136> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1476> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P50> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P101> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P17> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1412> <http://www.wikidata.org/entity/Q1860> . ?v1 <http://schema.org/about> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1014> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P195> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v1 <http://schema.org/dateModified> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q201658>
+?v0 <http://www.wikidata.org/prop/direct/P227> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P685> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P276> <http://www.wikidata.org/entity/Q11892928> . ?v1 <http://www.wikidata.org/prop/direct/P625> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P180> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P18> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P18> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P373> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v1 <http://www.wikidata.org/prop/direct/P577> ?v0
+?v1 <http://schema.org/dateModified> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424>
+?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P27> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P57> ?v2 . ?v2 <http://schema.org/dateModified> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P136> ?v2 . ?v2 <http://schema.org/dateModified> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q8955> . ?v1 <http://www.wikidata.org/prop/direct/P509> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q12140> . ?v1 ?v2 ?v0
+?v1 <http://www.wikidata.org/prop/direct/P18> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4830453>
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P27> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q20> . ?v1 <http://www.wikidata.org/prop/direct/P1923> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1103> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P112> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q801>
+?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v1 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P17> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q160091>
+?v1 <http://www.wikidata.org/prop/direct/P225> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+?v1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q68947> . ?v1 <http://www.wikidata.org/prop/direct/P225> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P50> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P577> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1001> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P18> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P214> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P227> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P407> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P407> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P279> ?v1 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P136> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P31> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P106> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q183>
+?v1 <http://www.wikidata.org/prop/direct/P106> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q30>
+?v1 <http://www.wikidata.org/prop/direct/P19> <http://www.wikidata.org/entity/Q36> . ?v1 <http://www.wikidata.org/prop/direct/P20> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q2225692> . ?v1 <http://www.wikidata.org/prop/direct/P625> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P2132> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q43229> . ?v1 <http://www.wikidata.org/prop/direct/P31> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P2456> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P569> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515> . ?v1 <http://www.wikidata.org/prop/direct/P571> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P186> ?v1 . ?v2 <http://schema.org/about> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v0 ?v1 <http://www.wikidata.org/entity/Q653645>
+?v0 <http://www.wikidata.org/prop/direct/P1010> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P18> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P18> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P54> <http://www.wikidata.org/entity/Q191264>
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16917> . ?v1 <http://www.wikidata.org/prop/direct/P856> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P137> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P2860> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P577> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q36> . ?v1 <http://www.wikidata.org/prop/direct/P19> ?v0
+?v0 <http://schema.org/about> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P244> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P18> ?v2 . ?v1 ?v0 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q17> . ?v1 <http://www.wikidata.org/prop/direct/P625> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P279> ?v2 . ?v2 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v1 ?v0 <http://www.wikidata.org/entity/Q507154> . ?v1 ?v2 ?v3
+?v1 <http://www.wikidata.org/prop/direct/P225> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q23038290>
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q131669> . ?v1 <http://www.wikidata.org/prop/direct/P856> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P497> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P348> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P348> ?v2
+?v0 <http://www.wikidata.org/prop/direct/P356> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P577> ?v1
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> . ?v1 <http://www.wikidata.org/prop/direct/P54> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q164079> . ?v1 <http://www.wikidata.org/prop/direct/P31> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P18> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q146>
+?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q30> . ?v1 <http://www.wikidata.org/prop/direct/P31> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1001> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P17> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q34> . ?v1 <http://www.wikidata.org/prop/direct/P625> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P1559> ?v0 . ?v1 <http://www.wikidata.org/prop/direct/P69> <http://www.wikidata.org/entity/Q2418908>
+?v2 <http://www.wikidata.org/prop/direct/P138> ?v1 . ?v2 ?v0 ?v1
+?v1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v1 <http://www.wikidata.org/prop/direct/P569> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P27> ?v2 . ?v0 <http://www.wikidata.org/prop/direct/P735> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1476> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P932> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P195> <http://www.wikidata.org/entity/Q636400> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P698> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11173> . ?v1 ?v2 ?v0
+?v0 <http://www.wikidata.org/prop/direct/P27> ?v1 . ?v0 <http://www.wikidata.org/prop/direct/P735> ?v2
+?v1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q33> . ?v1 <http://www.wikidata.org/prop/direct/P735> ?v0
+?v1 <http://www.wikidata.org/prop/direct/P641> ?v2 . ?v1 ?v0 ?v3
+?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v1
+?v1 ?v0 ?v2
+?v0 <http://www.wikidata.org/prop/direct/P31> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P279> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P569> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P150> ?v1
+<http://www.wikidata.org/entity/Q165947> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2900> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1082> ?v1
+<http://www.wikidata.org/entity/Q10990> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P625> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2860> ?v1
+?v0 <http://schema.org/version> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P106> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P17> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2093> ?v1
+?v0 ?v1 "computing"@en
+?v0 <http://www.wikidata.org/prop/direct/P300> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2892> ?v1
+?v0 <http://schema.org/about> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P973> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P39> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1329> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P735> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P214> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P21> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P18> ?v1
+<http://www.wikidata.org/entity/Q18338317> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P243> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P227> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P131> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2803> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1435> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2002> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P4000> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2044> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1566> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P921> ?v1
+?v0 <http://schema.org/name> ?v1
+?v0 <http://schema.org/dateModified> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P69> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P50> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P225> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1083> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P351> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P570> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P20> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P166> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P585> ?v1
+<http://www.wikidata.org/entity/Q7259> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P641> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P101> ?v1
+?v0 ?v1 <http://www.wikidata.org/entity/Q142>
+?v0 <http://www.wikidata.org/prop/direct/P374> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P19> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P161> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P356> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P910> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P527> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P27> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P361> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1038> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1114> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P102> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P36> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P159> ?v1
+?v0 ?v1 <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P646> ?v1
+?v0 ?v1 <http://www.wikidata.org/entity/Q13219330>
+?v0 <http://www.wikidata.org/prop/direct/P650> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P136> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P830> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P268> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P373> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1448> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P213> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P175> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1279> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1628> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P197> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2949> ?v1
+?v0 ?v1 <http://www.wikidata.org/entity/Q4167410>
+?v0 <http://www.wikidata.org/prop/direct/P734> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P231> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P698> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P26> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P37> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P3192> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P3265> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P452> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P127> ?v1
+<http://www.wikidata.org/entity/Q11424> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2046> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P686> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P382> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P281> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P180> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P170> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P47> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P4159> ?v1
+<http://www.wikidata.org/entity/Q2975784> ?v0 ?v1
+<http://www.wikidata.org/entity/Q5798772> ?v0 ?v1
+<http://www.wikidata.org/entity/Q5394074> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P41> ?v1
+<http://www.wikidata.org/entity/Q215346> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P94> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P105> ?v1
+<http://www.wikidata.org/entity/Q16298565> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P109> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P345> ?v1
+<http://www.wikidata.org/entity/Q5040254> ?v0 ?v1
+<http://www.wikidata.org/entity/Q5893896> ?v0 ?v1
+<http://www.wikidata.org/entity/Q11859495> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P3151> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P577> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1793> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P3995> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1412> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P462> ?v1
+?v0 <http://www.w3.org/2002/07/owl#sameAs> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2603> ?v1
+<http://www.wikidata.org/entity/Q21> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1301> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P234> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1433> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P276> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P932> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P762> ?v1
+?v0 ?v1 <http://www.wikidata.org/entity/Q13442814>
+?v0 <http://www.wikidata.org/prop/direct/P1476> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P138> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P859> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P407> ?v1
+?v0 ?v1 <http://www.wikidata.org/entity/Q30>
+?v0 <http://www.wikidata.org/prop/direct/P2067> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P171> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1081> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P937> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P605> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2048> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P793> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P591> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P178> ?v1
+<http://www.wikidata.org/entity/Q146> ?v0 ?v1
+?v0 ?v1 <http://www.wikidata.org/entity/Q5812>
+?v0 <http://www.wikidata.org/prop/direct/P4614> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2633> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P576> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1457> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P846> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2047> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2327> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P297> ?v1
+?v0 ?v1 <http://www.wikidata.org/entity/Q170539>
+?v0 <http://www.wikidata.org/prop/direct/P782> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P244> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P301> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1196> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P3946> ?v1
+<http://www.wikidata.org/entity/Q10320255> ?v0 ?v1
+?v0 ?v1 <http://www.wikidata.org/entity/Q183>
+?v0 <http://www.wikidata.org/prop/direct/P495> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P424> ?v1
+?v0 ?v1 <http://www.wikidata.org/entity/Q33>
+?v0 <http://www.wikidata.org/prop/direct/P856> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P4511> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1766> ?v1
+<http://www.wikidata.org/entity/Q72> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P40> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1340> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P509> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P839> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2049> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P571> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1963> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P610> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1589> ?v1
+?v0 ?v1 <http://www.wikidata.org/entity/Q1726>
+?v0 <http://www.wikidata.org/prop/direct/P458> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P580> ?v1
+<http://www.wikidata.org/entity/Q1189327> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P352> ?v1
+<http://www.wikidata.org/entity/Q28665865> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1015> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P3765> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P481> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P703> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2043> ?v1
+?v0 ?v1 <http://www.wikidata.org/entity/Q523>
+?v0 <http://www.wikidata.org/prop/direct/P3096> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1741> ?v1
+<http://www.wikidata.org/entity/Q24204143> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2534> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1559> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P902> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1529> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P453> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1056> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2579> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P61> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P275> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1813> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2581> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2174> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P304> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P1216> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P155> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P156> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P421> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P433> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P442> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P637> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P688> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P702> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P4963> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P969> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P195> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P274> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P54> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P639> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P680> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P682> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P2393> ?v1
+<http://www.wikidata.org/entity/Q28865> ?v0 ?v1
+?v0 <http://www.wikidata.org/prop/direct/P3596> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P4276> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P478> ?v1
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q49757> . ?v0 <http://www.wikidata.org/prop/direct/P19> <http://www.wikidata.org/entity/Q1185> . ?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q668> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q937857> . ?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q30> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q36834> . ?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q486748> . ?v0 <http://www.wikidata.org/prop/direct/P22> <http://www.wikidata.org/entity/Q1339> . ?v0 <http://www.wikidata.org/prop/direct/P25> <http://www.wikidata.org/entity/Q57487>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q1622272> . ?v0 <http://www.wikidata.org/prop/direct/P108> <http://www.wikidata.org/entity/Q214341> . ?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82955> . ?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q222>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q937857> . ?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q948>
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q30> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q183> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q30> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q80056> . ?v0 <http://www.wikidata.org/prop/direct/P407> <http://www.wikidata.org/entity/Q1321> . ?v0 <http://www.wikidata.org/prop/direct/P50> <http://www.wikidata.org/entity/Q201315>
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q948> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q901> . ?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6591072> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q901> . ?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q31> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q571> . ?v0 <http://www.wikidata.org/prop/direct/P50> <http://www.wikidata.org/entity/Q968721>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q252> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q23442>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q213> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q811534>
+?v0 <http://www.wikidata.org/prop/direct/P22> <http://www.wikidata.org/entity/Q1339> . ?v0 <http://www.wikidata.org/prop/direct/P25> <http://www.wikidata.org/entity/Q57487>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q183> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7138926>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q16> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q30> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q9826>
+?v0 <http://www.wikidata.org/prop/direct/P166> <http://www.wikidata.org/entity/Q1761> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q276>
+?v0 <http://www.wikidata.org/prop/direct/P276> <http://www.wikidata.org/entity/Q1761> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q276>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q183> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v0 <http://www.wikidata.org/prop/direct/P69> <http://www.wikidata.org/entity/Q51985>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q142> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515>
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q29> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q486972>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q213> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q142> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q593644> . ?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q29> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.wikidata.org/prop/novalue/P40> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q38> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q190107>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q30> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q191> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13358519>
+?v0 <http://www.wikidata.org/prop/direct/P170> <http://www.wikidata.org/entity/Q41406> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3305213>
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q36180> . ?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5185279> . ?v0 <http://www.wikidata.org/prop/direct/P50> <http://www.wikidata.org/entity/Q3141116>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5185279> . ?v0 <http://www.wikidata.org/prop/direct/P50> <http://www.wikidata.org/entity/Q2312843>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q13141064> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q794> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q532>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q937857> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> . ?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q30>
+?v0 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q131419> . ?v0 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q722218>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q183> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3914>
+?v0 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q661700> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q820477>
+?v0 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q559931> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1516079>
+?v0 <http://www.wikidata.org/prop/direct/P136> <http://www.wikidata.org/entity/Q132311> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7725634>
+?v0 <http://www.wikidata.org/prop/direct/P175> <http://www.wikidata.org/entity/Q261> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q482994>
+?v0 <http://www.wikidata.org/prop/direct/P1080> <http://www.wikidata.org/entity/Q18043309> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q95074>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v0 <http://www.wikidata.org/prop/direct/P57> <http://www.wikidata.org/entity/Q8877>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q482994> . ?v0 <http://www.wikidata.org/prop/direct/P577> <http://www.wikidata.org/entity/Q25290>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q30> . ?v0 <http://www.wikidata.org/prop/direct/P39> <http://www.wikidata.org/entity/Q30461>
+<http://www.wikidata.org/entity/Q8337> <http://www.wikidata.org/prop/direct/P674> ?v0 . ?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q15145593> . ?v0 <http://www.wikidata.org/prop/direct/P361> <http://www.wikidata.org/entity/Q129612>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> . ?v0 <http://www.wikidata.org/prop/direct/P407> <http://www.wikidata.org/entity/Q1860>
+?v0 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> . ?v0 <http://www.wikidata.org/prop/direct/P69> <http://www.wikidata.org/entity/Q160302>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4830453> . ?v0 <http://www.wikidata.org/prop/direct/P452> <http://www.wikidata.org/entity/Q190117>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q414> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q8502>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q20> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q33506>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q17> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3917681>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q28> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q192611>
+?v0 <http://www.wikidata.org/prop/direct/P1435> <http://www.wikidata.org/entity/Q811165> . ?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q183>
+?v0 <http://www.wikidata.org/prop/direct/P69> <http://www.wikidata.org/entity/Q1329269> . ?v0 <http://www.wikidata.org/prop/direct/P69> <http://www.wikidata.org/entity/Q49117>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424> . ?v0 <http://www.wikidata.org/prop/direct/P495> <http://www.wikidata.org/entity/Q801>
+?v0 <http://www.wikidata.org/prop/direct/P276> <http://www.wikidata.org/entity/Q19675> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3305213>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q884> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q2537> . ?v0 <http://www.wikidata.org/prop/direct/P397> <http://www.wikidata.org/entity/Q193>
+?v0 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q956> . ?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3918>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q928830> . ?v0 <http://www.wikidata.org/prop/direct/P361> <http://www.wikidata.org/entity/Q462201>
+?v0 <http://www.wikidata.org/prop/direct/P397> <http://www.wikidata.org/entity/Q525> . ?v0 <http://www.wikidata.org/prop/direct/P398> <http://www.wikidata.org/entity/Q634>
+?v0 <http://www.wikidata.org/prop/direct/P2561> <http://www.wikidata.org/entity/Q2537> . ?v0 <http://www.wikidata.org/prop/direct/P397> <http://www.wikidata.org/entity/Q525>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q41176>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q1449>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q8225192>
+?v0 <http://www.wikidata.org/prop/direct/P462> <http://www.wikidata.org/entity/Q943>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q23442>
+<http://www.wikidata.org/entity/Q1339> <http://www.wikidata.org/prop/direct/P40> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q1186921>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q252>
+?v0 <http://www.wikidata.org/prop/direct/P734> <http://www.wikidata.org/entity/Q21504830>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4167836>
+?v0 <http://www.wikidata.org/prop/direct/P737> <http://www.wikidata.org/entity/Q15777>
+?v0 <http://www.wikidata.org/prop/direct/P123> <http://www.wikidata.org/entity/Q45>
+?v0 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q145>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q213>
+?v0 <http://www.wikidata.org/prop/direct/P86> <http://www.wikidata.org/entity/Q1178>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4830453>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q482994>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q28640>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11344>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q15303838>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q668>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q146>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q101352>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13100073>
+?v0 <http://www.wikidata.org/prop/direct/P69> <http://www.wikidata.org/entity/Q51985>
+?v0 <http://www.wikidata.org/prop/direct/P166> <http://www.wikidata.org/entity/Q823422>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q484170>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q144>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3918>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4022>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q9143>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q515>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11173>
+?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Article>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q38>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7397>
+<http://www.wikidata.org/entity/Q21477581> <http://www.w3.org/2002/07/owl#sameAs> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3863>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5119>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11424>
+<http://www.wikidata.org/entity/Q11701> <http://www.wikidata.org/prop/direct/P527> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q9135>
+?v0 <http://www.wikidata.org/prop/direct/P509> <http://www.wikidata.org/entity/Q3235597>
+?v0 <http://www.wikidata.org/prop/direct/P136> <http://www.wikidata.org/entity/Q24862>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q55488>
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q486972>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11266439>
+<http://www.wikidata.org/entity/Q7259> <http://www.wikidata.org/prop/direct/P106> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P495> <http://www.wikidata.org/entity/Q267877>
+?v0 <http://www.wikidata.org/prop/direct/P69> <http://www.wikidata.org/entity/Q160302>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q8502>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q215380>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q142>
+?v0 <http://www.wikidata.org/prop/direct/P69> <http://www.wikidata.org/entity/Q32751>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1194951>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q408>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q836>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q937857>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q12308941>
+?v0 <http://schema.org/about> <http://www.wikidata.org/entity/Q52>
+<http://www.wikidata.org/entity/Q42> <http://www.wikidata.org/prop/direct/P31> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432>
+?v0 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q7725634>
+?v0 <http://www.wikidata.org/prop/direct/P364> <http://www.wikidata.org/entity/Q8752>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q30>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q142>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q148>
+?v0 <http://www.wikidata.org/prop/direct/P57> <http://www.wikidata.org/entity/Q191755>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q133311>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82955>
+?v0 <http://www.wikidata.org/prop/direct/P360> <http://www.wikidata.org/entity/Q5>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q30>
+?v0 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q413>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5710433>
+?v0 <http://www.wikidata.org/prop/direct/P1433> <http://www.wikidata.org/entity/Q30689463>
+?v0 <http://www.wikidata.org/prop/direct/P170> <http://www.wikidata.org/entity/Q5582>
+?v0 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q23436>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3305213>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q39614>
+<http://www.wikidata.org/entity/Q488383> <http://www.wikidata.org/prop/direct/P279> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P50> <http://www.wikidata.org/entity/Q7724>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q2665494>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q1456856>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q19124320>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q2864880>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4167410>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q22249448>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q19038775>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q1754235>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q338034>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q3226677>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q384076>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11812346>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q7719234>
+?v0 <http://www.wikidata.org/prop/direct/P138> <http://www.wikidata.org/entity/Q676555>
+<http://www.wikidata.org/entity/Q170277> <http://www.wikidata.org/prop/direct/P2048> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q22276038>
+<http://www.wikidata.org/entity/Q1400> <http://www.wikidata.org/prop/direct/P150> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q32859630>
+?v0 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q15324>
+?v0 <http://www.wikidata.org/prop/direct/P735> <http://www.wikidata.org/entity/Q4925477>
+?v0 <http://www.wikidata.org/prop/direct/P170> <http://www.wikidata.org/entity/Q21727807>
+?v0 <http://www.wikidata.org/prop/direct/P170> <http://www.wikidata.org/entity/Q5598>
+?v0 <http://www.wikidata.org/prop/direct/P170> <http://www.wikidata.org/entity/Q5599>
+?v0 <http://www.wikidata.org/prop/direct/P171> <http://www.wikidata.org/entity/Q7019837>
+<http://www.wikidata.org/entity/Q243> <http://www.wikidata.org/prop/direct/P2048> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P180> <http://www.wikidata.org/entity/Q34038>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q4943370>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q4659763>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q7209019>
+?v0 <http://www.wikidata.org/prop/direct/P22> <http://www.wikidata.org/entity/Q1339>
+?v0 <http://www.wikidata.org/prop/direct/P735> <http://www.wikidata.org/entity/Q1089094>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q308891>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7187>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q958314>
+<http://www.wikidata.org/entity/Q11862397> <http://www.wikidata.org/prop/direct/P106> ?v0
+<http://www.wikidata.org/entity/Q3138626> <http://www.wikidata.org/prop/direct/P106> ?v0
+<http://www.wikidata.org/entity/Q7446404> <http://www.wikidata.org/prop/direct/P106> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1549591>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q47064>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7378>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1032372>
+?v0 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q36180>
+?v0 <http://www.wikidata.org/prop/direct/P921> <http://www.wikidata.org/entity/Q2013>
+<http://www.wikidata.org/entity/Q896916> <http://www.wikidata.org/prop/direct/P31> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16970>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+?v0 <http://www.wikidata.org/prop/direct/P186> <http://www.wikidata.org/entity/Q287>
+?v0 <http://www.wikidata.org/prop/direct/P641> <http://www.wikidata.org/entity/Q7291>
+?v0 <http://www.wikidata.org/prop/direct/P3512> <http://www.wikidata.org/entity/Q372949>
+<http://www.wikidata.org/entity/Q6009733> <http://www.wikidata.org/prop/direct/P106> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q21562164>
+?v0 <http://www.wikidata.org/prop/direct/P407> <http://www.wikidata.org/entity/Q188>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q209824>
+?v0 <http://www.wikidata.org/prop/direct/P360> <http://www.wikidata.org/entity/Q6256>
+?v0 <http://www.wikidata.org/prop/direct/P178> <http://www.wikidata.org/entity/Q95>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11538>
+?v0 <http://www.wikidata.org/prop/direct/P366> <http://www.wikidata.org/entity/Q33506>
+?v0 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q515>
+?v0 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q83620>
+?v0 <http://www.wikidata.org/prop/direct/P551> <http://www.wikidata.org/entity/Q183>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1107>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q747074>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q11446>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q166502>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q593644>
+?v0 <http://www.wikidata.org/prop/direct/P4614> <http://www.wikidata.org/entity/Q46129179>
+?v0 <http://www.wikidata.org/prop/direct/P276> <http://www.wikidata.org/entity/Q46967564>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q831663>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q743488>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q201658>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q16>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7366>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3257686>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q40614>
+<http://www.wikidata.org/entity/Q3132941> <http://www.wikidata.org/prop/direct/P106> ?v0
+<http://www.wikidata.org/entity/Q2966137> <http://www.wikidata.org/prop/direct/P106> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P69> <http://www.wikidata.org/entity/Q16032>
+?v0 <http://www.wikidata.org/prop/direct/P463> <http://www.wikidata.org/entity/Q1065>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q191>
+?v0 <http://www.wikidata.org/prop/direct/P553> <http://www.wikidata.org/entity/Q40629>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q183>
+?v0 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q1017>
+<http://www.wikidata.org/entity/Q7351> <http://www.wikidata.org/prop/direct/P106> ?v0
+<http://www.wikidata.org/entity/Q27119725> <http://www.wikidata.org/prop/direct/P1709> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1420>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q33>
+?v0 <http://www.wikidata.org/prop/direct/P19> <http://www.wikidata.org/entity/Q1297>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q82042>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q20667187>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q226730>
+?v0 <http://www.wikidata.org/prop/direct/P641> <http://www.wikidata.org/entity/Q847>
+<http://www.wikidata.org/entity/Q463644> <http://www.wikidata.org/prop/direct/P27> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q22808403>
+<http://www.wikidata.org/entity/Q131324> <http://www.wikidata.org/prop/direct/P106> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q534932>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q839546>
+<http://www.wikidata.org/entity/Q142> <http://www.wikidata.org/prop/direct/P35> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1080> <http://www.wikidata.org/entity/Q20203549>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q786820>
+<http://www.wikidata.org/entity/Q2539> <http://www.wikidata.org/prop/direct/P279> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q482994>
+?v0 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q3183>
+?v0 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q16287>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q43501>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q184>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q8072>
+<http://www.wikidata.org/entity/Q125928> <http://www.wikidata.org/prop/direct/P1343> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q82594>
+?v0 <http://www.wikidata.org/prop/direct/P361> <http://www.wikidata.org/entity/Q69641>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q729>
+?v0 <http://www.wikidata.org/prop/direct/P921> <http://www.wikidata.org/entity/Q2763>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q31>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3231690>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q702842>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7075>
+?v0 <http://www.wikidata.org/prop/direct/P1709> <http://schema.org/ScholarlyArticle>
+?v0 <http://www.wikidata.org/prop/direct/P50> <http://www.wikidata.org/entity/Q31737>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q484215>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q23310071>
+?v0 <http://www.wikidata.org/prop/direct/P407> <http://www.wikidata.org/entity/Q7913>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7889>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q182436>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q2934>
+<http://www.wikidata.org/entity/Q7153495> <http://www.wikidata.org/prop/direct/P106> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3624078>
+?v0 <http://www.wikidata.org/prop/direct/P674> <http://www.wikidata.org/entity/Q3244512>
+<http://www.wikidata.org/entity/Q2379472> <http://www.wikidata.org/prop/direct/P106> ?v0
+<http://www.wikidata.org/entity/Q525485> <http://www.wikidata.org/prop/direct/P106> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1435> <http://www.wikidata.org/entity/Q811165>
+?v0 <http://www.wikidata.org/prop/direct/P2650> <http://www.wikidata.org/entity/Q1916831>
+?v0 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q21198>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q41>
+?v0 <http://www.wikidata.org/prop/direct/P921> <http://www.wikidata.org/entity/Q1041>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q836688>
+?v0 <http://www.wikidata.org/prop/direct/P50> <http://www.wikidata.org/entity/Q35610>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q1028181>
+?v0 <http://www.wikidata.org/prop/direct/P407> <http://www.wikidata.org/entity/Q9063>
+?v0 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q801>
+?v0 <http://www.wikidata.org/prop/direct/P1080> <http://www.wikidata.org/entity/Q620588>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q4>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q24017414>
+?v0 <http://www.wikidata.org/prop/direct/P50> <http://www.wikidata.org/entity/Q14468873>
+?v0 <http://www.wikidata.org/prop/direct/P161> <http://www.wikidata.org/entity/Q14468873>
+?v0 <http://www.wikidata.org/prop/direct/P921> <http://www.wikidata.org/entity/Q1037>
+<http://www.wikidata.org/entity/Q762> <http://www.wikidata.org/prop/direct/P800> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P1066> <http://www.wikidata.org/entity/Q762>
+?v0 <http://www.wikidata.org/prop/direct/P195> <http://www.wikidata.org/entity/Q3044768>
+?v0 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q2160801>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q2225692>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q17318027>
+?v0 <http://www.wikidata.org/prop/direct/P971> <http://www.wikidata.org/entity/Q167170>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q17>
+?v0 <http://www.wikidata.org/prop/direct/P166> <http://www.wikidata.org/entity/Q18844377>
+?v0 <http://www.wikidata.org/prop/direct/P54> <http://www.wikidata.org/entity/Q191264>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q145>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q16>
+?v0 <http://www.wikidata.org/prop/direct/P629> <http://www.wikidata.org/entity/Q3224693>
+?v0 <http://www.wikidata.org/prop/direct/P921> <http://www.wikidata.org/entity/Q182154>
+<http://www.wikidata.org/entity/Q10860948> <http://www.wikidata.org/prop/direct/P106> ?v0
+<http://www.wikidata.org/entity/Q441270> <http://www.wikidata.org/prop/direct/P106> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P19> <http://www.wikidata.org/entity/Q36>
+<http://www.wikidata.org/entity/Q6287639> <http://www.wikidata.org/prop/direct/P106> ?v0
+<http://www.wikidata.org/entity/Q90642> <http://www.wikidata.org/prop/direct/P106> ?v0
+<http://www.wikidata.org/entity/Q7377677> <http://www.wikidata.org/prop/direct/P106> ?v0
+<http://www.wikidata.org/entity/Q3501742> <http://www.wikidata.org/prop/direct/P106> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P921> <http://www.wikidata.org/entity/Q309>
+<http://www.wikidata.org/entity/Q42804> <http://www.wikidata.org/prop/direct/P279> ?v0
+<http://www.wikidata.org/entity/Q42804> <http://www.wikidata.org/prop/direct/P186> ?v0
+<http://www.wikidata.org/entity/Q4876640> <http://www.wikidata.org/prop/direct/P186> ?v0
+<http://www.wikidata.org/entity/Q4876636> <http://www.wikidata.org/prop/direct/P279> ?v0
+<http://www.wikidata.org/entity/Q16479662> <http://www.wikidata.org/prop/direct/P186> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q42722842>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q42722842>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q95074>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q19595382>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q349>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q928830>
+?v0 <http://www.wikidata.org/prop/direct/P407> <http://www.wikidata.org/entity/Q397>
+?v0 <http://www.wikidata.org/prop/direct/P921> <http://www.wikidata.org/entity/Q7283>
+?v0 <http://www.wikidata.org/prop/direct/P840> <http://www.wikidata.org/entity/Q43>
+<http://www.wikidata.org/entity/Q3304492> <http://www.wikidata.org/prop/direct/P26> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P364> <http://www.wikidata.org/entity/Q9168>
+?v0 <http://www.wikidata.org/prop/direct/P361> <http://www.wikidata.org/entity/Q27966197>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q101072>
+?v0 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q11631>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1362483>
+?v0 <http://www.wikidata.org/prop/direct/P361> <http://www.wikidata.org/entity/Q1>
+?v0 <http://www.wikidata.org/prop/direct/P136> <http://www.wikidata.org/entity/Q38848>
+?v0 <http://www.wikidata.org/prop/direct/P1080> <http://www.wikidata.org/entity/Q81738>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q1248784>
+?v0 <http://www.wikidata.org/prop/direct/P921> <http://www.wikidata.org/entity/Q4925193>
+?v0 <http://www.wikidata.org/prop/direct/P921> <http://www.wikidata.org/entity/Q146>
+?v0 <http://www.wikidata.org/prop/direct/P171> <http://www.wikidata.org/entity/Q160830>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q33506>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q7935>
+?v0 <http://www.wikidata.org/prop/direct/P971> <http://www.wikidata.org/entity/Q34316>
+?v0 <http://www.wikidata.org/prop/direct/P176> <http://www.wikidata.org/entity/Q312>
+?v0 <http://www.wikidata.org/prop/direct/P19> <http://www.wikidata.org/entity/Q1741>
+?v0 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q34>
+<http://www.wikidata.org/entity/Q76> ?v0 <http://www.wikidata.org/entity/Q30>
+<http://www.wikidata.org/entity/Q9049> ?v0 <http://www.wikidata.org/entity/Q30>
+?v0 <http://www.wikidata.org/prop/direct/P279> <http://www.wikidata.org/entity/Q864693>
+<http://www.wikidata.org/entity/Q84> <http://www.wikidata.org/prop/direct/P17> ?v0
+?v0 <http://www.wikidata.org/prop/direct/P921> <http://www.wikidata.org/entity/Q7226>
+?v0 <http://www.wikidata.org/prop/direct/P171> <http://www.wikidata.org/entity/Q147877>
+?v0 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q18656>

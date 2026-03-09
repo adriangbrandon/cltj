@@ -27,11 +27,22 @@ namespace cltj {
             return true;
         }
 
-        static void sym_level(const vector<spo_triple> &D, const spo_order_type &order, uint64_t level,
+        static void sym_root(const vector<spo_triple> &D, const spo_order_type &order, std::vector<uint32_t> &syms){
+            spo_triple prev, curr;
+            for(uint64_t i = 1; i < D.size(); ++i){
+                prev = D[i-1]; curr = D[i];
+                if(!helper::equal(prev, curr, order, 0)){
+                    syms.emplace_back(prev[order[0]]);
+                }
+            }
+            syms.emplace_back(curr[order[0]]);
+        }
+
+        static void sym_level(const vector<spo_triple> &D, const spo_order_type &order, uint64_t beg_level, uint64_t end_level,
                       std::vector<uint32_t> &syms, std::vector<uint64_t> &lengths){
             spo_triple prev, curr;
             uint64_t children;
-            for(uint32_t l = level; l < 3; ++l){
+            for(uint32_t l = beg_level; l < end_level; ++l){
                 children = 1;
                 for(uint64_t i = 1; i < D.size(); ++i){
                     prev = D[i-1]; curr = D[i];
@@ -50,12 +61,12 @@ namespace cltj {
             }
         }
 
-        static void sym_level(vector<spo_triple>::iterator beg, vector<spo_triple>::iterator end, const spo_order_type &order, uint64_t level,
+        static void sym_level(vector<spo_triple>::iterator beg, vector<spo_triple>::iterator end, const spo_order_type &order, uint64_t level, uint64_t end_level,
                       std::vector<uint32_t> &syms, std::vector<uint64_t> &lengths){
             vector<spo_triple>::iterator prev, curr;
             uint64_t children;
 
-            for(uint32_t l = level; l < 3; ++l){
+            for(uint32_t l = level; l < end_level; ++l){
                 children = 1;
                 prev = beg; curr = beg+1;
                 while(curr != end) {

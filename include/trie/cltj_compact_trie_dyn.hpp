@@ -40,7 +40,7 @@ namespace cltj {
             m_seq = dyn_cds::dyn_louds(width);
         }
 
-        compact_trie_dyn(const spo_triple &triple, const spo_order_type &order,
+        /*compact_trie_dyn(const spo_triple &triple, const spo_order_type &order,
                          const bool skip_level, const uint width = default_width) {
             sdsl::int_vector<> s(3+!skip_level);
             uint64_t l = 0;
@@ -50,6 +50,19 @@ namespace cltj {
             }
             s[l] = 0; //mock
             auto bv = sdsl::bit_vector(3+!skip_level, 1);
+            m_seq = dyn_cds::dyn_louds(bv.data(), s.data(), bv.size(), width);
+        }*/
+
+        compact_trie_dyn(const spo_triple &triple, const spo_order_type &order,
+                         const size_type beg_level, const size_type end_level, const uint width = default_width) {
+            sdsl::int_vector<> s(end_level - beg_level + 1);
+            uint64_t l = beg_level;
+            while( l < end_level) {
+                s[l-beg_level] = triple[order[l]];
+                ++l;
+            }
+            s[s.size()-1] = 0; //mock
+            auto bv = sdsl::bit_vector(end_level - beg_level + 1, 1);
             m_seq = dyn_cds::dyn_louds(bv.data(), s.data(), bv.size(), width);
         }
 

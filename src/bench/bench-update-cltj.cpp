@@ -25,7 +25,7 @@ template<class index_scheme_type, class trait_type>
 void query_upq(const std::string &index, const std::vector<query_type> &queries, const std::vector<update_type> &updates,
            const uint64_t limit, const uint64_t upq) { //upq = updates per query
 
-    typedef ltj::ltj_iterator_lite<index_scheme_type, uint8_t, uint64_t> iterator_type;
+    typedef ltj::ltj_iterator_dyn<index_scheme_type, uint8_t, uint64_t> iterator_type;
 #if ADAPTIVE
     typedef ltj::ltj_algorithm<iterator_type,
         ltj::veo::veo_adaptive<iterator_type, trait_type> > algorithm_type;
@@ -83,7 +83,7 @@ template<class index_scheme_type, class trait_type>
 void query_qpu(const std::string &index, const std::vector<query_type> &queries, const std::vector<update_type> &updates,
            const uint64_t limit, const uint64_t qpu) { //qpu = queries per update
 
-    typedef ltj::ltj_iterator_lite<index_scheme_type, uint8_t, uint64_t> iterator_type;
+    typedef ltj::ltj_iterator_dyn<index_scheme_type, uint8_t, uint64_t> iterator_type;
 #if ADAPTIVE
     typedef ltj::ltj_algorithm<iterator_type,
         ltj::veo::veo_adaptive<iterator_type, trait_type> > algorithm_type;

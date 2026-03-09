@@ -289,14 +289,14 @@ namespace ltj {
             if(m_nfixed == 1){
                 const auto* trie = m_ptr_index->get_trie(m_trie_i);
                 auto pos = m_status[m_nfixed].beg;
-                m_status[m_nfixed].it[0] =  trie->nodeselect(pos, 1); //root -> gap = 1
+                m_status[m_nfixed].it[0] =  trie->nodeselect(pos, 0); //no root -> gap = 0
                 trie = m_ptr_index->get_trie(m_trie_i+1);
                 m_status[m_nfixed].it[1] = trie->nodeselect(pos, 0); //no root -> gap = 0
             }else if (m_nfixed == 2){
                 const auto* trie = m_ptr_index->get_trie(m_trie_i);
                 auto pos = m_status[m_nfixed].beg;
-                //root -> gap = 1; level -> gap = nodes in first level
-                m_status[m_nfixed].it[m_status_i] = trie->nodeselect(pos, m_status_i ? m_ptr_index->gaps[m_trie_i/2] : 1);
+                //root -> gap = 1; no root -> gap = nodes in first level
+                m_status[m_nfixed].it[m_status_i] = trie->nodeselect(pos, m_ptr_index->gaps[m_trie_i/2]);
             }
             //print_status();
             //m_redo[m_nfixed] = true;
@@ -328,20 +328,43 @@ namespace ltj {
 
         bool exists(state_type state, size_type c) { //Return the minimum in the range
 
+            size_type beg, end, cnt;
             choose_trie(state);
-            const auto* trie = m_ptr_index->get_trie(m_trie_i);
+            if (m_nfixed == 0) { //we don't use tries, just the bitvectors
+                switch (state){
+                    case s:
+                        if (c > m_ptr_index->max_subject()) return false;
+                        if (m_ptr_index->next_subject(c) != c) return false;
+                        m_status[m_nfixed+1].beg = m_ptr_index->pos_subject(c);
+                        m_redo[m_nfixed] = false;
+                        break;
+                    case p:
+                        if (c > m_ptr_index->max_predicate()) return false;
+                        m_status[m_nfixed+1].beg = c-1;
+                        m_redo[m_nfixed] = false;
+                        break;
+                    case o:
+                        if (c > m_ptr_index->max_object()) return false;
+                        if (m_ptr_index->next_object(c) != c) return false;
+                        m_status[m_nfixed+1].beg = m_ptr_index->pos_object(c);
+                        m_redo[m_nfixed] = false;
+                        break;
+                }
 
-            size_type beg, end;
-            auto cnt = trie->children(parent());
-            //auto child = trie->child(parent(), 1)
-            beg = trie->first_child(parent());
-            end = beg + cnt -1;
-            auto p = trie->binary_search_seek(c, beg, end);
-            if(p.second > end or p.first != c) return false;
-            m_status[m_nfixed+1].beg = p.second;
-            m_status[m_nfixed+1].end = end;
-            m_status[m_nfixed+1].cnt = cnt;
-            m_redo[m_nfixed] = false;
+            }else {
+                const auto* trie = m_ptr_index->get_trie(m_trie_i);
+                cnt = trie->children(parent());
+                //auto child = trie->child(parent(), 1)
+                beg = trie->first_child(parent());
+                end = beg + cnt -1;
+                auto p = trie->binary_search_seek(c, beg, end);
+                if (p.second > end or p.first != c) return false;
+                m_status[m_nfixed+1].beg = p.second;
+                m_status[m_nfixed+1].end = end;
+                m_status[m_nfixed+1].cnt = cnt;
+                m_redo[m_nfixed] = false;
+            }
+
             //print_status();
             return true;
         }
@@ -357,6 +380,46 @@ namespace ltj {
                 state = p;
             }
             choose_trie(state);
+
+            if (m_nfixed == 0) {
+                value_type value;
+                switch (state){
+                    case s:
+                        if(c == -1ULL){
+                            value = m_ptr_index->next_subject(1);
+                            m_status[m_nfixed+1].beg = 0;
+                        }else{
+                            if (c > m_ptr_index->max_subject()) return 0;
+                            value = m_ptr_index->next_subject(c);
+                            if (value > m_ptr_index->max_subject()) return 0;
+                            m_status[m_nfixed+1].beg = m_ptr_index->pos_subject(value);
+                        }
+                        break;
+                    case p:
+                        if(c == -1ULL){
+                            value = 1;
+                            m_status[m_nfixed+1].beg = 0;
+                        }else{
+                            if (c > m_ptr_index->max_predicate()) return 0;
+                            value = c;
+                            m_status[m_nfixed+1].beg = c-1;
+                        }
+                        break;
+                    case o:
+                        if(c == -1ULL){
+                            value = m_ptr_index->next_object(1);
+                            m_status[m_nfixed+1].beg = 0;
+                        }else{
+                            if (c > m_ptr_index->max_object()) return 0;
+                            value = m_ptr_index->next_object(c);
+                            if (value > m_ptr_index->max_object()) return 0;
+                            m_status[m_nfixed+1].beg = m_ptr_index->pos_object(value);
+                        }
+                        break;
+                }
+                //print_status();
+                return value;
+            }
             const auto* trie = m_ptr_index->get_trie(m_trie_i);
             size_type beg, end, it;
             //std::cout << "Leap redo n_fixed:" << m_nfixed << std::endl;
@@ -397,9 +460,8 @@ namespace ltj {
 
         inline size_type children(state_type state) const{
             size_type t_i, s_i=0;
-            if(m_nfixed == 0) {
-                t_i = 2*state;
-            }else if (m_nfixed == 1){
+            if(m_nfixed == 0) return m_ptr_index->gaps[state];
+            if (m_nfixed == 1){
                 if (state == s) { //Fix variables
                     t_i = (m_fixed[m_nfixed-1] == o) ? 4 : 3 ;
                     s_i = (m_fixed[m_nfixed-1] == o) ? 0 : 1;
@@ -451,10 +513,10 @@ namespace ltj {
             //Count children
             auto cnt = trie->children(it);
             //Leftmost
-            auto first = trie->child(it, 1);
+            auto first = trie->child(it, 1, 0); //no root -> gap = 0
             leftmost_leaf = trie->first_child(first);
             //Rightmost
-            it = trie->child(it, cnt);
+            it = trie->child(it, cnt, m_ptr_index->gaps[m_trie_i/2]);
             cnt = trie->children(it);
             rightmost_leaf = trie->first_child(it) + cnt - 1;
             return rightmost_leaf - leftmost_leaf + 1;

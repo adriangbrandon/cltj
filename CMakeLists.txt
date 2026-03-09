@@ -89,6 +89,7 @@ target_compile_definitions(bench-query-cltj-global PUBLIC ADAPTIVE=0)
 target_link_libraries(bench-query-cltj-global sdsl divsufsort divsufsort64)
 set_target_properties(bench-query-cltj-global PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
 
+
 add_executable(bench-query-uncltj src/bench/bench-query-uncltj.cpp)
 target_compile_definitions(bench-query-uncltj PUBLIC ADAPTIVE=1)
 target_link_libraries(bench-query-uncltj sdsl divsufsort divsufsort64)
@@ -108,6 +109,8 @@ add_executable(bench-query-xcltj-global src/bench/bench-query-xcltj.cpp)
 target_compile_definitions(bench-query-xcltj-global PUBLIC ADAPTIVE=0)
 target_link_libraries(bench-query-xcltj-global sdsl divsufsort divsufsort64)
 set_target_properties(bench-query-xcltj-global PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
+
+
 
 add_executable(bench-query-cltj-rdf src/bench/bench-query-cltj-rdf.cpp)
 target_compile_definitions(bench-query-cltj-rdf PUBLIC ADAPTIVE=1)

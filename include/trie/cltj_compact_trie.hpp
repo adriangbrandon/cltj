@@ -1,5 +1,5 @@
-#ifndef CLTJ_COMPACT_TRIE_V3_H
-#define CLTJ_COMPACT_TRIE_V3_H
+#ifndef CLTJ_COMPACT_TRIE_H
+#define CLTJ_COMPACT_TRIE_H
 
 #include <vector>
 #include <iostream>

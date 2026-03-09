@@ -17,8 +17,8 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef LTJ_ITERATOR_METATRIE_HPP
-#define LTJ_ITERATOR_METATRIE_HPP
+#ifndef LTJ_ITERATOR_METATRIE_DYN_HPP
+#define LTJ_ITERATOR_METATRIE_DYN_HPP
 
 #include <triple_pattern.hpp>
 #include <cltj_config.hpp>
@@ -31,7 +31,7 @@
 namespace ltj {
 
     template<class index_scheme_t, class var_t, class cons_t>
-    class ltj_iterator_metatrie {
+    class ltj_iterator_metatrie_dyn {
 
     public:
         typedef cons_t value_type;
@@ -68,7 +68,7 @@ namespace ltj {
         status_type m_status;
         redo_array_type m_redo;
 
-        void copy(const ltj_iterator_metatrie &o) {
+        void copy(const ltj_iterator_metatrie_dyn &o) {
             m_ptr_triple_pattern = o.m_ptr_triple_pattern;
             m_ptr_index = o.m_ptr_index;
             m_nfixed = o.m_nfixed;
@@ -153,25 +153,17 @@ namespace ltj {
             size_type fti = cltj::ts_full_map[m_trie_i/2]; //full trie index
             const auto* trie = m_ptr_index->get_trie(fti);   // switches to the corresponding trie
             // Now gets down using the labels of the current path, reversed
-            size_type p0; //position in first level
-            switch (m_fixed[m_nfixed-1]){
-                case s:
-                    p0 = m_ptr_index->pos_subject(m_path_label[m_nfixed-1]);
-                    break;
-                case p:
-                    p0 = m_path_label[m_nfixed-1]-1;
-                    break;
-                case o:
-                    p0 = m_ptr_index->pos_object(m_path_label[m_nfixed-1]);
-                    break;
-            }
-            //descend to the next level
-            size_type cur_node = trie->nodeselect(p0, 0); // no root -> gap = 0
-            size_type cnt = trie->children(cur_node);
-            size_type beg = trie->first_child(cur_node);
-            size_type end = beg+cnt-1;
-            auto p = trie->binary_search_seek(m_path_label[m_nfixed-2], beg, end);
-            cur_node = trie->nodeselect(p.second, m_ptr_index->gaps[fti/2]); //no root -> gap = nodes in first level
+            auto cnt = m_ptr_index->gaps[fti/2];
+            size_type beg, end;
+            beg = trie->first_child(0);
+            end = beg+cnt-1;
+            auto p = trie->binary_search_seek(m_path_label[m_nfixed-1], beg, end);
+            size_type cur_node = trie->nodeselect(p.second);
+            cnt = trie->children(cur_node);
+            beg = trie->first_child(cur_node);
+            end = beg+cnt-1;
+            p = trie->binary_search_seek(m_path_label[m_nfixed-2], beg, end);
+            cur_node = trie->nodeselect(p.second);
             return cur_node;
         }
 
@@ -200,8 +192,8 @@ namespace ltj {
         inline size_type parent() const;
 
 
-        ltj_iterator_metatrie() = default;
-        ltj_iterator_metatrie(const triple_pattern *triple, index_scheme_type *index) {
+        ltj_iterator_metatrie_dyn() = default;
+        ltj_iterator_metatrie_dyn(const triple_pattern *triple, index_scheme_type *index) {
             m_ptr_triple_pattern = triple;
             m_ptr_index = index;
 
@@ -232,17 +224,17 @@ namespace ltj {
             return m_ptr_triple_pattern;
         }
         //! Copy constructor
-        ltj_iterator_metatrie(const ltj_iterator_metatrie &o) {
+        ltj_iterator_metatrie_dyn(const ltj_iterator_metatrie_dyn &o) {
             copy(o);
         }
 
         //! Move constructor
-        ltj_iterator_metatrie(ltj_iterator_metatrie &&o) {
+        ltj_iterator_metatrie_dyn(ltj_iterator_metatrie_dyn &&o) {
             *this = std::move(o);
         }
 
         //! Copy Operator=
-        ltj_iterator_metatrie &operator=(const ltj_iterator_metatrie &o) {
+        ltj_iterator_metatrie_dyn &operator=(const ltj_iterator_metatrie_dyn &o) {
             if (this != &o) {
                 copy(o);
             }
@@ -250,7 +242,7 @@ namespace ltj {
         }
 
         //! Move Operator=
-        ltj_iterator_metatrie &operator=(ltj_iterator_metatrie &&o) {
+        ltj_iterator_metatrie_dyn &operator=(ltj_iterator_metatrie_dyn &&o) {
             if (this != &o) {
                 m_ptr_triple_pattern = std::move(o.m_ptr_triple_pattern);
                 m_ptr_index = std::move(o.m_ptr_index);
@@ -266,7 +258,7 @@ namespace ltj {
             return *this;
         }
 
-        void swap(ltj_iterator_metatrie &o) {
+        void swap(ltj_iterator_metatrie_dyn &o) {
             // m_bp.swap(bp_support.m_bp); use set_vector to set the supported bit_vector
             std::swap(m_ptr_triple_pattern, o.m_ptr_triple_pattern);
             std::swap(m_ptr_index, o.m_ptr_index);
@@ -287,15 +279,15 @@ namespace ltj {
             if(m_nfixed == 1) {
                 const auto* trie = m_ptr_index->get_trie(m_trie_i);
                 auto pos = m_status[m_nfixed].beg;
-                m_status[m_nfixed].it[0] =  trie->nodeselect(pos, 0); //no root -> gap = 0
+                m_status[m_nfixed].it[0] =  trie->nodeselect(pos, 1); //root -> gap = 1
                 trie = m_ptr_index->get_trie(m_trie_i+1);
                 m_status[m_nfixed].it[1] = trie->nodeselect(pos, 0); //no root -> gap = 0
             } else if (m_nfixed == 2) {
                 if (!m_status_i) {
                     const auto* trie = m_ptr_index->get_trie(m_trie_i);
                     auto pos = m_status[m_nfixed].beg;
-                    //root -> gap = 1; no root -> gap = nodes in first level
-                    m_status[m_nfixed].it[m_status_i] = trie->nodeselect(pos, m_ptr_index->gaps[m_trie_i/2]);
+                    //root -> gap = 1
+                    m_status[m_nfixed].it[m_status_i] = trie->nodeselect(pos);
                 } else {
                     // trie switching
                     size_type switch_node = trie_switch();
@@ -330,44 +322,23 @@ namespace ltj {
         bool exists(state_type state, size_type c) { //Return the minimum in the range
 
             choose_trie(state);
-            if (m_nfixed == 0) { //we don't use tries, just the bitvectors
-                switch (state){
-                    case s:
-                        if (c > m_ptr_index->max_subject()) return false;
-                        if (m_ptr_index->next_subject(c) != c) return false;
-                        m_status[m_nfixed+1].beg = m_ptr_index->pos_subject(c);
-                        m_redo[m_nfixed] = false;
-                        break;
-                    case p:
-                        if (c > m_ptr_index->max_predicate()) return false;
-                        m_status[m_nfixed+1].beg = c-1;
-                        m_redo[m_nfixed] = false;
-                        break;
-                    case o:
-                        if (c > m_ptr_index->max_object()) return false;
-                        if (m_ptr_index->next_object(c) != c) return false;
-                        m_status[m_nfixed+1].beg = m_ptr_index->pos_object(c);
-                        m_redo[m_nfixed] = false;
-                        break;
-                }
-            }else {
-                size_type cnt, beg, end;
-                const auto* trie = m_ptr_index->get_trie(m_trie_i);
-                if (m_status_i && m_nfixed == 2) { //partial trie
-                    size_type fti = cltj::ts_full_map[m_trie_i/2];
-                    trie = m_ptr_index->get_trie(fti);   // switches to the corresponding trie
-                }
-                cnt = trie->children(parent());
-                //auto child = trie->child(parent(), 1)
-                beg = trie->first_child(parent());
-                end = beg + cnt -1;
-                auto p = trie->binary_search_seek(c, beg, end);
-                if (p.second > end or p.first != c) return false;
-                m_status[m_nfixed+1].beg = p.second;
-                m_status[m_nfixed+1].end = end;
-                m_status[m_nfixed+1].cnt = cnt;
-                m_redo[m_nfixed] = false;
+            size_type cnt, beg, end;
+            const auto* trie = m_ptr_index->get_trie(m_trie_i);
+            if (m_status_i && m_nfixed == 2) { //partial trie
+                size_type fti = cltj::ts_full_map[m_trie_i/2];
+                trie = m_ptr_index->get_trie(fti);   // switches to the corresponding trie
             }
+            cnt = trie->children(parent());
+            //auto child = trie->child(parent(), 1)
+            beg = trie->first_child(parent());
+            end = beg + cnt -1;
+            auto p = trie->binary_search_seek(c, beg, end);
+            if (p.second > end or p.first != c) return false;
+            m_status[m_nfixed+1].beg = p.second;
+            m_status[m_nfixed+1].end = end;
+            m_status[m_nfixed+1].cnt = cnt;
+            m_redo[m_nfixed] = false;
+
             return true;
         }
 
@@ -381,46 +352,6 @@ namespace ltj {
                 state = p;
             }
             choose_trie(state);
-
-            if (m_nfixed == 0) {
-                value_type value;
-                switch (state){
-                    case s:
-                        if(c == -1ULL){
-                            value = m_ptr_index->next_subject(1);
-                            m_status[m_nfixed+1].beg = 0;
-                        }else{
-                            if (c > m_ptr_index->max_subject()) return 0;
-                            value = m_ptr_index->next_subject(c);
-                            if (value > m_ptr_index->max_subject()) return 0;
-                            m_status[m_nfixed+1].beg = m_ptr_index->pos_subject(value);
-                        }
-                        break;
-                    case p:
-                        if(c == -1ULL){
-                            value = 1;
-                            m_status[m_nfixed+1].beg = 0;
-                        }else{
-                            if (c > m_ptr_index->max_predicate()) return 0;
-                            value = c;
-                            m_status[m_nfixed+1].beg = c-1;
-                        }
-                        break;
-                    case o:
-                        if(c == -1ULL){
-                            value = m_ptr_index->next_object(1);
-                            m_status[m_nfixed+1].beg = 0;
-                        }else{
-                            if (c > m_ptr_index->max_object()) return 0;
-                            value = m_ptr_index->next_object(c);
-                            if (value > m_ptr_index->max_object()) return 0;
-                            m_status[m_nfixed+1].beg = m_ptr_index->pos_object(value);
-                        }
-                        break;
-                }
-                //print_status();
-                return value;
-            }
             const auto* trie = m_ptr_index->get_trie(m_trie_i);
             if (m_status_i && m_nfixed == 2) { //partial trie
                 size_type fti = cltj::ts_full_map[m_trie_i/2];
@@ -522,10 +453,10 @@ namespace ltj {
             //Count children
             auto cnt = trie->children(it);
             //Leftmost
-            auto first = trie->child(it, 1, 0); //no root -> gap = 0
+            auto first = trie->child(it, 1); // root -> gap = 1
             leftmost_leaf = trie->first_child(first);
             //Rightmost
-            it = trie->child(it, cnt, m_ptr_index->gaps[m_trie_i/2]);
+            it = trie->child(it, cnt);
             cnt = trie->children(it);
             rightmost_leaf = trie->first_child(it) + cnt - 1;
             return rightmost_leaf - leftmost_leaf + 1;
@@ -559,10 +490,10 @@ namespace ltj {
     };
 
     template<class index_scheme_t, class var_t, class cons_t>
-    uint64_t ltj_iterator_metatrie<index_scheme_t, var_t, cons_t>::parent() const {
+    uint64_t ltj_iterator_metatrie_dyn<index_scheme_t, var_t, cons_t>::parent() const {
         return m_status[m_nfixed].it[m_status_i];
     }
 
 }
 
-#endif //LTJ_ITERATOR_METATRIE_HPP
+#endif //LTJ_ITERATOR_METATRIE_DYN_HPP

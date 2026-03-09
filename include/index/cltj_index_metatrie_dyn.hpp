@@ -5,8 +5,10 @@
 #ifndef CLTJ_INDEX_METATRIE_DYN_HPP
 #define CLTJ_INDEX_METATRIE_DYN_HPP
 
-#include <metatrie/cltj_compact_metatrie_dyn.hpp>
+#include <trie/cltj_compact_trie_dyn.hpp>
 #include <cltj_config.hpp>
+
+#include "cltj_helper.hpp"
 
 namespace cltj {
 
@@ -24,6 +26,7 @@ namespace cltj {
 
     private:
         std::array<trie_type, 6> m_tries;
+        std::array<size_type, 3> m_gaps;
         size_type m_n_triples = 0;
 
         trie_type create_full_trie(spo_triple triple, uint8_t order) {
@@ -44,169 +47,50 @@ namespace cltj {
             return trie_type(seq, bv);
         }
 
-        trie_type create_full_trie(vector<spo_triple> &D, uint8_t order){
-
-            std::sort(D.begin(), D.end(), comparator_order(order));
-
-            uint64_t c0 = 1, cur_value = D[0][spo_orders[order][0]];
-            std::vector<uint64_t> v0;
-            std::vector<uint64_t> seq;
-
-            for (uint64_t i = 1; i < D.size(); i++) {
-                if (D[i][spo_orders[order][0]] != D[i-1][spo_orders[order][0]]) {
-                    seq.push_back(cur_value);
-                    cur_value = D[i][spo_orders[order][0]];
-                    v0.push_back(c0);
-                    c0 = 1;
-                } else c0++;
-            }
-            seq.push_back(cur_value);
-            v0.push_back(c0);
-            
-            uint64_t c1, c2;
-            std::vector<uint64_t> v1, v2;
-
-            for (uint64_t i = 0, k = 0; i < v0.size(); i++) {
-                c1 = 1;
-                c2 = 1;
-                for (uint64_t j = 1; j < v0[i]; j++) {
-                    k++;
-                    if (D[k][spo_orders[order][1]] != D[k-1][spo_orders[order][1]]) {
-                        v2.push_back(c2);
-                        seq.push_back(D[k-1][spo_orders[order][1]]);
-                        c2 = 1;
-                        c1++;
-                    } else c2++;
-                }
-                seq.push_back(D[k][spo_orders[order][1]]);
-                v2.push_back(c2);
-                v1.push_back(c1);
-                k++;
-            }
-            uint64_t c = v0.size()+1; 
-
-            for (uint64_t i = 0; i < v1.size(); i++)
-                c += v1[i];
-
-            for (uint64_t i = 0; i < v2.size(); i++)
-                c += v2[i];
-
-            sdsl::bit_vector bv = sdsl::bit_vector(c, 0);
-            sdsl::int_vector<> seq_compact = sdsl::int_vector<>(seq.size()+D.size()+1);
-
-            uint64_t j = 0;
-
-            bv[0] = 1;
-            bv[v0.size()] = 1;
-            j = v0.size();
-
-            for (uint64_t i = 0; i < v1.size(); i++) {
-                j += v1[i];
-                bv[j] = 1;
-            }
-
-            for (uint64_t i = 0; i < v2.size(); i++) {
-                j += v2[i];
-                bv[j] = 1;
-            }
-
-            for (j = 0; j < seq.size(); j++)
-                seq_compact[j] = seq[j];
-
-            for (uint64_t i = 0; i < D.size(); i++)
-                seq_compact[j++] = D[i][spo_orders[order][2]];
-            seq_compact[j]=0; //mock
-
-/*            cout << "*** Trie para el orden " << (uint64_t)order << " ***" << endl;
-            for (uint64_t i = 0; i < bv.size(); i++) {
-                cout << bv[i];
-            }
-            cout << endl;
-            for (uint64_t i = 0; i < seq_compact.size(); i++) {
-                cout << seq_compact[i] << " ";
-            }
-            cout << endl;
-*/
-            return trie_type(seq_compact, bv);
-        }
-
-
-        trie_type create_partial_trie(vector<spo_triple> &D, uint8_t order){
-
-            std::sort(D.begin(), D.end(), comparator_order(order));
-
-            uint64_t c0 = 1;
-            std::vector<uint64_t> v0;
-            std::vector<uint64_t> seq;
-
-            for (uint64_t i = 1; i < D.size(); i++) {
-                if (D[i][spo_orders[order][0]] != D[i-1][spo_orders[order][0]]) {
-                    v0.push_back(c0);
-                    c0 = 1;
-                } else c0++;
-            }
-            v0.push_back(c0);
-
-            uint64_t c1, c2;
-            std::vector<uint64_t> v1, v2;
-
-            for (uint64_t i = 0, k = 0; i < v0.size(); i++) {
-                c1 = 1;
-                c2 = 1;
-                for (uint64_t j = 1; j < v0[i]; j++) {
-                    k++;
-                    if (D[k][spo_orders[order][1]] != D[k-1][spo_orders[order][1]]) {
-                        v2.push_back(c2);
-                        seq.push_back(D[k-1][spo_orders[order][1]]);
-                        c2 = 1;
-                        c1++;
-                    } else c2++;
-                }
-                seq.push_back(D[k][spo_orders[order][1]]);
-                v2.push_back(c2);
-                v1.push_back(c1);
-                k++;
-            }
-
-            uint64_t c = 0;
-            for (uint64_t i = 0; i < v1.size(); i++)
-                c += v1[i];
-
-            sdsl::bit_vector bv = sdsl::bit_vector(c+1, 0);
-            sdsl::int_vector<> seq_compact = sdsl::int_vector<>(seq.size()+1);
-
-            bv[0] = 1;
-            uint64_t j = 1;
-            for (uint64_t i = 0; i < v1.size(); i++) {
-                j += v1[i];
-                bv[j-1] = 1;
-            }
-
-            for (j = 0; j < seq.size(); j++)
-                seq_compact[j] = seq[j];
-            seq_compact[seq.size()] = 0; //mock
-            return trie_type(seq_compact, bv);
-        }
 
         void copy(const cltj_index_metatrie_dyn &o){
             m_tries = o.m_tries;
+            m_gaps = o.m_gaps;
             m_n_triples = o.m_n_triples;
         }
 
     public:
 
         const std::array<trie_type, 6> &tries = m_tries;
+        const std::array<size_type, 3> &gaps = m_gaps;
         cltj_index_metatrie_dyn() = default;
 
-        cltj_index_metatrie_dyn(vector<spo_triple> &D) {
+        cltj_index_metatrie_dyn(vector<spo_triple> &D){
             if(D.empty()) return;
-            m_tries[0] = create_full_trie(D, 0);  // trie for SPO
-            m_tries[1] = create_partial_trie(D, 1); // trie for SOP
-	        m_tries[2] = create_full_trie(D, 2);  // trie for POS
-	        m_tries[3] = create_partial_trie(D, 3); // trie for PSO
-	        m_tries[4] = create_full_trie(D, 4);  // trie for OSP
-	        m_tries[5] = create_partial_trie(D, 5); // trie for OPS
+            for(size_type i = 0; i < 6; ++i){
+                std::sort(D.begin(), D.end(), comparator_order(i));
+                std::vector<uint32_t> syms;
+                std::vector<size_type> lengths;
+                auto beg_level = (i & 0x1);
+                auto end_level = 3 - beg_level;
+                helper::sym_level(D,  spo_orders[i], beg_level, end_level, syms, lengths);
+                if(beg_level == 0){
+                    m_gaps[i/2] = lengths[0];
+                }
+                m_tries[i] = trie_type(syms, lengths);
+            }
             m_n_triples = D.size();
+        }
+
+        cltj_index_metatrie_dyn(vector<spo_triple>::iterator beg, vector<spo_triple>::iterator end){
+            if(std::distance(beg, end) == 0) return;
+            for(size_type i = 0; i < 6; ++i){
+                std::sort(beg, end, comparator_order(i));
+                std::vector<uint32_t> syms;
+                std::vector<size_type> lengths;
+                auto end_level = 2 + (i % 2 == 0);
+                helper::sym_level(beg, end, spo_orders[i], i % 2, end_level, syms, lengths);
+                if(i % 2 == 0){
+                    m_gaps[i/2] = lengths[0];
+                }
+                m_tries[i] = trie_type(syms, lengths);
+            }
+            m_n_triples = std::distance(beg, end);
         }
 
         //! Copy constructor
@@ -231,6 +115,7 @@ namespace cltj {
         cltj_index_metatrie_dyn &operator=(cltj_index_metatrie_dyn &&o) {
             if (this != &o) {
                 m_tries = std::move(o.m_tries);
+                m_gaps = std::move(o.m_gaps);
                 m_n_triples = std::move(o.m_n_triples);
             }
             return *this;
@@ -239,6 +124,7 @@ namespace cltj {
         void swap(cltj_index_metatrie_dyn &o) {
             // m_bp.swap(bp_support.m_bp); use set_vector to set the supported bit_vector
             std::swap(m_tries, o.m_tries);
+            std::swap(m_gaps, o.m_gaps);
             std::swap(m_n_triples, o.m_n_triples);
         }
 
@@ -246,84 +132,16 @@ namespace cltj {
             return &m_tries[i];
         }
 
-        bool insert_old(const spo_triple &triple) {
-            if(!m_n_triples) {
-                m_tries[0] = create_full_trie(triple, 0);
-                m_tries[1] = create_partial_trie(triple, 1);
-                m_tries[2] = create_full_trie(triple, 2);
-                m_tries[3] = create_partial_trie(triple, 3);
-                m_tries[4] = create_full_trie(triple, 4);
-                m_tries[5] = create_partial_trie(triple, 5);
-                for(size_type i = 0; i < m_tries.size(); i+=2) {
-                    m_tries[i].inc_root_degree();
-                }
-                ++m_n_triples;
-                return true;
-            }
-            typedef struct {
-                size_type pos;
-                bool first_child; //pos contains the first_child of the current level
-                bool ins;
-            } state_type ;
-            std::array<state_type, 4> states;
-            std::array<bool, 3> inc_gaps = {false, false, false};
-            states[0].pos = 0; states[0].first_child = false; states[0].ins = false;
-            size_type b, e;
-            for(size_type i = 0; i < m_tries.size(); ++i) {
-                bool skip_level = i & 0x1;
-                if(skip_level) { //partial trie => just level = 1
-                    if(!states[1].ins) { //the previous element exists in the previous level
-                        b = m_tries[i].child(states[1].pos, 1, 0);
-                        e = b+m_tries[i].children(b)-1;
-                        auto p = m_tries[i].next(b, e, triple[spo_orders[i][1]]);
-                        if(p.first != triple[spo_orders[i][1]]) {
-                            m_tries[i].insert(p.second, triple[spo_orders[i][1]], states[1].ins, (b==p.second));
-                        }
-                    }else {
-                        b = m_tries[i].child(states[1].pos, 1, 0);
-                        m_tries[i].insert(b, triple[spo_orders[i][1]], states[1].ins, false);
-                    }
-                }else { //global tries
-                    bool insert = false;
-                    for(size_type l = 0; l < 3; ++l) {
-                        if(!states[l].ins) {
-                            b = (l==0) ? 0 : m_tries[i].child(states[l].pos, 1);
-                            e = b+m_tries[i].children(b)-1;
-                            auto p = m_tries[i].next(b, e, triple[spo_orders[i][l]]);
-                            states[l+1].pos = p.second;
-                            states[l+1].first_child = (b==p.second); //first position
-                            states[l+1].ins =  p.first != triple[spo_orders[i][l]]; //insert
-                            insert = p.first != triple[spo_orders[i][l]];
-                        } else {
-                            states[l+1].pos = m_tries[i].child(states[l].pos, 1);
-                            states[l+1].first_child = false; //it is not the first child of the current range
-                            states[l+1].ins = true;
-                        }
-                    }
-                    if(i == 0 && !insert) return false;
-                    for(int64_t j = 3; j >= 1; --j) {
-                        //When the triple is not found in the previous level, it means that we are in the first child (1-bit) of the current level.
-                        //Otherwise, we have to add a new child to the current level, thus we add a 0-bit.
-                        if(states[j].ins) {
-                            //std::cout << "insert at: " << states[j].pos << "[" << states[j-1].ins << ", " << states[j].first_child << "]" << std::endl;
-                            m_tries[i].insert(states[j].pos, triple[spo_orders[i][j-1]], states[j-1].ins, states[j].first_child);
-                            //m_tries[i].print();
-                            if(j == 1) inc_gaps[i/2] = true;
-                        }
-                    }
-                }
-            }
-
-            //Update root degree because insertion of a new element in the first level
-            for(auto i = 0; i < m_tries.size(); i+=2) {
-                if(inc_gaps[i/2]) m_tries[i].inc_root_degree();
-            }
-            ++m_n_triples;
-            return true;
-        }
-
         bool insert(const spo_triple &triple) {
             if(!m_n_triples) {
+                for(size_type i = 0; i < m_tries.size(); ++i) {
+                    m_tries[i] = trie_type(triple, spo_orders[i], (i & 0x1), 3 - (i & 0x1));
+                }
+                m_gaps = {1,1,1};
+                ++m_n_triples;
+                return true;
+            }
+            /*if(!m_n_triples) {
                 m_tries[0] = create_full_trie(triple, 0);
                 m_tries[1] = create_partial_trie(triple, 1);
                 m_tries[2] = create_full_trie(triple, 2);
@@ -335,7 +153,7 @@ namespace cltj {
                 }
                 ++m_n_triples;
                 return true;
-            }
+            }*/
             typedef struct {
                 size_type pos;
                 bool first_child; //pos contains the first_child of the current level
@@ -365,18 +183,18 @@ namespace cltj {
                     }
                 }
                 if(i == 0 && !insert) return false;
+                u_part[i/2] = states[1]; //to sync with the first level in the partial trie
                 for(int64_t j = 3; j >= 1; --j) {
                     //When the triple is not found in the previous level, it means that we are in the first child (1-bit) of the current level.
                     //Otherwise, we have to add a new child to the current level, thus we add a 0-bit.
                     if(states[j].ins) {
-                        //std::cout << "insert at: " << states[j].pos << "[" << states[j-1].ins << ", " << states[j].first_child << "]" << std::endl;
+                        //std::cout << "insert at j: " << j << " -> " << states[j].pos << "[" << states[j-1].ins << ", " << states[j].first_child << "]" << std::endl;
                         m_tries[i].insert(states[j].pos, triple[spo_orders[i][j-1]], states[j-1].ins, states[j].first_child);
                         //m_tries[i].print();
                         if (j == 1) inc_gaps[i/2] = true;
                         if (j == 2) { //insert into partial trie
                             auto pt = ts_part_map[i/2];
                             ins_part[pt/2] = true;
-                            u_part[i/2] = states[1]; //to sync with the first level in the partial trie
                         }
                     }
                 }
@@ -388,18 +206,17 @@ namespace cltj {
                         //the previous element exists in the previous level
                         b = m_tries[i].child(u_part[i/2].pos, 1, 0);
                         e = b+m_tries[i].children(b)-1;
-                        auto p = m_tries[i].next(b, e, triple[spo_orders[i][1]]);
+                        auto p = m_tries[i].next(b, e, triple[spo_orders[i][1]]); //find the position to insert
                         m_tries[i].insert(p.second, triple[spo_orders[i][1]], u_part[i/2].ins, (b==p.second));
                     }else {
-                        b = m_tries[i].child(u_part[i/2].pos, 1, 0);
-                        m_tries[i].insert(b, triple[spo_orders[i][1]], states[1].ins, false);
+                        b = m_tries[i].child(u_part[i/2].pos, 1, 0); //insert at the beginning of the range
+                        m_tries[i].insert(b, triple[spo_orders[i][1]], u_part[i/2].ins, false);
                     }
                 }
             }
 
-            //Update root degree because insertion of a new element in the first level
-            for(auto i = 0; i < m_tries.size(); i+=2) {
-                if(inc_gaps[i/2]) m_tries[i].inc_root_degree();
+            for(auto i = 0; i < 3; ++i) {
+                m_gaps[i] += inc_gaps[i]; //updating gaps because of insertions in the first level
             }
             ++m_n_triples;
             return true;
@@ -455,9 +272,9 @@ namespace cltj {
                     m_tries[pt].remove(p.second, b!=e); //remove it
                 }
             }
-            //Updating root degree
-            for(auto i = 0; i < m_tries.size(); i+=2) {
-                if(dec_gaps[i/2]) m_tries[i].dec_root_degree();
+
+            for(auto i = 0; i < 3; ++i) {
+                m_gaps[i] -= dec_gaps[i]; //updating gaps because of deletions in the first level
             }
             --m_n_triples;
             return true;
@@ -515,19 +332,19 @@ namespace cltj {
                 }
             }
             //Updating root degree
-            for(auto i = 0; i < m_tries.size(); i+=2) {
-                if(dec_gaps[i/2]) m_tries[i].dec_root_degree();
+            for(size_type i = 0; i < 3; ++i) {
+                m_gaps[i] -= dec_gaps[i]; //updating gaps because of deletions in the first level
             }
             //Compute nodes to remove
             if(dec_gaps[0]) {
                 //Check if the node exists as object
-                auto p = m_tries[4].next(0, m_tries[4].root_degree(), triple[0]);
+                auto p = m_tries[4].next(0, m_gaps[2], triple[0]);
                 res.rem_in_dict[0] = (p.first != triple[0]);
             }
             res.rem_in_dict[1] = dec_gaps[1];
             if(triple[0] != triple[2] && dec_gaps[2]) {
                 //Check if the node exists as subject
-                auto p = m_tries[0].next(0, m_tries[0].root_degree(), triple[2]);
+                auto p = m_tries[0].next(0, m_gaps[0], triple[2]);
                 res.rem_in_dict[2] = (p.first != triple[2]);
             }
             --m_n_triples;
@@ -561,31 +378,25 @@ namespace cltj {
         size_type serialize(std::ostream &out, sdsl::structure_tree_node *v = nullptr, std::string name = "") const {
             sdsl::structure_tree_node *child = sdsl::structure_tree::add_child(v, name, sdsl::util::class_name(*this));
             size_type written_bytes = 0;
-            sdsl::write_member(m_n_triples, out, child, "ntriples");
             for(const auto & trie : m_tries){
                 written_bytes += trie.serialize(out, child, "tries");
             }
+            for(const auto & gap : m_gaps) {
+                written_bytes += sdsl::write_member(gap, out, child, "gaps");
+            }
+            written_bytes += sdsl::write_member(m_n_triples, out, child, "n_triples");
             sdsl::structure_tree::add_size(child, written_bytes);
             return written_bytes;
         }
 
         void load(std::istream &in) {
-            sdsl::read_member(m_n_triples, in);
             for(auto & trie : m_tries){
                 trie.load(in);
             }
-        }
-
-        bool check() {
-            bool ok = true;
-            for(uint64_t i = 0; i < 6; ++i) {
-                ok &= m_tries[i].check();
-                if(!ok) {
-                    std::cout << "Error in trie: " << i << std::endl;
-                    break;
-                }
+            for(auto & gap : m_gaps){
+                sdsl::read_member(gap, in);
             }
-            return ok;
+            sdsl::read_member(m_n_triples, in);
         }
 
         void split() {
@@ -600,6 +411,28 @@ namespace cltj {
             }
         }
 
+        void print() {
+            for(uint64_t i = 0; i < 6; ++i) {
+                m_tries[i].print();
+            }
+        }
+
+        bool check() {
+            bool ok = true;
+            for(uint64_t i = 0; i < 6; ++i) {
+                ok &= m_tries[i].check();
+            }
+            return ok;
+        }
+
+        bool check_last() {
+            bool ok = true;
+            for(uint64_t i = 0; i < 6; ++i) {
+                ok &= m_tries[i].check_last();
+            }
+            return ok;
+        }
+
         bool check_leaves() {
             bool ok = true;
             for(uint64_t i = 0; i < 6; ++i) {
@@ -612,9 +445,27 @@ namespace cltj {
             return ok;
         }
 
+        void check_print() {
+            bool ok = true;
+            for(uint64_t i = 0; i < 6; ++i) {
+                std::cout << "------ TRIE=" << i << " ------"<< std::endl;
+                m_tries[i].check_print();
+                std::cout << std::endl;
+            }
+        }
+
+        void check_last_print() {
+            bool ok = true;
+            for(uint64_t i = 0; i < 6; ++i) {
+                std::cout << "------ TRIE=" << i << " ------"<< std::endl;
+                m_tries[i].check_last_print();
+                std::cout << std::endl;
+            }
+        }
+
     };
 
-    typedef cltj::cltj_index_metatrie_dyn<cltj::compact_metatrie_dyn<>> compact_ltj_metatrie_dyn;
+    typedef cltj::cltj_index_metatrie_dyn<cltj::compact_trie_dyn<>> compact_ltj_metatrie_dyn;
     //typedef cltj::cltj_index_metatrie_dyn<cltj::uncompact_trie_v2> uncompact_ltj;
 
 }

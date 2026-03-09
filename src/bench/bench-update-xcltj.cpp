@@ -25,7 +25,7 @@ template<class index_scheme_type, class trait_type>
 void query_upq(const std::string &index, const std::vector<query_type> &queries, const std::vector<update_type> &updates,
            const uint64_t limit, const uint64_t upq) { //upq = updates per query
 
-    typedef ltj::ltj_iterator_metatrie<index_scheme_type, uint8_t, uint64_t> iterator_type;
+    typedef ltj::ltj_iterator_metatrie_dyn<index_scheme_type, uint8_t, uint64_t> iterator_type;
 #if ADAPTIVE
     typedef ltj::ltj_algorithm<iterator_type,
         ltj::veo::veo_adaptive<iterator_type, trait_type> > algorithm_type;
@@ -68,7 +68,7 @@ void query_upq(const std::string &index, const std::vector<query_type> &queries,
 
         auto start = std::chrono::high_resolution_clock::now();
         algorithm_type ltj(&q, &graph);
-        ltj.join(res, limit, 600);
+        ltj.join_v2(res, limit, 600);
         auto stop = std::chrono::high_resolution_clock::now();
 
         auto time = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start).count();
@@ -83,7 +83,7 @@ template<class index_scheme_type, class trait_type>
 void query_qpu(const std::string &index, const std::vector<query_type> &queries, const std::vector<update_type> &updates,
            const uint64_t limit, const uint64_t qpu) { //qpu = queries per update
 
-    typedef ltj::ltj_iterator_metatrie<index_scheme_type, uint8_t, uint64_t> iterator_type;
+    typedef ltj::ltj_iterator_metatrie_dyn<index_scheme_type, uint8_t, uint64_t> iterator_type;
 #if ADAPTIVE
     typedef ltj::ltj_algorithm<iterator_type,
         ltj::veo::veo_adaptive<iterator_type, trait_type> > algorithm_type;
@@ -108,7 +108,7 @@ void query_qpu(const std::string &index, const std::vector<query_type> &queries,
 
         auto start = std::chrono::high_resolution_clock::now();
         algorithm_type ltj(&q, &graph);
-        ltj.join(res, limit, 600);
+        ltj.join_v2(res, limit, 600);
         auto stop = std::chrono::high_resolution_clock::now();
 
         auto time = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start).count();
@@ -122,7 +122,7 @@ void query_qpu(const std::string &index, const std::vector<query_type> &queries,
                 graph.insert(u.triple);
                 stop = std::chrono::high_resolution_clock::now();
                 time = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start).count();
-                cout << "D;" << i_up << ";" << 0 << ";" << time << endl;
+                cout << "I;" << i_up << ";" << 0 << ";" << time << endl;
             }else {
                 start = std::chrono::high_resolution_clock::now();
                 graph.remove(u.triple);
