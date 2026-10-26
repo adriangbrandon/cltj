@@ -6,7 +6,7 @@
 
 extern float FactorBV = 1.0; // Factor * length reads => rebuild as static
 
-static inline mustFlatten(hybridBV B) {
+static inline int mustFlatten(hybridBV B) {
     return (B->bv.dyn->accesses >= FactorBV * B->bv.dyn->size);
 }
 

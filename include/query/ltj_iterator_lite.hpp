@@ -440,7 +440,7 @@ namespace ltj {
             }
             size_type value;
             if(c == -1ULL){
-                value = trie->seq[beg];
+                value = trie->access(beg);
                 m_status[m_nfixed+1].beg = beg; //First position in the sequence
             }else{
                 const auto p  = trie->binary_search_seek(c, beg, end);
@@ -536,7 +536,7 @@ namespace ltj {
             uint32_t cnt = trie->children(parent());
             size_type beg = trie->first_child(parent());
             for(auto i = beg; i < beg + cnt; ++i){
-                results.emplace_back(trie->seq[i]);
+                results.emplace_back(trie->access(i));
             }
             return results;
         }

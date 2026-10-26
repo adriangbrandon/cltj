@@ -43,11 +43,14 @@ else()
     message(STATUS "CPU does NOT support SSE4.2")
 endif()
 
-include_directories(~/include
+# Where the (extended) sdsl is installed. Defaults to the home directory, as before.
+# Use -DSDSL_PREFIX=/path to build against an sdsl installed elsewhere.
+set(SDSL_PREFIX "$ENV{HOME}" CACHE PATH "Installation prefix of the sdsl-lite fork")
+include_directories(${SDSL_PREFIX}/include
                     ${CMAKE_HOME_DIRECTORY}/lib/hybridBV/include
                     ${CMAKE_HOME_DIRECTORY}/include)
 
-link_directories(~/lib)
+link_directories(${SDSL_PREFIX}/lib)
 add_subdirectory(lib/hybridBV)
 
 #BENCH EXECUTABLES

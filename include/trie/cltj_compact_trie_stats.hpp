@@ -47,6 +47,9 @@ namespace cltj {
     public:
 
         const sdsl::int_vector<> &seq = m_seq;
+
+        //! Label of the edge at position i of L
+        inline uint64_t access(uint64_t i) const { return m_seq[i]; }
         const size_type &count_select = m_count_select;
 
         compact_trie_stats() = default;

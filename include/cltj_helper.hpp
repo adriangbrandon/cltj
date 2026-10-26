@@ -11,6 +11,15 @@
 
 namespace cltj {
 
+    //! Builds a trie from its labels and node degrees. n1 is the number of
+    //! level-1 nodes; tries that store each level separately specialize this.
+    template<class Trie>
+    struct trie_builder {
+        static Trie build(const std::vector<uint32_t> &syms, const std::vector<uint64_t> &lengths, uint64_t n1) {
+            return Trie(syms, lengths);
+        }
+    };
+
     namespace helper {
          
         static bool equal(const spo_triple &a, const spo_triple &b, const spo_order_type &order, const uint64_t l){

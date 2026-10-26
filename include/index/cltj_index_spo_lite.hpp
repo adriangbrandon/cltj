@@ -89,7 +89,7 @@ namespace cltj {
                         sdsl::util::init_support(m_rank_obj, &m_objects);
                     }
                 }
-                m_tries[i] = trie_type(syms, lengths);
+                m_tries[i] = trie_builder<trie_type>::build(syms, lengths, m_gaps[i/2]);
             }
         }
 

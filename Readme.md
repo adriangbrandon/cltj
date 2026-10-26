@@ -28,6 +28,15 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 make
 ```
 
+If the extended SDSL library is installed somewhere other than your home directory, pass its prefix to CMake:
+```Bash
+cmake .. -DCMAKE_BUILD_TYPE=Release -DSDSL_PREFIX=/path/to/sdsl
+```
+
+**Note on index files.** The static tries store the labels of each level with its own width and search
+them with galloping search. Static indices (`.cltj`, `.xcltj`) built with earlier versions of the code
+must be rebuilt.
+
 For a debug environment you can compile the code with the following command:
 ```Bash
 cmake .. -DCMAKE_BUILD_TYPE=Debug

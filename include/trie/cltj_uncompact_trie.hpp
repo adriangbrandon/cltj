@@ -33,6 +33,9 @@ namespace cltj {
 
         const sdsl::int_vector<> &seq = m_seq;
 
+        //! Label of the edge at position i of L
+        inline uint64_t access(uint64_t i) const { return m_seq[i]; }
+
         uncompact_trie() = default;
 
         uncompact_trie(const std::vector<uint32_t> &syms, const std::vector<size_type> &lengths) {

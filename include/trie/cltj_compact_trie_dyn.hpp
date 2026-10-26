@@ -36,6 +36,9 @@ namespace cltj {
 
         const dyn_cds::dyn_louds &seq = m_seq;
 
+        //! Label of the edge at position i of L
+        inline uint64_t access(uint64_t i) const { return m_seq[i]; }
+
         compact_trie_dyn(const uint width = default_width) {
             m_seq = dyn_cds::dyn_louds(width);
         }
