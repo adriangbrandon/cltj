@@ -6,6 +6,7 @@
 #define CLTJ_INDEX_METATRIE_HPP
 
 #include <trie/cltj_compact_trie.hpp>
+#include <trie/cltj_compact_trie_ef.hpp>
 #include <cltj_config.hpp>
 #include <cltj_helper.hpp>
 
@@ -233,6 +234,8 @@ namespace cltj {
     };
 
     typedef cltj::cltj_index_metatrie<cltj::compact_trie> compact_ltj_metatrie;
+    //! xCLTJ-EF: children of nodes with >= 1024 children stored with Elias-Fano
+    typedef cltj::cltj_index_metatrie<cltj::compact_trie_ef> compact_ltj_metatrie_ef;
     //typedef cltj::cltj_index_metatrie<cltj::uncompact_trie_v2> uncompact_ltj;
 
 }

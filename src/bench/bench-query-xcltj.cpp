@@ -28,6 +28,12 @@
 
 using namespace std;
 
+#ifdef CLTJ_EF
+#define INDEX_TYPE cltj::compact_ltj_metatrie_ef
+#else
+#define INDEX_TYPE cltj::compact_ltj_metatrie
+#endif
+
 //#include<chrono>
 //#include<ctime>
 
@@ -105,9 +111,9 @@ int main(int argc, char *argv[]) {
     }
 
     if (type == "normal") {
-        query<cltj::compact_ltj_metatrie, ltj::util::trait_distinct>(index, queries, limit, timeout);
+        query<INDEX_TYPE, ltj::util::trait_distinct>(index, queries, limit, timeout);
     } else if (type == "star") {
-        query<cltj::compact_ltj_metatrie, ltj::util::trait_size>(index, queries, limit, timeout);
+        query<INDEX_TYPE, ltj::util::trait_size>(index, queries, limit, timeout);
     } else {
         std::cout << "Type of index: " << type << " is not supported." << std::endl;
     }

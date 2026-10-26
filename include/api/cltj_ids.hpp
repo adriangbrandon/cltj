@@ -188,6 +188,13 @@ namespace cltj {
             ltj::ltj_iterator_metatrie<cltj::compact_ltj_metatrie, uint8_t, uint64_t>,
             ltj::veo::veo_simple<ltj::ltj_iterator_metatrie<cltj::compact_ltj_metatrie, uint8_t, uint64_t>>> xcltj_ids_static_global;
 
+    //Full Tries + Static + Elias-Fano for long nodes (CLTJ-EF) + VEO adaptive
+    typedef cltj::cltj_ids<cltj::compact_ltj_ef, ltj::util::trait_size,
+            ltj::ltj_iterator_lite<cltj::compact_ltj_ef, uint8_t, uint64_t>> cltj_ids_static_ef;
+    //Meta Tries + Static + Elias-Fano for long nodes (xCLTJ-EF) + VEO adaptive
+    typedef cltj::cltj_ids<cltj::compact_ltj_metatrie_ef, ltj::util::trait_size,
+            ltj::ltj_iterator_metatrie<cltj::compact_ltj_metatrie_ef, uint8_t, uint64_t>> xcltj_ids_static_ef;
+
 
 }
 #endif //CLTJ_IDS_HPP

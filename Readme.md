@@ -43,6 +43,20 @@ cmake .. -DCMAKE_BUILD_TYPE=Debug
 make
 ```
 Once the code is compiled, you should have three folder (`example`, `cmd`, and `bench`). The binaries of each folder are detailed in the following sections.
+## CLTJ-EF: Elias-Fano for long nodes
+
+CLTJ-EF (and xCLTJ-EF, with partial tries) is a static variant that stores the children labels of
+the trie nodes with at least 1024 children with Elias-Fano (`sdsl::sd_vector`), grouped in density
+classes, and the remaining labels in plain arrays with one width per level. The topology of the tries
+and the navigation (`child`, `children`) do not change. On Wikidata it uses about 12-15% less space
+than CLTJ, at a cost of about 8-10% in average query time.
+
+- Index types: `cltj::compact_ltj_ef`, `cltj::compact_ltj_metatrie_ef`; API: `cltj::cltj_ids_static_ef`,
+  `cltj::xcltj_ids_static_ef`.
+- Benchmark binaries: `build-cltj-ef`, `build-xcltj-ef` (indices `<dataset>.cltj-ef`, `<dataset>.xcltj-ef`)
+  and `bench-query-cltj-ef`, `bench-query-xcltj-ef` (and `-global`), with the same arguments as the others.
+- There is no dynamic version of CLTJ-EF.
+
 ## Usage of the library
 The CompactLTJ library supports different input data formats:
 - **IDs**: This format is a text file where each IRI or Literal form the RDF dataset are encoded with an integer identifier.

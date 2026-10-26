@@ -44,6 +44,7 @@ namespace ltj {
             size_type cnt;
             size_type beg;
             size_type end;
+            size_type cur;   // trie cursor of position beg (see compact_trie_ef), ~0 if unknown
         } level_data_type;
         typedef std::array<level_data_type, 4> status_type;
         typedef std::array<bool, 4> redo_array_type;
@@ -192,6 +193,7 @@ namespace ltj {
             m_status[0].beg = 1;
             m_status[0].end = 0;
             m_status[0].cnt = 1;
+            for (auto &st: m_status) st.cur = ~0ULL;
             //m_status[1][0].it = 2;
             //m_status[1][0].last = 1;
             m_redo[0] = true;
@@ -357,9 +359,11 @@ namespace ltj {
                 //auto child = trie->child(parent(), 1)
                 beg = trie->first_child(parent());
                 end = beg + cnt -1;
-                auto p = trie->binary_search_seek(c, beg, end);
+                uint64_t cur = ~0ULL;
+                auto p = trie->binary_search_seek(c, beg, end, cnt, cur);
                 if (p.second > end or p.first != c) return false;
                 m_status[m_nfixed+1].beg = p.second;
+                m_status[m_nfixed+1].cur = cur;
                 m_status[m_nfixed+1].end = end;
                 m_status[m_nfixed+1].cnt = cnt;
                 m_redo[m_nfixed] = false;
@@ -429,6 +433,7 @@ namespace ltj {
                 beg = trie->first_child(parent());
                 end = beg + cnt -1;
                 m_status[m_nfixed+1].beg = beg;
+                m_status[m_nfixed+1].cur = ~0ULL;
                 m_status[m_nfixed+1].end = end;
                 //m_status[m_nfixed+1].it[0] = m_status[m_nfixed+1].it[1] = it;
                 m_status[m_nfixed+1].cnt  = cnt;
@@ -440,10 +445,11 @@ namespace ltj {
             }
             size_type value;
             if(c == -1ULL){
-                value = trie->access(beg);
+                value = trie->access(beg, m_status[m_nfixed+1].cnt, m_status[m_nfixed+1].cur);
                 m_status[m_nfixed+1].beg = beg; //First position in the sequence
             }else{
-                const auto p  = trie->binary_search_seek(c, beg, end);
+                const auto p  = trie->binary_search_seek(c, beg, end, m_status[m_nfixed+1].cnt,
+                                                          m_status[m_nfixed+1].cur);
                 if(p.second > end) return 0;
                 value = p.first;
                 m_status[m_nfixed+1].beg = p.second; //Position of the first value gt c
@@ -535,9 +541,7 @@ namespace ltj {
             const auto* trie = m_ptr_index->get_trie(m_trie_i);
             uint32_t cnt = trie->children(parent());
             size_type beg = trie->first_child(parent());
-            for(auto i = beg; i < beg + cnt; ++i){
-                results.emplace_back(trie->access(i));
-            }
+            trie->append_children(beg, cnt, results);
             return results;
         }
     };

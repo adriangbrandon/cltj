@@ -258,3 +258,25 @@ set_target_properties(test-dyn PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINAR
 add_executable(cltj-louds src/test/cltj_louds.cpp)
 target_link_libraries(cltj-louds sdsl divsufsort divsufsort64 hybridbv_gn)
 set_target_properties(cltj-louds PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/test)
+
+# CLTJ-EF / xCLTJ-EF: children of nodes with >= 1024 children stored with Elias-Fano
+foreach(V cltj xcltj)
+    add_executable(build-${V}-ef src/bench/build-${V}.cpp)
+    target_compile_definitions(build-${V}-ef PUBLIC CLTJ_EF=1)
+    target_link_libraries(build-${V}-ef sdsl divsufsort divsufsort64 hybridbv_gn)
+    set_target_properties(build-${V}-ef PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
+
+    add_executable(bench-query-${V}-ef src/bench/bench-query-${V}.cpp)
+    target_compile_definitions(bench-query-${V}-ef PUBLIC ADAPTIVE=1 CLTJ_EF=1)
+    target_link_libraries(bench-query-${V}-ef sdsl divsufsort divsufsort64)
+    set_target_properties(bench-query-${V}-ef PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
+
+    add_executable(bench-query-${V}-ef-global src/bench/bench-query-${V}.cpp)
+    target_compile_definitions(bench-query-${V}-ef-global PUBLIC ADAPTIVE=0 CLTJ_EF=1)
+    target_link_libraries(bench-query-${V}-ef-global sdsl divsufsort divsufsort64)
+    set_target_properties(bench-query-${V}-ef-global PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bench)
+endforeach()
+
+add_executable(test-compact-trie-ef src/test/test-compact-trie-ef.cpp)
+target_link_libraries(test-compact-trie-ef sdsl divsufsort divsufsort64)
+set_target_properties(test-compact-trie-ef PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/test)

@@ -7,6 +7,7 @@
 
 
 #include <trie/cltj_compact_trie.hpp>
+#include <trie/cltj_compact_trie_ef.hpp>
 #include <trie/cltj_compact_trie_stats.hpp>
 #include <cltj_helper.hpp>
 #include <trie/cltj_uncompact_trie.hpp>
@@ -229,6 +230,8 @@ namespace cltj {
     typedef cltj::cltj_index_spo_lite<cltj::compact_trie> compact_ltj;
     typedef cltj::cltj_index_spo_lite<cltj::uncompact_trie> uncompact_ltj;
     typedef cltj::cltj_index_spo_lite<cltj::compact_trie_stats> compact_ltj_stats;
+    //! CLTJ-EF: children of nodes with >= 1024 children stored with Elias-Fano
+    typedef cltj::cltj_index_spo_lite<cltj::compact_trie_ef> compact_ltj_ef;
 
 }
 

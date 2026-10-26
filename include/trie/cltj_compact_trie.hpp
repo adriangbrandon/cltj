@@ -188,6 +188,17 @@ namespace cltj {
             return gallop(m_seq3, m_n2, val, i, f);
         }
 
+        //! Interface used by the iterators (deg = degree of the node, cur = cursor of the
+        //! position, only meaningful for tries that store long nodes apart, such as compact_trie_ef)
+        inline uint64_t access(uint64_t i, uint64_t, uint64_t &) const { return access(i); }
+        std::pair<uint32_t, uint64_t> binary_search_seek(uint32_t val, uint64_t i, uint64_t f, uint64_t,
+                                                         uint64_t &) const {
+            return binary_search_seek(val, i, f);
+        }
+        void append_children(uint64_t beg, uint64_t deg, std::vector<uint64_t> &out) const {
+            for (uint64_t j = beg; j < beg + deg; ++j) out.emplace_back(access(j));
+        }
+
         void print() const {
             for (auto i = 0; i < m_bv.size(); ++i) {
                 std::cout << (uint) m_bv[i];

@@ -15,7 +15,13 @@ int main(int argc, char **argv){
         }
 
         std::string dataset = argv[1];
+#ifdef CLTJ_EF
+        std::string index_name = dataset + ".cltj-ef";
+        typedef cltj::compact_ltj_ef index_type;
+#else
         std::string index_name = dataset + ".cltj";
+        typedef cltj::compact_ltj index_type;
+#endif
         vector<cltj::spo_triple> D;
 
         std::ifstream ifs(dataset);
@@ -35,7 +41,7 @@ int main(int argc, char **argv){
         //sdsl::memory_monitor::start();
 
         auto start = timer::now();
-        cltj::compact_ltj index(D);
+        index_type index(D);
         auto stop = timer::now();
 
         //sdsl::memory_monitor::stop();
