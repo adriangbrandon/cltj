@@ -89,7 +89,7 @@ namespace ltj {
                 ++m_clock_checks;
                 time_point_type stop = chrono::high_resolution_clock::now();
                 auto sec = chrono::duration_cast<chrono::seconds>(stop-start).count();
-                if(sec > timeout_seconds) {
+                if((size_type) sec > timeout_seconds) { //sec is never negative
                     return true;
                 }
             }
@@ -243,6 +243,13 @@ namespace ltj {
             search(0, t, res, start, limit_results, timeout_seconds);
         };
 
+        /**
+        *
+        * @param res                   Results
+        * @param limit_results         Limit of results
+        * @param timeout_seconds       Timeout in seconds
+        * @param timeout_check_period  The clock is read every this number of calls to search (0 is treated as 1)
+        */
         template<class results_type>
         void join_v2(/*vector<tuple_type> &res,*/
                   results_type &res,
@@ -257,9 +264,10 @@ namespace ltj {
 
         /**
         *
-        * @param res               Results
-        * @param limit_results     Limit of results
-        * @param timeout_seconds   Timeout in seconds
+        * @param res                   Results
+        * @param limit_results         Limit of results
+        * @param timeout_seconds       Timeout in seconds
+        * @param timeout_check_period  The clock is read every this number of calls to search (0 is treated as 1)
         */
         template<class results_type>
         void join_str(/*vector<tuple_type> &res,*/

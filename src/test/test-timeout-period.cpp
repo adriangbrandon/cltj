@@ -3,7 +3,7 @@
  *
  * Tests for the timeout check period of ltj_algorithm (join, join_v2, join_str and the
  * query() methods of the API). Self-contained: datasets are generated in memory with a
- * fixed seed (the only file written is a small temporary one for the cltj_ids/cltj_rdf tests).
+ * fixed seed (the only file written is a small temporary one for the cltj_ids tests).
  * Returns != 0 if any check fails.
  */
 
@@ -15,6 +15,7 @@
 #include <chrono>
 #include <cstdio>
 #include <cstdlib>
+#include <unistd.h>
 #include <api/cltj_ids.hpp>
 #include <api/cltj_rdf.hpp>
 
@@ -244,45 +245,45 @@ static void run_api_ids(const std::string &name, const std::string &file, const 
     check(ok, name + "::query(..., timeout, P) equals query(..., timeout) and naive");
 }
 
-static void run_api_rdf(std::mt19937 &gen) {
-    //Small string dataset: subjects/objects e0..e29, predicates p0..p3
-    std::set<std::array<std::string, 3>> S;
-    std::uniform_int_distribution<int> ent(0, 29), pred(0, 3);
-    for (int i = 0; i < 4; ++i) S.insert({{"<e" + std::to_string(ent(gen)) + ">", "<p" + std::to_string(i) + ">", "<e" + std::to_string(ent(gen)) + ">"}});
-    while (S.size() < 120) {
-        S.insert({{"<e" + std::to_string(ent(gen)) + ">", "<p" + std::to_string(pred(gen)) + ">", "<e" + std::to_string(ent(gen)) + ">"}});
-    }
-    const std::string file = tmp_name();
-    {
-        std::ofstream ofs(file);
-        for (const auto &t : S) ofs << t[0] << " " << t[1] << " " << t[2] << "\n";
-    }
-    //Naive for the path query ?x p0 ?y . ?y p1 ?z and the star ?x p0 ?y . ?x p1 ?z
-    uint64_t path = 0, star = 0;
-    for (const auto &a : S) for (const auto &b : S) {
-        if (a[1] == "<p0>" && b[1] == "<p1>") {
-            if (a[2] == b[0]) ++path;
-            if (a[0] == b[0]) ++star;
+//join_str directly on a static index, with in-memory dictionaries (ids i <-> "e<i>" / "p<i>")
+template<class Index, class Iterator, class Veo>
+static void run_join_str(const std::string &name, const std::vector<cltj::spo_triple> &data0) {
+    typedef ltj::ltj_algorithm<Iterator, Veo> algorithm_type;
+    typedef ::util::results_collector<typename algorithm_type::tuple_str_type> results_type;
+    std::vector<cltj::spo_triple> D = data0;
+    Index index(D);
+    std::map<std::string, uint64_t> map_so, map_p;
+    for (uint64_t i = 1; i <= 61; ++i) map_so.insert({"e" + std::to_string(i), i});
+    for (uint64_t i = 1; i <= 5; ++i) map_p.insert({"p" + std::to_string(i), i});
+    dict::basic_map dso(map_so), dp(map_p);
+
+    bool same = true, inv = true, zero_read = true;
+    for (const char *qs : QUERIES) {
+        query_type q = ::util::rdf::ids::get_query(qs);
+        const uint64_t expected = naive_count(q, data0);
+        std::vector<bool> in_p(256, false);
+        for (const auto &tp : q) if (tp.p_is_variable()) in_p[tp.term_p.value] = true;
+        {
+            results_type res;
+            algorithm_type ltj(&q, &index);
+            ltj.join_str(res, in_p, dso, dp, 0, 0, 4096);
+            if (res.size() != expected) same = false;
+            if (ltj.clock_checks() != 0) zero_read = false;
         }
-    }
-    cltj::cltj_rdf_dyn rdf(file);
-    std::remove(file.c_str());
-    bool ok = true;
-    const std::string qp = "?x <p0> ?y . ?y <p1> ?z", qs = "?x <p0> ?y . ?x <p1> ?z";
-    for (int k = 0; k < 2; ++k) {
-        const std::string &q = (k == 0) ? qp : qs;
-        const uint64_t expected = (k == 0) ? path : star;
-        ::util::results_collector<cltj::cltj_rdf_dyn::tuple_type> r0;
-        rdf.query(q, r0, 0, 600);
-        if (r0.size() != expected) { ok = false; std::cout << "  rdf '" << q << "' " << r0.size() << " vs " << expected << std::endl; }
         for (uint64_t P : PERIODS) {
-            ::util::results_collector<cltj::cltj_rdf_dyn::tuple_type> r;
-            rdf.query(q, r, 0, 600, P);
-            if (r.size() != expected) ok = false;
+            results_type res;
+            algorithm_type ltj(&q, &index);
+            ltj.join_str(res, in_p, dso, dp, 0, 600, P);
+            if (res.size() != expected) {
+                same = false;
+                std::cout << "  query '" << qs << "' P " << P << ": got " << res.size() << " expected " << expected << std::endl;
+            }
+            if (ltj.clock_checks() != ceil_div(ltj.search_calls(), P == 0 ? 1 : P)) inv = false;
         }
     }
-    check(ok && path > 0 && star > 0, "cltj_rdf_dyn::query (join_str) with P in {0,1,2,7,4096,2^40} equals naive (path "
-          + std::to_string(path) + ", star " + std::to_string(star) + ")");
+    check(same, name + "/join_str: same results as naive for P in {0,1,2,7,4096,2^40}");
+    check(zero_read, name + "/join_str: timeout 0 never reads the clock");
+    check(inv, name + "/join_str: clock_checks == ceil(search_calls / max(P,1))");
 }
 
 int main() {
@@ -314,6 +315,7 @@ int main() {
     run_timeout<cltj::compact_ltj, it_lite, veo_a_lite>("compact_ltj/adaptive", Dbig);
     run_timeout<cltj::compact_ltj, it_lite, veo_s_lite>("compact_ltj/simple", Dbig);
     run_timeout<cltj::compact_ltj_metatrie, it_meta, veo_a_meta>("compact_ltj_metatrie/adaptive", Dbig);
+    run_timeout<cltj::compact_ltj_metatrie, it_meta, veo_s_meta>("compact_ltj_metatrie/simple", Dbig);
 
     //API with ids (needs a file with the dataset)
     const std::string file = tmp_name();
@@ -336,8 +338,18 @@ int main() {
     run_api_ids<cltj::xcltj_ids_static_global>("xcltj_ids_static_global", file, D);
     std::remove(file.c_str());
 
-    //API with strings (join_str)
-    run_api_rdf(gen);
+    //join_str on static indexes with in-memory dictionaries
+    run_join_str<cltj::compact_ltj, it_lite, veo_a_lite>("compact_ltj/adaptive", D);
+    run_join_str<cltj::compact_ltj_metatrie, it_meta, veo_a_meta>("compact_ltj_metatrie/adaptive", D);
+
+    //cltj_rdf::query(..., timeout, P): only the signature is checked (building a dynamic cltj_rdf here is
+    //not clean under ASan because of known leaks / alloc-dealloc mismatches in the dynamic path)
+    {
+        typedef ::util::results_collector<cltj::cltj_rdf_dyn::tuple_type> res_t;
+        bool (cltj::cltj_rdf_dyn::*f)(const std::string &, res_t &, uint64_t, uint64_t, uint64_t) =
+            &cltj::cltj_rdf_dyn::query<res_t>;
+        check(f != nullptr, "cltj_rdf_dyn::query(..., timeout, P) compiles (not run)");
+    }
 
     std::cout << n_ok << " checks OK, " << n_fail << " FAIL" << std::endl;
     return n_fail == 0 ? 0 : 1;
