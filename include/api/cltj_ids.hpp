@@ -176,7 +176,10 @@ namespace cltj {
 
 
     //Full Tries + Static + VEO adaptive
-    typedef cltj::cltj_ids<cltj::compact_ltj> cltj_ids_static;
+    typedef cltj::cltj_ids<cltj::compact_ltj, ltj::util::trait_size,
+            ltj::ltj_iterator_lite<cltj::compact_ltj, uint8_t, uint64_t>,
+            ltj::veo::veo_adaptive<ltj::ltj_iterator_lite<cltj::compact_ltj, uint8_t, uint64_t>,
+                    ltj::util::trait_size>> cltj_ids_static;
     //Full Tries + Static + VEO global
     typedef cltj::cltj_ids<cltj::compact_ltj, ltj::util::trait_size,
             ltj::ltj_iterator_lite<cltj::compact_ltj, uint8_t, uint64_t>,
