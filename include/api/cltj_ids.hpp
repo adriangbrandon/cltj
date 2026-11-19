@@ -95,11 +95,12 @@ namespace cltj {
         }
 
         template<class result_type>
-        bool query(const std::string &query_str, result_type &res, size_type limit = 1000, size_type timeout_seconds = 600) {
+        bool query(const std::string &query_str, result_type &res, size_type limit = 1000, size_type timeout_seconds = 600,
+                   size_type timeout_check_period = algorithm_type::default_timeout_check_period) {
 
             std::vector<ltj::triple_pattern> query = ::util::rdf::ids::get_query(query_str);
             algorithm_type ltj(&query, &m_index);
-            ltj.join(res, limit, timeout_seconds);
+            ltj.join(res, limit, timeout_seconds, timeout_check_period);
             return true;
         }
 
