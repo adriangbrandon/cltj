@@ -37,3 +37,5 @@ cmake-build-debug/
 .idea/
 plots/
 build/
+cmake-build-*/
+.claude/settings.local.json
