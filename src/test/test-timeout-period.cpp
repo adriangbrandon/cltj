@@ -1,10 +1,10 @@
 /*
  * test-timeout-period.cpp
  *
- * Tests for the timeout check of ltj_algorithm (join, join_v2, join_str and
- * cltj_ids::query): the clock is read once every ltj_algorithm::timeout_check_period calls to search, so
- * results must not depend on it, and the timeout must still fire. Self-contained: datasets are generated in memory with a
- * fixed seed (the only file written is a small temporary one for the cltj_ids tests).
+ * Tests for the timeout check of ltj_algorithm (join, join_v2, join_str and cltj_ids::query): the clock
+ * is read once every ltj_algorithm::timeout_check_period calls to search, so results must not depend on
+ * it, and the timeout must still fire. Self-contained: datasets are generated in memory with a fixed
+ * seed (the only file written is a small temporary one for the cltj_ids tests).
  * Returns != 0 if any check fails.
  */
 
