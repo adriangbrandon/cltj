@@ -135,8 +135,7 @@ namespace cltj {
         }
 
         template<class result_type>
-        bool query(const std::string &query_str, result_type &res, size_type limit = 1000, size_type timeout_seconds = 600,
-                   size_type timeout_check_period = algorithm_type::default_timeout_check_period) {
+        bool query(const std::string &query_str, result_type &res, size_type limit = 1000, size_type timeout_seconds = 600) {
 
             ::util::rdf::ht_var_id_type ht_var_id;
             std::vector<bool> var_in_p;
@@ -150,7 +149,7 @@ namespace cltj {
             }
 
             algorithm_type ltj(&query, &m_index);
-            ltj.join_str(res, var_in_p, m_dict_so, m_dict_p, limit, timeout_seconds, timeout_check_period);
+            ltj.join_str(res, var_in_p, m_dict_so, m_dict_p, limit, timeout_seconds);
 
             m_dict_p.reset_cache(); //TODO: ao mellor hai que mellorar isto
             m_dict_so.reset_cache();
