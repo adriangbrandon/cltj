@@ -56,8 +56,10 @@ namespace ltj {
         typedef vector<pair<var_type, const_type>> tuple_type;
         typedef vector<std::string> tuple_str_type;
         typedef chrono::high_resolution_clock::time_point time_point_type;
-        //! Default number of calls to search between two timeout checks
-        static constexpr size_type default_timeout_check_period = 4096;
+        //! Number of calls to search between two clock readings for the timeout (power of 2)
+        static const size_type timeout_check_period = 4096;
+        static_assert((timeout_check_period & (timeout_check_period - 1)) == 0,
+                      "timeout_check_period must be a power of 2");
         //typedef ::util::results_collector<tuple_type> results_type;
 
     private:
@@ -67,33 +69,17 @@ namespace ltj {
         vector<ltj_iter_type> m_iterators;
         var_to_iterators_type m_var_to_iterators;
         bool m_is_empty = false;
-        size_type m_timeout_period = default_timeout_check_period;
-        size_type m_countdown = 1;       //calls left until the next clock reading
-        size_type m_search_calls = 0;    //calls to search* in the last join
-        size_type m_clock_checks = 0;    //clock readings for timeout in the last join
+        //! Calls to search*, only used to decide when to read the clock for the timeout.
+        //! It is deliberately not reset in join* nor copied in copy/move/swap: it only sets the phase of the readings.
+        size_type m_search_calls = 0;
 
-        //! Resets the counters at the beginning of each join (period 0 is treated as 1)
-        inline void init_timeout_check(const size_type period){
-            m_timeout_period = (period == 0) ? 1 : period;
-            m_countdown = 1;
-            m_search_calls = 0;
-            m_clock_checks = 0;
-        }
-
-        //! Counts a call to search* and, every m_timeout_period calls, reads the clock.
+        //! Reads the clock only once every timeout_check_period calls to search*.
         //! Returns true if the timeout has expired.
         inline bool timeout_expired(const time_point_type start, const size_type timeout_seconds){
-            ++m_search_calls;
-            if(timeout_seconds > 0 && --m_countdown == 0){
-                m_countdown = m_timeout_period;
-                ++m_clock_checks;
-                time_point_type stop = chrono::high_resolution_clock::now();
-                auto sec = chrono::duration_cast<chrono::seconds>(stop-start).count();
-                if((size_type) sec > timeout_seconds) { //sec is never negative
-                    return true;
-                }
-            }
-            return false;
+            if(timeout_seconds == 0 || (m_search_calls++ & (timeout_check_period - 1)) != 0) return false;
+            time_point_type stop = chrono::high_resolution_clock::now();
+            auto sec = chrono::duration_cast<chrono::seconds>(stop-start).count();
+            return (size_type) sec > timeout_seconds; //sec is never negative
         }
 
 
@@ -104,10 +90,6 @@ namespace ltj {
             m_iterators = o.m_iterators;
             m_var_to_iterators = o.m_var_to_iterators;
             m_is_empty = o.m_is_empty;
-            m_timeout_period = o.m_timeout_period;
-            m_countdown = o.m_countdown;
-            m_search_calls = o.m_search_calls;
-            m_clock_checks = o.m_clock_checks;
         }
 
 
@@ -196,10 +178,6 @@ namespace ltj {
                 m_iterators = move(o.m_iterators);
                 m_var_to_iterators = move(o.m_var_to_iterators);
                 m_is_empty = o.m_is_empty;
-                m_timeout_period = o.m_timeout_period;
-                m_countdown = o.m_countdown;
-                m_search_calls = o.m_search_calls;
-                m_clock_checks = o.m_clock_checks;
             }
             return *this;
         }
@@ -211,51 +189,29 @@ namespace ltj {
             std::swap(m_iterators, o.m_iterators);
             std::swap(m_var_to_iterators, o.m_var_to_iterators);
             std::swap(m_is_empty, o.m_is_empty);
-            std::swap(m_timeout_period, o.m_timeout_period);
-            std::swap(m_countdown, o.m_countdown);
-            std::swap(m_search_calls, o.m_search_calls);
-            std::swap(m_clock_checks, o.m_clock_checks);
         }
 
 
-        //! Number of calls to search/search_v2/search_str in the last join
-        size_type search_calls() const { return m_search_calls; }
-
-        //! Number of clock readings for the timeout in the last join
-        size_type clock_checks() const { return m_clock_checks; }
-
         /**
         *
-        * @param res                   Results
-        * @param limit_results         Limit of results
-        * @param timeout_seconds       Timeout in seconds
-        * @param timeout_check_period  The clock is read every this number of calls to search (0 is treated as 1)
+        * @param res               Results
+        * @param limit_results     Limit of results
+        * @param timeout_seconds   Timeout in seconds
         */
         template<class results_type>
         void join(/*vector<tuple_type> &res,*/
                   results_type &res,
-                  const size_type limit_results = 0, const size_type timeout_seconds = 0,
-                  const size_type timeout_check_period = default_timeout_check_period){
-            init_timeout_check(timeout_check_period);
+                  const size_type limit_results = 0, const size_type timeout_seconds = 0){
             if(m_is_empty) return;
             time_point_type start = chrono::high_resolution_clock::now();
             tuple_type t(m_veo.size());
             search(0, t, res, start, limit_results, timeout_seconds);
         };
 
-        /**
-        *
-        * @param res                   Results
-        * @param limit_results         Limit of results
-        * @param timeout_seconds       Timeout in seconds
-        * @param timeout_check_period  The clock is read every this number of calls to search (0 is treated as 1)
-        */
         template<class results_type>
         void join_v2(/*vector<tuple_type> &res,*/
                   results_type &res,
-                  const size_type limit_results = 0, const size_type timeout_seconds = 0,
-                  const size_type timeout_check_period = default_timeout_check_period){
-            init_timeout_check(timeout_check_period);
+                  const size_type limit_results = 0, const size_type timeout_seconds = 0){
             if(m_is_empty) return;
             time_point_type start = chrono::high_resolution_clock::now();
             tuple_type t(m_veo.size());
@@ -264,19 +220,16 @@ namespace ltj {
 
         /**
         *
-        * @param res                   Results
-        * @param limit_results         Limit of results
-        * @param timeout_seconds       Timeout in seconds
-        * @param timeout_check_period  The clock is read every this number of calls to search (0 is treated as 1)
+        * @param res               Results
+        * @param limit_results     Limit of results
+        * @param timeout_seconds   Timeout in seconds
         */
         template<class results_type>
         void join_str(/*vector<tuple_type> &res,*/
                   results_type &res,
                   const std::vector<bool> &in_p,
                   dict::basic_map &dict_so, dict::basic_map &dict_p,
-                  const size_type limit_results = 0, const size_type timeout_seconds = 0,
-                  const size_type timeout_check_period = default_timeout_check_period){
-            init_timeout_check(timeout_check_period);
+                  const size_type limit_results = 0, const size_type timeout_seconds = 0){
             if(m_is_empty) return;
             time_point_type start = chrono::high_resolution_clock::now();
             tuple_type t(m_veo.size());
@@ -688,10 +641,6 @@ namespace ltj {
 
 
     };
-
-    template<class iterator_t, class veo_t>
-    constexpr typename ltj_algorithm<iterator_t, veo_t>::size_type
-    ltj_algorithm<iterator_t, veo_t>::default_timeout_check_period;
 }
 
 #endif //RING_LTJ_ALGORITHM_HPP
