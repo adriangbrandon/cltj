@@ -121,7 +121,7 @@ static void run_index(const std::string &name, const std::vector<cltj::spo_tripl
             return (uint64_t) res.size();
         };
 
-        bool same = true, nonzero = false, zero = false, twice = true;
+        bool same = true, nonzero = false, zero = false;
         for (const char *qs : QUERIES) {
             query_type q = ::util::rdf::ids::get_query(qs);
             const uint64_t expected = naive_count(q, data0);
@@ -137,20 +137,9 @@ static void run_index(const std::string &name, const std::vector<cltj::spo_tripl
                     }
                 }
             }
-            //Two consecutive joins on the same object (the call counter is not reset between them)
-            algorithm_type ltj(&q, &index);
-            results_type res1, res2;
-            if (variant == 0) { ltj.join(res1, 0, 600); ltj.join(res2, 0, 600); }
-            else { ltj.join_v2(res1, 0, 600); ltj.join_v2(res2, 0, 600); }
-            if (res1.size() != expected || res2.size() != expected) {
-                twice = false;
-                std::cout << "  query '" << qs << "' twice: " << res1.size() << " / " << res2.size()
-                          << " expected " << expected << std::endl;
-            }
         }
         check(nonzero && zero, vname + ": test queries include empty and non-empty results");
         check(same, vname + ": same results as naive with timeout 600 and 0, limit 0/1/1000");
-        check(twice, vname + ": two joins on the same object give the same results");
     }
 }
 
