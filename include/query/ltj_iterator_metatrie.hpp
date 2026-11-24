@@ -522,10 +522,13 @@ namespace ltj {
             //Count children
             auto cnt = trie->children(it);
             //Leftmost
-            auto first = trie->child(it, 1, 0); //no root -> gap = 0
+            //it is a node of the first level of the full trie t_i - s_i, so its children are found
+            //with the gap of that trie (nodes in its first level)
+            const auto gap = m_ptr_index->gaps[(t_i - s_i)/2];
+            auto first = trie->child(it, 1, gap);
             leftmost_leaf = trie->first_child(first);
             //Rightmost
-            it = trie->child(it, cnt, m_ptr_index->gaps[m_trie_i/2]);
+            it = trie->child(it, cnt, gap);
             cnt = trie->children(it);
             rightmost_leaf = trie->first_child(it) + cnt - 1;
             return rightmost_leaf - leftmost_leaf + 1;

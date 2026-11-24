@@ -186,6 +186,10 @@ add_executable(test-ids-static src/test/test-ids-static.cpp)
 target_link_libraries(test-ids-static sdsl divsufsort divsufsort64 hybridbv_gn)
 set_target_properties(test-ids-static PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/test)
 
+add_executable(test-subtree-size src/test/test-subtree-size.cpp)
+target_link_libraries(test-subtree-size sdsl divsufsort divsufsort64 hybridbv_gn)
+set_target_properties(test-subtree-size PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/test)
+
 add_executable(main src/test/main.cpp)
 target_link_libraries(main sdsl divsufsort divsufsort64 hybridbv_gn)
 set_target_properties(main PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/test)
