@@ -72,6 +72,29 @@ static data_type gen_all_single() { //every value of every component has exactly
     return to_data(S);
 }
 
+//Sparse ids (up to 2^24) so that the rank/succ structures of the first level are exercised
+static data_type gen_sparse(std::mt19937 &gen) {
+    std::set<cltj::spo_triple> S;
+    const uint32_t big = (1u << 24) - 1;
+    uint32_t pool[12] = {1, 2, 3, 40, 977, 5000, 65535, 65536, 1000003, 8388608, big - 1, big};
+    std::uniform_int_distribution<uint32_t> pick(0, 11), pred(1, 3);
+    for (uint32_t p = 1; p <= 3; ++p) S.insert({{pool[pick(gen)], p, pool[pick(gen)]}});
+    S.insert({{1, 1, big}});
+    S.insert({{big, 3, 1}});
+    while (S.size() < 70) S.insert({{pool[pick(gen)], pred(gen), pool[pick(gen)]}});
+    return to_data(S);
+}
+
+//A single predicate (P = 1): stars and chains
+static data_type gen_one_pred(std::mt19937 &gen) {
+    std::set<cltj::spo_triple> S;
+    std::uniform_int_distribution<uint32_t> ent(1, 15);
+    for (uint32_t i = 1; i < 15; ++i) S.insert({{i, 1, i + 1}}); //chain
+    for (uint32_t i = 2; i <= 15; ++i) S.insert({{1, 1, i}});    //star
+    while (S.size() < 50) S.insert({{ent(gen), 1, ent(gen)}});
+    return to_data(S);
+}
+
 static data_type gen_two_triples() {
     std::set<cltj::spo_triple> S;
     S.insert({{1, 1, 2}});
@@ -153,7 +176,6 @@ static void case1(const std::string &name, Index &index, const data_type &D) {
     group g;
     for (int c = 0; c < 3; ++c) {
         for (uint64_t v : values_of(D, c)) {
-            std::string qs[3] = {"?x ?y", "?x ?y", "?x ?y"};
             std::string str;
             if (c == 0) str = std::to_string(v) + " ?x ?y";
             else if (c == 1) str = "?x " + std::to_string(v) + " ?y";
@@ -229,6 +251,57 @@ static void case3(const std::string &name, Index &index, const data_type &D) {
     g.report(name + " case 3: subtree_size_fixed2 with two constants == #triples");
 }
 
+//Case 5: one component fixed (level 1) and the iterator has changed state in that level, as the adaptive
+//VEO does: after a leap/seek on a free variable (choose_trie changes m_trie_i, maybe to an odd trie) and
+//after going down to level 2 and back up
+template<class Index, class Iterator>
+static void case5(const std::string &name, Index &index, const data_type &D) {
+    group g;
+    for (int c = 0; c < 3; ++c) {
+        for (uint64_t v : values_of(D, c)) {
+            std::string str;
+            if (c == 0) str = std::to_string(v) + " ?x ?y";
+            else if (c == 1) str = "?x " + std::to_string(v) + " ?y";
+            else str = "?x ?y " + std::to_string(v);
+            query_type q = ::util::rdf::ids::get_query(str);
+            const uint64_t expected = count_eq(D, c, v);
+            const uint8_t vars[3] = {(uint8_t) q[0].term_s.value, (uint8_t) q[0].term_p.value,
+                                     (uint8_t) q[0].term_o.value};
+            for (int f = 0; f < 3; ++f) { //free component whose variable is moved
+                if (f == c) continue;
+                const std::string ctx = str + " (" + COMP[c] + "=" + std::to_string(v) + ") on " + COMP[f];
+                //a) leap to the minimum, then seek to the next value, checking the weights each time
+                {
+                    Iterator it(&q[0], &index);
+                    const uint64_t v1 = it.leap(vars[f]);
+                    g.compare(v1 != 0, true, ctx + " leap finds a value");
+                    for (int k = 0; k < 3; ++k)
+                        if (k != c) g.compare(weight(it, k), expected, ctx + " after leap, weight of " + COMP[k]);
+                    if (v1 != 0) {
+                        it.leap(vars[f], v1 + 1);
+                        for (int k = 0; k < 3; ++k)
+                            if (k != c) g.compare(weight(it, k), expected, ctx + " after seek, weight of " + COMP[k]);
+                    }
+                    g.compare(it.nfixed, 1, ctx + " nfixed after leap");
+                }
+                //b) leap, down to level 2, up to level 1
+                {
+                    Iterator it(&q[0], &index);
+                    const uint64_t v1 = it.leap(vars[f]);
+                    if (v1 != 0) {
+                        it.down(vars[f], v1);
+                        it.up(vars[f]);
+                    }
+                    g.compare(it.nfixed, 1, ctx + " nfixed after down/up");
+                    for (int k = 0; k < 3; ++k)
+                        if (k != c) g.compare(weight(it, k), expected, ctx + " after down/up, weight of " + COMP[k]);
+                }
+            }
+        }
+    }
+    g.report(name + " case 5: subtree_size_fixed1 after leap/seek and down/up == #triples");
+}
+
 static const char *QUERIES[] = {
     "?x 1 ?y . ?y 2 ?z",
     "?x 1 ?y . ?y 2 ?z . ?z 1 ?x",
@@ -264,8 +337,8 @@ static void case4(const std::string &name, const data_type &D) {
             g.compare(res.size(), expected, std::string(qs) + (variant == 0 ? " join" : " join_v2"));
         }
     }
+    check(nonzero > 0 && zero > 0, name + " case 4: test queries include empty and non-empty results");
     g.report(name + " case 4: results == naive");
-    (void) nonzero; (void) zero;
 }
 
 template<class Index, class Iterator, class VeoA, class VeoS>
@@ -276,6 +349,7 @@ static void run_all(const std::string &name, const std::string &dname, const dat
     case1<Index, Iterator>(full, index, D);
     case2<Index, Iterator>(full, index, D);
     case3<Index, Iterator>(full, index, D);
+    case5<Index, Iterator>(full, index, D);
     case4<Index, Iterator, VeoA>(full + "/adaptive", D);
     case4<Index, Iterator, VeoS>(full + "/simple", D);
 }
@@ -290,6 +364,8 @@ int main() {
     datasets.push_back({"same-subject", gen_same_subject()});
     datasets.push_back({"all-single", gen_all_single()});
     datasets.push_back({"two-triples", gen_two_triples()});
+    datasets.push_back({"sparse-ids", gen_sparse(gen)});
+    datasets.push_back({"one-predicate", gen_one_pred(gen)});
 
     typedef cltj::compact_ltj lite_index;
     typedef cltj::compact_ltj_metatrie meta_index;
